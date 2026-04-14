@@ -1,34 +1,93 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+:root {
+    --font-titulo: Archivo Black;
+    --font-assunto: Roboto, arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
 
 html, body {
     font-family: Arial, Helvetica, sans-serif;
     padding: 0;
     margin: 0;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 header {
     display: flex;
+    flex-direction: column;
+    justify-content: center;        /* Para o conteudo */
+    align-items: center;            /*e para centralizar tudo */
+    text-align: center;
+
     background-image: url(img/Green\ Modern\ Minimalist\ Agrifarm\ Company\ Presentation.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-position: fixed;
-    height: 500px;
-    min-width: 500px;
+    background-position: center;
+    background-size: cover;         /*Pra preencher todo o espaço */
+    background-attachment: scroll;
+
+    min-height: 500px;
+    width: 100%;
+    padding: 20px;
+
+
+}
+
+.title {
+    color: white;
+    font-family: var(--font-titulo);
+    font-size: clamp(2rem, 8vw, 4rem);   /* cresce com a tela */
+    margin-bottom: 10px;
+}
+
+.resumo {
+    color: white;
+    font-family: var(--font-assunto);
+    font-weight: bold;
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    max-width: 800px;           /* não deixar texto largos*/
+    margin-bottom: 20px;
 }
 
 .navegacao {
-    display: flex;
-    padding: 20px;
-    gap: 15px;
-    font-size: 20px;
+    display: flex;   
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+    padding: 0;
 }
 
-li { 
-    list-style-type: none;
-    text-decoration: none;
+.navegacao li {
+    list-style: none;
+    transition: ease-out 0.5s;
 }
 
-a {
+.navegacao a {
     text-decoration: none;
     color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: ease-out 0.5s;
+    font-size: 25px;
+}
+
+.navegacao a:hover {
+    color: #4CAF50; 
+}
+
+.navegacao li:hover {
+    transition: ease-out 0.5s;
+    transform: scale(1.2);
+}
+
+hr {
+    margin-top: px;
+    width: 200px;
+    border: 2px solid white;
+    border-radius: 10px;
 }
