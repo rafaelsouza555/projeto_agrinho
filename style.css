@@ -6,6 +6,12 @@
     --cor-fundo-suave: #fcfdfc;
     --font-titulo: Archivo Black;
     --font-assunto: Roboto, arial, sans-serif;
+    --verde-sotaque: #4CAF50;
+    --cinza-texto: #444;
+    --cor-fundo-escura: #1a1a1a; 
+    --verde-primario: #2d5a27;
+    --verde-sotaque: #4CAF50;
+    --texto-claro: #eeeeee;
 }
 
 * {
@@ -101,7 +107,7 @@ hr {
     border: 2px solid white;
     border-radius: 10px;
 }
-
+                                    /* Primeiro conteudo ( meche em tudo )*/
 .conteudo-principal {
     max-width: 1100px;
     margin: 10px auto ;
@@ -135,7 +141,7 @@ section {
     width: 100%;
     border-radius: 15px;
     filter: saturate(0.8);
-    transition: 0.3s;
+    transition: 0.4s;
 }
 
 .imagem-exemplo img:hover {
@@ -168,7 +174,7 @@ h2 {
     letter-spacing: 1px;
 }
 
-                        /* Estilo para os Cards de Dados */
+                        /* estilo para cards dados */
 .estatisticas {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -192,7 +198,7 @@ h2 {
     color: #666;
 }
 
-                        /* Estilo para os Pilares */
+                        /* estilo para do pilares */
 .pilares {
     margin-top: 80px;
 }
@@ -217,4 +223,171 @@ h2 {
     font-family: var(--font-titulo);
     color: #1a3318;
     margin-bottom: 10px;
+}
+
+.hidden {
+    opacity: 0;                             /* animação pro centeudo apareçer enquanto scroola */
+    filter: blur(5px);
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);   
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 1s all ease;
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.secao-impacto {
+    margin-top: 100px;
+    padding: 100px 0;
+    background-color: var(--cor-fundo-escura);
+    border-radius: 30px;
+    color: var(--texto-claro);
+    overflow: hidden;   
+}
+
+.bloco-contraste {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Duas colunas iguais */
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.coluna-producao, .coluna-preservacao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.conteudo-impacto {
+    background: #fff;    /* Fundo branco pros cartões*/
+    padding: 60px;
+    border-radius: 20px;
+    color: var(--cinza-texto);
+    text-align: center;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.3); 
+    position: relative;
+}
+
+.coluna-producao .conteudo-impacto { border-top: 5px solid var(--verde-primario); }
+.coluna-preservacao .conteudo-impacto { border-top: 5px solid var(--verde-sotaque); }   /* Detalhe de cor no topo dos cartões */
+
+.conteudo-impacto h2 {
+    font-family: 'Archivo Black', sans-serif;
+    color: var(--cor-fundo-escura);   
+    font-size: 2.5rem;
+    margin: 15px 0;
+}
+
+.conteudo-impacto img {
+    width: 100%;
+    border-radius: 12px;
+    margin-top: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.coluna-producao, .coluna-preservacao {             /* animação de hover quando o mouse pasar por cima */
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);     
+    cursor: pointer;
+}
+
+.coluna-producao:hover, .coluna-preservacao:hover {
+    transform: scale(1.05); 
+    z-index: 20; 
+}
+                /* Botão voltar ao Topo */
+#backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--verde-primario);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 24px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 1000;
+    opacity: 0; 
+    transition: 0.4s;
+}
+
+#backToTop.show-btn {
+    opacity: 1;
+}
+
+
+.secao-impacto {
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    box-shadow: 0 -20px 40px rgba(0,0,0,0.2);
+}
+                                      /* Responsividade para celular */
+@media (max-width: 768px) {
+    .cabecalho {
+        min-height: 400px; 
+        padding: 40px 20px;
+        background-attachment: scroll; 
+    }
+
+    .title {
+        font-size: 2.2rem; 
+        line-height: 1.1;
+        margin-top: 20px;
+    }
+
+    .resumo {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+        padding: 15px; 
+    }
+    
+    .navegacao a {
+        font-size: 1.2rem; 
+        display: block;
+        width: 100%;
+    }
+
+    hr {
+        width: 100px; 
+        margin: 20px auto;
+    }
+
+    #backToTop {
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+    }
+    .secao, .bloco-contraste {
+        flex-direction: column;
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+    
+    .conteudo-principal {
+        padding: 30px 15px;
+        margin: 0 10px;
+    }
+
+    .conteudo-impacto {
+        padding: 30px 15px;
+    }
 }

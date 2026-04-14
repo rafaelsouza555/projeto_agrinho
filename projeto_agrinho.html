@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header class="cabecalho">
         <h1 class="title">
             Agro forte, Futuro Sustentável
@@ -17,30 +18,18 @@
         </p>
         <nav>
             <ul class="navegacao">
-                <li><a href="#home">Início</a></li>
                 <li><a href="#conceito">Tema</a></li>
                 <li><a href="#estatisticas">Dados</a></li>
                 <li><a href="#pilares">Pilares</a></li>
+                <li><a href="#impacto">Impacto</a></li>
             </ul>
             <hr>
         </nav>
+
     </header>
     <main class="conteudo-principal">
-    <section id="home"  class="secao">
-        <div class="texto">
-            <h2>O Conceito de Agro Sustentável</h2>
-            <p>
-                Ter um agro forte não significa apenas bater recordes de colheita. Significa produzir de forma que o solo continue fértil daqui a 50 anos. 
-            </p>
-            <p>
-                O verdadeiro equilíbrio acontece quando o produtor rural entende que a floresta em pé ajuda a regular a chuva que molha a sua plantação. É um ciclo de ajuda mútua: a natureza oferece os recursos, e o agro devolve cuidado e manejo consciente.
-            </p>
-        </div>
-        <div class="imagem-exemplo">
-            <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&q=80&w=800" alt="Plantação sustentável">
-        </div>
-    </section>
-    <section id="conceito" class="secao">
+
+    <section id="conceito" class="secao reveal">
         <div class="texto">
             <span class="tag-topo">Consciência</span>
             <h2>O Conceito de Agro Sustentável</h2>
@@ -56,7 +45,7 @@
         </div>
     </section>
 
-    <section id="estatisticas" class="estatisticas">
+    <section id="estatisticas" class="estatisticas reveal">
         <div class="card-dado">
             <h3>+20%</h3>
             <p>De produtividade média em solos com manejo de plantio direto.</p>
@@ -71,7 +60,7 @@
         </div>
     </section>
 
-    <section id="pilares" class="pilares">
+    <section id="pilares" class="pilares reveal">
         <h2>Como o <em>Paraná</em> lidera este movimento?</h2>
         <div class="grade-pilares">
             <article>
@@ -88,6 +77,68 @@
             </article>
         </div>
     </section>
+
+    <section id="impacto" class="secao-impacto reveal">
+    <div class="bloco-contraste">
+        <div class="coluna-producao">
+            <div class="conteudo-impacto">
+                <h3 class="tag-topo">Força Produtiva</h3>
+                <h2>Alimentar o Mundo</h2>
+                <p>O campo não para. A força do agro gera riqueza e garante a segurança alimentar em escala global.</p>
+                <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&q=80&w=800" alt="">
+            </div>
+        </div>
+        
+        <div class="coluna-preservacao reveal">
+            <div class="conteudo-impacto">
+                <h3 class="tag-topo">Cuidado Ambiental</h3>
+                <h2>Preservar a Vida</h2>
+                <p>A terra exige respeito. A preservação da biodiversidade é o único caminho para um solo perene.</p>
+                <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=800" alt="Floresta">
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section id="comunidade" class="secao reveal" style="background: white; margin-top: 50px; padding: 60px; border-radius: 20px;">
+    <div class="texto">
+        <h3 class="tag-topo">Impacto Social</h3>
+        <h2>O Rosto por trás da Terra</h2>
+        <p>A sustentabilidade paranaense não é feita apenas de máquinas, mas de <strong>famílias</strong>. Mais de 80% das propriedades rurais do estado são de agricultura familiar.</p>
+        <p>Garantir o equilíbrio é garantir que a próxima geração de produtores tenha um solo fértil para continuar o legado de alimentar o mundo.</p>
+    </div>
+    <div class="imagem-exemplo">
+        <img src="https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&q=80&w=800" alt="agricultora cuidando da plantação">
+    </div>
+</section>
+
+<a href="#" id="backToTop" title="Voltar ao topo">↑</a>
+
 </main>
+    <footer style="text-align: center; padding: 40px; color: #777; font-size: 0.9rem;">
+        &copy; 2026 Equilíbrio Verde - Projeto Agro Sustentável
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) entry.target.classList.add('show');
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+        // Mostrar/Esconder botão de voltar ao topo
+        const backToTop = document.querySelector("#backToTop");
+        
+        window.addEventListener("scroll", () => {               
+            if (window.scrollY > 400) {
+                 backToTop.classList.add("show-btn");
+            } else {                                                    
+                backToTop.classList.remove("show-btn");
+        }
+    });
+    </script>
+
 </body>
 </html>
