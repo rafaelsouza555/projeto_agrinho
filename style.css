@@ -11,6 +11,7 @@ header {
     background-image: url(img/Green\ Modern\ Minimalist\ Agrifarm\ Company\ Presentation.jpg);
     background-position: center center;
     background-repeat: no-repeat;
+    background-position: fixed;
     height: 500px;
     min-width: 500px;
 }
@@ -19,9 +20,10 @@ header {
     display: flex;
     padding: 20px;
     gap: 15px;
+    font-size: 20px;
 }
 
-li {  
+li { 
     list-style-type: none;
     text-decoration: none;
 }
