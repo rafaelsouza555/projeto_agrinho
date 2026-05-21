@@ -20,6 +20,7 @@
             <li><a href="#diagnostico">Diagnóstico</a></li>
             <li><a href="#catalogo">Catálogo</a></li>
             <li><a href="#planos">Planos</a></li>
+            <li><a href="#suporte">Suporte</a></li>
             <li><a href="#nos">Sobre Nós</a></li>
         </ul>
         <button class="hamburger" id="hamburger" aria-label="Abrir Menu">
@@ -420,6 +421,71 @@
                 <div class="depo-autor">
                     <strong>Maria Clara Oliveira</strong><br>
                     <small>Tomate • São Paulo</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="suporte" class="suporte-section">
+    <div class="container">
+        <div class="section-label reveal">SUPORTE</div>
+        <h2 class="section-title reveal">Reclamações e<br><em>Suporte ao Produtor</em></h2>
+        <p class="section-sub reveal">Sua opinião importa. Registre sua reclamação, sugestão ou problema que vamos te ajudar o mais rápido possível.</p>
+
+        <div class="suporte-grid">
+            
+            <!-- Formulário -->
+            <div class="suporte-form reveal">
+                <h3>Registrar Reclamação / Sugestão</h3>
+                <form id="formReclamacao">
+                    <div class="form-group">
+                        <label>Nome completo</label>
+                        <input type="text" id="nome" required placeholder="Seu nome">
+                    </div>
+                    <div class="form-group">
+                        <label>Telefone / WhatsApp</label>
+                        <input type="tel" id="telefone" required placeholder="(00) 00000-0000">
+                    </div>
+                    <div class="form-group">
+                        <label>Tipo</label>
+                        <select id="tipo" required>
+                            <option value="">Selecione...</option>
+                            <option value="reclamacao">Reclamação</option>
+                            <option value="sugestao">Sugestão de melhoria</option>
+                            <option value="erro">Erro no diagnóstico</option>
+                            <option value="outros">Outros</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Descreva o problema ou sugestão</label>
+                        <textarea id="descricao" rows="6" required placeholder="Descreva com detalhes..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%; padding: 16px;">
+                        Enviar Reclamação
+                    </button>
+                </form>
+            </div>
+
+            <!-- Informações de Contato -->
+            <div class="suporte-info reveal">
+                <h3>Outras formas de contato</h3>
+                <div class="contato-opcoes">
+                    <a href="#" class="contato-item">
+                        <span>📱</span>
+                        <strong>WhatsApp</strong>
+                        <p>(11) 91234-5678</p>
+                    </a>
+                    <a href="#" class="contato-item">
+                        <span>✉️</span>
+                        <strong>E-mail</strong>
+                        <p>suporte@agrointeligente.com.br</p>
+                    </a>
+                </div>
+
+                <div class="tempo-resposta">
+                    <strong>⏱️ Tempo médio de resposta:</strong>
+                    <p><strong>Até 4 horas</strong> em dias úteis</p>
                 </div>
             </div>
         </div>

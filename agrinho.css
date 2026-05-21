@@ -1104,3 +1104,242 @@ footer strong { color: var(--verde-neon); }
     border-radius: 12px;
     color: white;
 }
+
+/* ===== SUPORTE - VERSÃO MELHORADA E RESPONSIVA ===== */
+.suporte-section {
+    background: linear-gradient(180deg, #0d2614 0%, var(--bg-escuro) 100%);
+    padding: 90px 0;
+}
+
+.suporte-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    margin-top: 40px;
+}
+
+.suporte-form {
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: 24px;
+    padding: 40px;
+}
+
+.suporte-form h3 {
+    font-family: var(--font-display);
+    color: #fff;
+    margin-bottom: 28px;
+    font-size: 1.35rem;
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--verde-neon);
+    font-size: 0.92rem;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 16px;
+    background: rgba(255,255,255,0.06);
+    border: 1.5px solid var(--border-card);
+    border-radius: 12px;
+    color: white;
+    font-size: 1rem;
+    resize: vertical;
+}
+
+.form-group textarea {
+    min-height: 140px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--verde-neon);
+    box-shadow: 0 0 0 3px rgba(78, 203, 106, 0.15);
+}
+
+.suporte-info {
+    background: rgba(78,203,106,0.06);
+    border: 1px solid var(--border-card);
+    border-radius: 24px;
+    padding: 40px;
+    height: fit-content;
+}
+
+.suporte-info h3 {
+    margin-bottom: 28px;
+    font-family: var(--font-display);
+}
+
+/* ===== RESPONSIVO - SUPORTE ===== */
+@media (max-width: 900px) {
+    .suporte-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .suporte-form,
+    .suporte-info {
+        padding: 32px 28px;
+    }
+}
+
+@media (max-width: 600px) {
+    .suporte-section {
+        padding: 70px 0;
+    }
+    
+    .suporte-form,
+    .suporte-info {
+        padding: 28px 22px;
+    }
+
+    .suporte-form h3,
+    .suporte-info h3 {
+        font-size: 1.25rem;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 13px 14px;
+        font-size: 0.98rem; /* evita zoom no iOS */
+    }
+}
+
+@media (max-width: 380px) {
+    .suporte-form,
+    .suporte-info {
+        padding: 24px 18px;
+    }
+}
+
+.contato-item strong {
+    display: block;
+    font-size: 1.05rem;
+    color: #fff;
+    margin-bottom: 2px;
+}
+
+.contato-item p {
+    color: var(--texto-muted);
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+/* =============================================
+   CORREÇÕES ESPECÍFICAS PARA MOBILE 
+   (Letras cortando / Overflow)
+   ============================================= */
+
+@media (max-width: 1000px) {
+    
+    /* ===== TÍTULOS GRANDES QUE ESTÃO CORTANDO ===== */
+    .section-title {
+        font-size: clamp(2rem, 8vw, 2.8rem) !important;
+        line-height: 1.1 !important;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.4rem, 9vw, 3.2rem) !important;
+        line-height: 1.05 !important;
+    }
+
+    /* ===== ESPAÇAMENTOS EXCESSIVOS ===== */
+    section {
+        padding: 70px 0 !important;
+    }
+
+    .suporte-section,
+    .nos-section,
+    .faq-section,
+    .depoimentos-section {
+        padding: 60px 0 !important;
+    }
+
+    /* ===== CONTAINER MAIS SEGURO ===== */
+    .container {
+        padding: 0 18px !important;
+    }
+
+    /* ===== NAV BAR ===== */
+    .nav-inner {
+        padding: 14px 18px !important;
+    }
+
+    .logo {
+        font-size: 1.05rem !important;
+        white-space: nowrap;
+    }
+
+    /* ===== TEXTOS LONGOS ===== */
+    .solucao-intro p,
+    .section-sub,
+    .beneficio-card p,
+    .nos-card p,
+    .depo-card p {
+        font-size: 0.95rem !important;
+        line-height: 1.65 !important;
+    }
+
+    /* ===== FORMULÁRIO DE SUPORTE ===== */
+    .suporte-form {
+        padding: 28px 24px !important;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 1rem !important; /* evita zoom automático no iOS */
+    }
+
+    /* ===== DIAGNÓSTICO - PASSOS ===== */
+    .diag-step {
+        padding: 28px 20px !important;
+    }
+
+    .steps-grid {
+        gap: 20px !important;
+    }
+
+    /* ===== EVITAR QUEBRA DE PALAVRAS FORÇADA ===== */
+    h1, h2, h3, h4 {
+        word-break: break-word;
+        hyphens: auto;
+    }
+
+    /* ===== CTA ===== */
+    .cta-content h2 {
+        font-size: 2.4rem !important;
+    }
+}
+
+/* Correção extra para telas muito pequenas (iPhone SE, Galaxy small, etc) */
+@media (max-width: 380px) {
+    .hero h1 {
+        font-size: 2.25rem !important;
+    }
+    
+    .section-title {
+        font-size: 1.95rem !important;
+    }
+    
+    .suporte-grid {
+        gap: 30px !important;
+    }
+}
