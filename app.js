@@ -1,5 +1,5 @@
 /* ========================================================
-   AgroInteligente – app.js
+   AgroInteligente – app.js (VERSÃO ATUALIZADA)
    Mano, não mexe em nada que tá funcionando, pfvr! 🙏
    ======================================================== */
 
@@ -7,185 +7,185 @@
 
 const culturas = [
   {
-  id: "algodao",
-  emoji: "☁️",
-  nome: "Algodão",
-  tipo: "fibra",
-  descricao: "Cultura de alto valor tecnológico. Principal praga: Bicudo-do-algodoeiro.",
-  fotoRef: "https://images.unsplash.com/photo-1585336268764-0c4c4e9c5e0f?w=400&q=80",
-  sintomas: [
-    "Furos nos botões florais com queda",
-    "Manchas angulares nas folhas",
-    "Folhas com pó branco ou teia fina",
-    "Lagartas devorando folhas",
-    "Manchas marrons circulares nas folhas",
-    "Plantas murchas com raízes podres"
-  ],
-  diagnosticos: {
-    "Furos nos botões florais com queda": {
-      nome: "Bicudo-do-Algodoeiro",
-      emoji: "🪲",
-      gravidade: "grave",
-      causes: "Anthonomus grandis. O adulto perfura botões e a larva destrói o interior.",
-      tratamentos: ["Monitoramento com armadilhas", "Inseticidas específicos em janela de aplicação", "Destruir restos culturais"]
-    },
-    "Manchas angulares nas folhas,Manchas marrons circulares nas folhas": {
-      nome: "Mancha Angular / Ramulária",
-      emoji: "🍂",
-      gravidade: "grave",
-      causes: "Bactéria Xanthomonas ou fungo Ramularia areola.",
-      tratamentos: ["Fungicidas/bactericidas preventivos", "Variedades resistentes", "Boa circulação de ar"]
-    },
-    "Folhas com pó branco ou teia fina": {
-      nome: "Ácaro-Rajado",
-      emoji: "🕷️",
-      gravidade: "moderado",
-      causes: "Tetranychus urticae – favorecido por clima seco e quente.",
-      tratamentos: ["Acaricidas seletivos", "Predadores naturais", "Irrigação por aspersão"]
-    },
-    default: {
-      nome: "Lagarta-do-Cartucho",
-      emoji: "🐛",
-      gravidade: "grave",
-      causes: "Spodoptera frugiperda.",
-      tratamentos: ["Inseticidas Bt", "Controle biológico", "Monitoramento de ovos"]
+    id: "algodao",
+    emoji: "☁️",
+    nome: "Algodão",
+    tipo: "fibra",
+    descricao: "Cultura de alto valor tecnológico. Principal praga: Bicudo-do-algodoeiro.",
+    fotoRef: "https://images.unsplash.com/photo-1585336268764-0c4c4e9c5e0f?w=600&q=80",
+    sintomas: [
+      "Furos nos botões florais com queda",
+      "Manchas angulares nas folhas",
+      "Folhas com pó branco ou teia fina",
+      "Lagartas devorando folhas",
+      "Manchas marrons circulares nas folhas",
+      "Plantas murchas com raízes podres"
+    ],
+    diagnosticos: {
+      "Furos nos botões florais com queda": {
+        nome: "Bicudo-do-Algodoeiro",
+        emoji: "🪲",
+        gravidade: "grave",
+        causes: "Anthonomus grandis. O adulto perfura botões e a larva destrói o interior.",
+        tratamentos: ["Monitoramento com armadilhas", "Inseticidas específicos em janela de aplicação", "Destruir restos culturais"]
+      },
+      "Manchas angulares nas folhas,Manchas marrons circulares nas folhas": {
+        nome: "Mancha Angular / Ramulária",
+        emoji: "🍂",
+        gravidade: "grave",
+        causes: "Bactéria Xanthomonas ou fungo Ramularia areola.",
+        tratamentos: ["Fungicidas/bactericidas preventivos", "Variedades resistentes", "Boa circulação de ar"]
+      },
+      "Folhas com pó branco ou teia fina": {
+        nome: "Ácaro-Rajado",
+        emoji: "🕷️",
+        gravidade: "moderado",
+        causes: "Tetranychus urticae – favorecido por clima seco e quente.",
+        tratamentos: ["Acaricidas seletivos", "Predadores naturais", "Irrigação por aspersão"]
+      },
+      default: {
+        nome: "Lagarta-do-Cartucho",
+        emoji: "🐛",
+        gravidade: "grave",
+        causes: "Spodoptera frugiperda.",
+        tratamentos: ["Inseticidas Bt", "Controle biológico", "Monitoramento de ovos"]
+      }
     }
-  }
-},
+  },
 
-{
-  id: "arroz",
-  emoji: "🌾",
-  nome: "Arroz",
-  tipo: "alimentar",
-  descricao: "Principal cereal do Brasil. Brusone é a doença mais temida.",
-  fotoRef: "https://images.unsplash.com/photo-1593001873049-2f5d3b2e7f4d?w=400&q=80",
-  sintomas: [
-    "Manchas necróticas com halo amarelo nas folhas",
-    "Lesões nas panículas (espigas vazias)",
-    "Manchas pardas ovais nas folhas",
-    "Folhas com escaldadura (queimadas)",
-    "Perfurações no colmo",
-    "Plantas murchas"
-  ],
-  diagnosticos: {
-    "Manchas necróticas com halo amarelo nas folhas,Lesões nas panículas (espigas vazias)": {
-      nome: "Brusone",
-      emoji: "🍄",
-      gravidade: "grave",
-      causes: "Fungo Magnaporthe oryzae.",
-      tratamentos: ["Fungicidas triazóis na fase reprodutiva", "Cultivares resistentes", "Manejo de nitrogênio"]
-    },
-    "Manchas pardas ovais nas folhas": {
-      nome: "Mancha Parda",
-      emoji: "🟫",
-      gravidade: "moderado",
-      causes: "Bipolaris oryzae.",
-      tratamentos: ["Fungicidas preventivos", "Equilíbrio nutricional", "Rotação de culturas"]
-    },
-    default: {
-      nome: "Percevejo-do-Colmo",
-      emoji: "🐞",
-      gravidade: "moderado",
-      causes: "Tibraca limbativentris.",
-      tratamentos: ["Inseticidas na fase de perfilhamento", "Preservação de inimigos naturais"]
+  {
+    id: "arroz",
+    emoji: "🌾",
+    nome: "Arroz",
+    tipo: "alimentar",
+    descricao: "Principal cereal do Brasil. Brusone é a doença mais temida.",
+    fotoRef: "https://images.unsplash.com/photo-1593001873049-2f5d3b2e7f4d?w=600&q=80",
+    sintomas: [
+      "Manchas necróticas com halo amarelo nas folhas",
+      "Lesões nas panículas (espigas vazias)",
+      "Manchas pardas ovais nas folhas",
+      "Folhas com escaldadura (queimadas)",
+      "Perfurações no colmo",
+      "Plantas murchas"
+    ],
+    diagnosticos: {
+      "Manchas necróticas com halo amarelo nas folhas,Lesões nas panículas (espigas vazias)": {
+        nome: "Brusone",
+        emoji: "🍄",
+        gravidade: "grave",
+        causes: "Fungo Magnaporthe oryzae.",
+        tratamentos: ["Fungicidas triazóis na fase reprodutiva", "Cultivares resistentes", "Manejo de nitrogênio"]
+      },
+      "Manchas pardas ovais nas folhas": {
+        nome: "Mancha Parda",
+        emoji: "🟫",
+        gravidade: "moderado",
+        causes: "Bipolaris oryzae.",
+        tratamentos: ["Fungicidas preventivos", "Equilíbrio nutricional", "Rotação de culturas"]
+      },
+      default: {
+        nome: "Percevejo-do-Colmo",
+        emoji: "🐞",
+        gravidade: "moderado",
+        causes: "Tibraca limbativentris.",
+        tratamentos: ["Inseticidas na fase de perfilhamento", "Preservação de inimigos naturais"]
+      }
     }
-  }
-},
+  },
 
-{
-  id: "feijao",
-  emoji: "🌱",
-  nome: "Feijão",
-  tipo: "alimentar",
-  descricao: "Cultura de alto risco fitossanitário, especialmente viroses.",
-  fotoRef: "https://images.unsplash.com/photo-1596733434982-0a5c4c8f4b0f?w=400&q=80",
-  sintomas: [
-    "Folhas com mosaico dourado",
-    "Manchas angulares nas folhas",
-    "Lesões encharcadas nos caules e vagens",
-    "Plantas murchas com raízes podres",
-    "Pó branco nas folhas",
-    "Vagens deformadas"
-  ],
-  diagnosticos: {
-    "Folhas com mosaico dourado": {
-      nome: "Mosaico Dourado",
-      emoji: "🟨",
-      gravidade: "grave",
-      causes: "Bean Golden Mosaic Virus (transmitido por mosca-branca).",
-      tratamentos: ["Controle rigoroso da mosca-branca", "Eliminação de plantas doentes", "Variedades resistentes"]
-    },
-    "Manchas angulares nas folhas": {
-      nome: "Mancha Angular",
-      emoji: "🔶",
-      gravidade: "moderado",
-      causes: "Pseudocercospora griseola.",
-      tratamentos: ["Fungicidas preventivos", "Rotação de culturas", "Evitar molhar folhas"]
-    },
-    "Plantas murchas com raízes podres": {
-      nome: "Mofo Branco / Podridão Radicular",
-      emoji: "☠️",
-      gravidade: "grave",
-      causes: "Sclerotinia ou Fusarium.",
-      tratamentos: ["Solarização", "Tratamento de sementes", "Melhor drenagem"]
-    },
-    default: {
-      nome: "Ferrugem do Feijoeiro",
-      emoji: "🟠",
-      gravidade: "moderado",
-      causes: "Uromyces appendiculatus.",
-      tratamentos: ["Fungicidas à base de triazol", "Cultivares resistentes"]
+  {
+    id: "feijao",
+    emoji: "🌱",
+    nome: "Feijão",
+    tipo: "alimentar",
+    descricao: "Cultura de alto risco fitossanitário, especialmente viroses.",
+    fotoRef: "https://images.unsplash.com/photo-1596733434982-0a5c4c8f4b0f?w=600&q=80",
+    sintomas: [
+      "Folhas com mosaico dourado",
+      "Manchas angulares nas folhas",
+      "Lesões encharcadas nos caules e vagens",
+      "Plantas murchas com raízes podres",
+      "Pó branco nas folhas",
+      "Vagens deformadas"
+    ],
+    diagnosticos: {
+      "Folhas com mosaico dourado": {
+        nome: "Mosaico Dourado",
+        emoji: "🟨",
+        gravidade: "grave",
+        causes: "Bean Golden Mosaic Virus (transmitido por mosca-branca).",
+        tratamentos: ["Controle rigoroso da mosca-branca", "Eliminação de plantas doentes", "Variedades resistentes"]
+      },
+      "Manchas angulares nas folhas": {
+        nome: "Mancha Angular",
+        emoji: "🔶",
+        gravidade: "moderado",
+        causes: "Pseudocercospora griseola.",
+        tratamentos: ["Fungicidas preventivos", "Rotação de culturas", "Evitar molhar folhas"]
+      },
+      "Plantas murchas com raízes podres": {
+        nome: "Mofo Branco / Podridão Radicular",
+        emoji: "☠️",
+        gravidade: "grave",
+        causes: "Sclerotinia ou Fusarium.",
+        tratamentos: ["Solarização", "Tratamento de sementes", "Melhor drenagem"]
+      },
+      default: {
+        nome: "Ferrugem do Feijoeiro",
+        emoji: "🟠",
+        gravidade: "moderado",
+        causes: "Uromyces appendiculatus.",
+        tratamentos: ["Fungicidas à base de triazol", "Cultivares resistentes"]
+      }
     }
-  }
-},
+  },
 
-{
-  id: "uva",
-  emoji: "🍇",
-  nome: "Uva",
-  tipo: "fruta",
-  descricao: "Exige manejo fitossanitário intenso, especialmente em regiões úmidas.",
-  fotoRef: "https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?w=400&q=80",
-  sintomas: [
-    "Manchas oleosas na face inferior das folhas",
-    "Pó branco nas folhas e cachos",
-    "Lesões escuras tipo 'olho de passarinho'",
-    "Podridão cinzenta nos cachos",
-    "Folhas amarelecidas com nervuras verdes",
-    "Cachos murchos"
-  ],
-  diagnosticos: {
-    "Manchas oleosas na face inferior das folhas": {
-      nome: "Míldio da Videira",
-      emoji: "🌧️",
-      gravidade: "grave",
-      causes: "Plasmopara viticola.",
-      tratamentos: ["Fungicidas cúpricos + sistêmicos", "Poda verde", "Boa aeração do dossel"]
-    },
-    "Pó branco nas folhas e cachos": {
-      nome: "Oídio",
-      emoji: "⬜",
-      gravidade: "grave",
-      causes: "Uncinula necator.",
-      tratamentos: ["Enxofre ou fungicidas específicos", "Evitar excesso de vigor"]
-    },
-    default: {
-      nome: "Antracnose (Olho de Passarinho)",
-      emoji: "⚫",
-      gravidade: "moderado",
-      causes: "Elsinoe ampelina.",
-      tratamentos: ["Fungicidas preventivos", "Remoção de restos culturais"]
+  {
+    id: "uva",
+    emoji: "🍇",
+    nome: "Uva",
+    tipo: "fruta",
+    descricao: "Exige manejo fitossanitário intenso, especialmente em regiões úmidas.",
+    fotoRef: "https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?w=600&q=80",
+    sintomas: [
+      "Manchas oleosas na face inferior das folhas",
+      "Pó branco nas folhas e cachos",
+      "Lesões escuras tipo 'olho de passarinho'",
+      "Podridão cinzenta nos cachos",
+      "Folhas amarelecidas com nervuras verdes",
+      "Cachos murchos"
+    ],
+    diagnosticos: {
+      "Manchas oleosas na face inferior das folhas": {
+        nome: "Míldio da Videira",
+        emoji: "🌧️",
+        gravidade: "grave",
+        causes: "Plasmopara viticola.",
+        tratamentos: ["Fungicidas cúpricos + sistêmicos", "Poda verde", "Boa aeração do dossel"]
+      },
+      "Pó branco nas folhas e cachos": {
+        nome: "Oídio",
+        emoji: "⬜",
+        gravidade: "grave",
+        causes: "Uncinula necator.",
+        tratamentos: ["Enxofre ou fungicidas específicos", "Evitar excesso de vigor"]
+      },
+      default: {
+        nome: "Antracnose (Olho de Passarinho)",
+        emoji: "⚫",
+        gravidade: "moderado",
+        causes: "Elsinoe ampelina.",
+        tratamentos: ["Fungicidas preventivos", "Remoção de restos culturais"]
+      }
     }
-  }
-},
+  },
   {
     id: "laranja",
     emoji: "🍊",
     nome: "Laranja",
     tipo: "fruta",
     descricao: "Pilar da citricultura brasileira; o controle do Greening é o maior desafio atual.",
-    fotoRef: "https://images.unsplash.com/photo-1580052614034-c55d20bfee3b?w=400&q=80",
+    fotoRef: "https://images.unsplash.com/photo-1580052614034-c55d20bfee3b?w=600&q=80",
     sintomas: [
       "Folhas com manchas amareladas assimétricas",
       "Frutos pequenos e deformados",
@@ -224,7 +224,7 @@ const culturas = [
     nome: "Cana-de-Açúcar",
     tipo: "alimentar",
     descricao: "Base da nossa bioenergia e açúcar. Sofre com brocas e pragas de solo.",
-    fotoRef: "https://images.unsplash.com/photo-1590005085374-2976be0d5884?w=400&q=80",
+    fotoRef: "https://images.unsplash.com/photo-1590005085374-2976be0d5884?w=600&q=80",
     sintomas: [
       "Orifícios no colmo com serragem",
       "Morte do broto apical (coração morto)",
@@ -263,7 +263,7 @@ const culturas = [
     nome: "Mandioca / Macaxeira",
     tipo: "alimentar",
     descricao: "Raiz rústica e 100% brasileira, mas muito sensível a apodrecimentos radiculares.",
-    fotoRef: "https://images.unsplash.com/photo-1627914092120-00eab868f029?w=400&q=80",
+    fotoRef: "https://images.unsplash.com/photo-1627914092120-00eab868f029?w=600&q=80",
     sintomas: [
       "Folhas devoradas rapidamente",
       "Raízes moles e com mau cheiro",
@@ -302,8 +302,7 @@ const culturas = [
     nome: "Café",
     tipo: "alimentar",
     descricao: "Uma das principais culturas do Brasil, sensível a fungos e variações climáticas.",
-    // Foto real de folhas de café em plantação para análise de pragas
-    fotoRef: "https://images.unsplash.com/photo-1629157241274-9f8bc3704283?w=400&q=80",
+    fotoRef: "https://images.unsplash.com/photo-1629157241274-9f8bc3704283?w=600&q=80",
     sintomas: [
       "Manchas alaranjadas nas folhas",
       "Queda prematura de folhas",
@@ -342,8 +341,7 @@ const culturas = [
     nome: "Soja",
     tipo: "alimentar",
     descricao: "Cultura de maior volume exportado pelo Brasil; suscetível a diversas doenças fúngicas.",
-    // Foto macro com foco total na textura e saúde das folhas de soja
-    fotoRef: "https://images.unsplash.com/photo-1594756202469-9ff9799b2e4e?w=400&q=80",
+    fotoRef: "https://images.unsplash.com/photo-1594756202469-9ff9799b2e4e?w=600&q=80",
     sintomas: [
       "Pústulas marrons nas folhas",
       "Amarelecimento generalizado",
@@ -382,8 +380,7 @@ const culturas = [
     nome: "Milho",
     tipo: "alimentar",
     descricao: "Base da alimentação humana e animal; atacado por pragas e doenças foliares.",
-    // Foto em detalhe de uma folha e espiga de milho no talo
-    fotoRef: "https://images.unsplash.com/photo-1551754655-cd27e38d2076?w=400&q=80",
+    fotoRef: "https://images.unsplash.com/photo-1551754655-cd27e38d2076?w=600&q=80",
     sintomas: [
       "Fileiras de ovos nas folhas",
       "Folhas com listras brancas",
@@ -422,8 +419,7 @@ const culturas = [
     nome: "Tomate",
     tipo: "horta",
     descricao: "Hortaliça de alto valor; extremamente sensível a viroses e fungos do solo.",
-    // Foto macro focada na folhagem do tomateiro sob inspeção
-    fotoRef: "https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=400&q=80",
+    fotoRef: "https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=600&q=80",
     sintomas: [
       "Folhas com mosaico amarelo",
       "Frutos com manchas escuras",
@@ -462,8 +458,7 @@ const culturas = [
     nome: "Banana",
     tipo: "fruta",
     descricao: "Fruta tropical amplamente cultivada; vulnerável ao mal-do-Panamá e sigatoka.",
-    // Close-up nas folhas gigantes da bananeira para verificar manchas fúngicas
-    fotoRef: "https://images.unsplash.com/photo-1566393028639-d108a42c46a7?w=400&q=80",
+    fotoRef: "https://images.unsplash.com/photo-1566393028639-d108a42c46a7?w=600&q=80",
     sintomas: [
       "Folhas com listras amarelas",
       "Pseudocaule com manchas escuras",
@@ -502,101 +497,177 @@ const catalogoCompleto = [
   {
     emoji: "☕", nome: "Café", tipo: "alimentar",
     desc: "A bebida do Brasil. Requer clima ameno e solo bem drenado.",
-    pragas: ["Ferrugem", "Broca-do-café", "Bicho-mineiro"],
+    pragas: [
+      {nome: "Ferrugem", controle: "Fungicidas cúpricos e sistêmicos em rotação, poda de ramos afetados, adubação potássica para fortalecer a planta e quebra-ventos para reduzir umidade foliar."},
+      {nome: "Broca-do-café", controle: "Monitoramento com armadilhas, controle biológico com Beauveria bassiana, colheita bem feita para não deixar frutos no chão e inseticidas específicos no período crítico."},
+      {nome: "Bicho-mineiro", controle: "Inseticidas seletivos, preservação de inimigos naturais como vespas parasitoides, e adubação equilibrada para manter planta vigorosa."}
+    ],
   },
   {
     emoji: "🫘", nome: "Soja", tipo: "alimentar",
     desc: "Oleaginosa mais exportada do mundo; ciclo de 90–150 dias.",
-    pragas: ["Ferrugem Asiática", "Lagarta-da-soja", "Percevejo"],
+    pragas: [
+      {nome: "Ferrugem Asiática", controle: "Fungicidas triazóis + estrobilurinas em rotação de modos de ação, monitoramento semanal a partir do fechamento das linhas e uso de cultivares com genes de resistência."},
+      {nome: "Lagarta-da-soja", controle: "Inseticidas biológicos (Bt), controle biológico com Trichogramma, monitoramento de ovos e lagartas pequenas, e preservação de inimigos naturais."},
+      {nome: "Percevejo", controle: "Inseticidas específicos na fase reprodutiva (R5-R6), monitoramento com pano de batida, e controle antes do enchimento de grãos para evitar danos."}
+    ],
   },
   {
     emoji: "🌽", nome: "Milho", tipo: "alimentar",
     desc: "Cultura estratégica para alimentação humana e ração animal.",
-    pragas: ["Lagarta-do-cartucho", "Cigarrinha", "Helmintosporiose"],
+    pragas: [
+      {nome: "Lagarta-do-cartucho", controle: "Tecnologia Bt (milho geneticamente modificado), inseticidas fisiológicos (teflubenzuron), monitoramento de posturas, e liberação de Trichogramma para parasitismo de ovos."},
+      {nome: "Cigarrinha", controle: "Inseticidas neonicotinoides no tratamento de sementes, eliminação de plantas voluntárias (tigueras), e rotação de culturas para quebrar o ciclo."},
+      {nome: "Helmintosporiose", controle: "Fungicidas preventivos na fase vegetativa (V8-V10), cultivares tolerantes, adubação nitrogenada equilibrada e eliminação de restos culturais."}
+    ],
   },
   {
     emoji: "🌾", nome: "Arroz", tipo: "alimentar",
     desc: "Cultivado em várzeas e terras altas; base alimentar do brasileiro.",
-    pragas: ["Brusone", "Percevejo-do-colmo", "Mancha-parda"],
+    pragas: [
+      {nome: "Brusone", controle: "Fungicidas triazóis na fase reprodutiva (início de panícula), cultivares resistentes, manejo adequado de nitrogênio (evitar excesso), e tratamento de sementes."},
+      {nome: "Percevejo-do-colmo", controle: "Inseticidas na fase de perfilhamento, monitoramento semanal, e preservação de áreas naturais para inimigos naturais."},
+      {nome: "Mancha-parda", controle: "Fungicidas preventivos, equilíbrio nutricional (especialmente potássio e silício), rotação de culturas e tratamento de sementes."}
+    ],
   },
   {
     emoji: "🌱", nome: "Feijão", tipo: "alimentar",
     desc: "Leguminosa rica em proteína, cultivada em todo o território.",
-    pragas: ["Mosca-branca", "Antracnose", "Mancha-angular"],
+    pragas: [
+      {nome: "Mosca-branca", controle: "Inseticidas específicos (neonicotinoides), óleo mineral para asfixia, controle biológico com Encarsia formosa, e eliminação de plantas daninhas hospedeiras."},
+      {nome: "Antracnose", controle: "Fungicidas cúpricos preventivos, sementes certificadas e tratadas, rotação de culturas por 2-3 anos, e eliminação de restos culturais."},
+      {nome: "Mancha-angular", controle: "Fungicidas preventivos (mancozeb, clorotalonil), evitar irrigação por aspersão, espaçamento adequado para ventilação, e cultivares resistentes."}
+    ],
   },
   {
     emoji: "🍌", nome: "Banana", tipo: "fruta",
     desc: "Fruta tropical de alto consumo; exige temperatura acima de 18 °C.",
-    pragas: ["Sigatoka-negra", "Mal-do-Panamá", "Broca"],
+    pragas: [
+      {nome: "Sigatoka-negra", controle: "Fungicidas sistêmicos (triazóis) em rotação, eliminação semanal de folhas doentes, adubação potássica, e uso de cultivares resistentes como BRS Vitória."},
+      {nome: "Mal-do-Panamá", controle: "Não há controle químico eficaz; usar mudas certificadas de viveiro, eliminar plantas doentes com quarentena, solarização do solo, e replantio com cultivares resistentes."},
+      {nome: "Broca", controle: "Iscas com pedaços de pseudocaule, inseticidas biológicos (Beauveria), eliminação de restos culturais, e monitoramento de adultos."}
+    ],
   },
   {
     emoji: "🍊", nome: "Laranja", tipo: "fruta",
     desc: "Principal fruta cítrica do Brasil; sensível ao greening.",
-    pragas: ["Greening (HLB)", "Mosca-da-fruta", "Pulgão-preto"],
+    pragas: [
+      {nome: "Greening (HLB)", controle: "Erradicação imediata de plantas doentes (obrigatório por lei), controle rigoroso do psilídeo com inseticidas, uso exclusivo de mudas certificadas de viveiro telado, e eliminação de plantas de citrus abandonadas."},
+      {nome: "Mosca-da-fruta", controle: "Coleta e destruição de frutos caídos, iscas tóxicas proteicas, ensacamento de frutos, e liberação de parasitoides como Diachasmimorpha longicaudata."},
+      {nome: "Pulgão-preto", controle: "Óleo mineral para asfixia, inseticidas sistêmicos, preservação de joaninhas e sirfídeos (predadores naturais), e controle de formigas que protegem os pulgões."}
+    ],
   },
   {
     emoji: "🍇", nome: "Uva", tipo: "fruta",
     desc: "Cultivada no Sul do Brasil; demanda manejo fitossanitário intenso.",
-    pragas: ["Míldio", "Oídio", "Podridão-cinzenta"],
+    pragas: [
+      {nome: "Míldio", controle: "Fungicidas cúpricos preventivos + sistêmicos (fosfitos, metalaxil), poda verde para aeração, manejo do dossel, e evitar irrigação por aspersão."},
+      {nome: "Oídio", controle: "Enxofre em pó ou molhável, fungicidas específicos (tebuconazol, myclobutanil), evitar excesso de nitrogênio, e poda para ventilação."},
+      {nome: "Podridão-cinzenta", controle: "Fungicidas específicos (boscalid, fenhexamid), poda de cachos para aeração, evitar ferimentos nos frutos, e colheita no ponto certo."}
+    ],
   },
   {
     emoji: "🍓", nome: "Morango", tipo: "fruta",
     desc: "Fruta de ciclo curto de alto valor agregado e demanda constante.",
-    pragas: ["Ácaro-rajado", "Antracnose", "Oídio"],
+    pragas: [
+      {nome: "Ácaro-rajado", controle: "Acaricidas seletivos, controle biológico com Phytoseiulus persimilis, aumento de umidade relativa, e monitoramento constante."},
+      {nome: "Antracnose", controle: "Fungicidas preventivos, mudas sadias certificadas, evitar molhar folhas e frutos, e remoção de frutos doentes."},
+      {nome: "Oídio", controle: "Enxofre, fungicidas específicos, boa ventilação em estufas, e evitar excesso de adubação nitrogenada."}
+    ],
   },
   {
     emoji: "🥦", nome: "Brócolis", tipo: "horta",
     desc: "Hortaliça crucífera rica em nutrientes; ciclo de 70–90 dias.",
-    pragas: ["Traça-das-crucíferas", "Pulgão-verde", "Alternária"],
+    pragas: [
+      {nome: "Traça-das-crucíferas", controle: "Bacillus thuringiensis (Bt), inseticidas fisiológicos, monitoramento de lagartas, e rotação de culturas."},
+      {nome: "Pulgão-verde", controle: "Óleo de neem, sabão potássico, preservação de joaninhas e sirfídeos, e controle de formigas."},
+      {nome: "Alternária", controle: "Fungicidas cúpricos preventivos, evitar molhar folhas, espaçamento adequado, e rotação com não-crucíferas."}
+    ],
   },
   {
     emoji: "🍅", nome: "Tomate", tipo: "horta",
     desc: "Hortaliça de maior renda bruta; manejo fitossanitário intensivo.",
-    pragas: ["Traça-do-tomateiro", "Requeima", "Nematoide"],
+    pragas: [
+      {nome: "Traça-do-tomateiro", controle: "Baculovírus spodoptera, feromônios para monitoramento, Bt, e eliminação de frutos e folhas atacadas."},
+      {nome: "Requeima", controle: "Fungicidas preventivos (mancozeb, cúpricos), evitar molhar folhas, tutoramento adequado, e cultivares resistentes."},
+      {nome: "Nematoide", controle: "Solarização do solo, rotação com crotalária ou mucuna, nematicidas biológicos (Purpureocillium), e uso de porta-enxertos resistentes."}
+    ],
   },
   {
     emoji: "🥕", nome: "Cenoura", tipo: "horta",
     desc: "Raiz tuberosa cultivada em solos arenosos e férteis.",
-    pragas: ["Queima-das-folhas", "Alternária", "Mosca-da-cenoura"],
+    pragas: [
+      {nome: "Queima-das-folhas", controle: "Fungicidas preventivos, rotação de culturas, evitar excesso de umidade foliar, e adubação equilibrada."},
+      {nome: "Alternária", controle: "Fungicidas específicos, sementes tratadas, espaçamento adequado para ventilação, e eliminação de restos culturais."},
+      {nome: "Mosca-da-cenoura", controle: "Rotação de culturas, cobertura morta, armadilhas adesivas amarelas, e colheita no ponto certo."}
+    ],
   },
   {
     emoji: "🎋", nome: "Cana-de-Açúcar", tipo: "alimentar",
     desc: "Principal cultura sucroenergética do país. Exige solos férteis e maquinário pesado.",
-    pragas: ["Broca-da-cana", "Cigarrinha-das-raízes", "Bicudo (Sphenophorus)"],
+    pragas: [
+      {nome: "Broca-da-cana", controle: "Controle biológico com vespinha Cotesia flavipes (liberação em campo), parasitoides de ovos (Trichogramma), variedades resistentes, e monitoramento de posturas."},
+      {nome: "Cigarrinha-das-raízes", controle: "Inseticidas de solo na época chuvosa, destruição mecânica da soqueira, rotação com amendoim ou crotalária, e variedades resistentes."},
+      {nome: "Bicudo (Sphenophorus)", controle: "Destruição da soqueira, iscas tóxicas com pedaços de colmo, inseticidas granulados no sulco de plantio, e monitoramento de adultos."}
+    ],
   },
   {
     emoji: "🍠", nome: "Mandioca", tipo: "alimentar",
     desc: "Cultura rústica e essencial para a segurança alimentar, de fácil manejo.",
-    pragas: ["Mandarová", "Mosca-branca", "Ácaro-verde"],
+    pragas: [
+      {nome: "Mandarová", controle: "Baculovírus erinnyis (altamente eficaz), controle biológico natural, armadilhas luminosas para mariposas, e inseticidas fisiológicos apenas em infestações severas."},
+      {nome: "Mosca-branca", controle: "Inseticidas seletivos, óleo mineral, controle biológico com Encarsia, e eliminação de plantas daninhas hospedeiras."},
+      {nome: "Ácaro-verde", controle: "Acaricidas seletivos, aumento de umidade, controle biológico com ácaros predadores, e variedades resistentes."}
+    ],
   },
   {
-    emoji: "☁️", nome: "Algodão", tipo: "alimentar", /* ou crie um tipo 'fibra' no seu filtro */
+    emoji: "☁️", nome: "Algodão", tipo: "fibra",
     desc: "A pluma de ouro do cerrado. Alta tecnologia e janela de plantio restrita.",
-    pragas: ["Bicudo-do-algodoeiro", "Lagarta-das-maçãs", "Pulgão"],
+    pragas: [
+      {nome: "Bicudo-do-algodoeiro", controle: "Monitoramento rigoroso com armadilhas de feromônio, destruição de restos culturais (obrigatório), janela de aplicação de inseticidas, e variedades transgênicas."},
+      {nome: "Lagarta-das-maçãs", controle: "Tecnologia Bt (algodão geneticamente modificado), inseticidas reguladores de crescimento, monitoramento de botões florais, e controle biológico com Trichogramma."},
+      {nome: "Pulgão", controle: "Inseticidas seletivos (evitar piretróides), preservação de inimigos naturais (joaninhas, sirfídeos), controle de formigas, e monitoramento semanal."}
+    ],
   },
   {
     emoji: "🌾", nome: "Trigo", tipo: "alimentar",
     desc: "Cereal de inverno estratégico, cultivado principalmente na região Sul.",
-    pragas: ["Brusone", "Giberela", "Ferrugem-da-folha"],
+    pragas: [
+      {nome: "Brusone", controle: "Fungicidas triazóis + estrobilurinas no início do florescimento, cultivares resistentes, tratamento de sementes, e evitar excesso de nitrogênio."},
+      {nome: "Giberela", controle: "Fungicidas preventivos no início do florescimento, cultivares tolerantes, rotação de culturas, e evitar plantio após milho."},
+      {nome: "Ferrugem-da-folha", controle: "Fungicidas triazóis, cultivares resistentes, tratamento de sementes, e monitoramento constante."}
+    ],
   },
   {
     emoji: "🍉", nome: "Melancia", tipo: "fruta",
     desc: "Cultivada em clima quente. Rasteira, demanda muita água no envase do fruto.",
-    pragas: ["Mosca-minadora", "Broca-dos-frutos", "Oídio"],
+    pragas: [
+      {nome: "Mosca-minadora", controle: "Inseticidas sistêmicos, armadilhas adesivas amarelas, controle biológico com parasitoides, e eliminação de folhas atacadas."},
+      {nome: "Broca-dos-frutos", controle: "Ensacamento dos frutos, coleta e destruição de frutos atacados, inseticidas específicos, e monitoramento de adultos."},
+      {nome: "Oídio", controle: "Enxofre, fungicidas específicos, boa ventilação, e evitar excesso de nitrogênio."}
+    ],
   },
   {
     emoji: "🥬", nome: "Alface", tipo: "horta",
     desc: "A hortaliça folhosa mais consumida. Produção em campo e hidroponia.",
-    pragas: ["Tripes", "Pulgão", "Míldio"],
+    pragas: [
+      {nome: "Tripes", controle: "Inseticidas seletivos, armadilhas adesivas azuis, controle biológico com Orius, e aumento de umidade relativa."},
+      {nome: "Pulgão", controle: "Óleo de neem, sabão potássico, joaninhas, e controle de formigas."},
+      {nome: "Míldio", controle: "Fungicidas cúpricos preventivos, evitar molhar folhas, boa ventilação, e irrigação controlada."}
+    ],
   },
   {
     emoji: "🫑", nome: "Pimentão", tipo: "horta",
     desc: "Sensível a oscilações térmicas, muito comum o cultivo em estufas (plasticultura).",
-    pragas: ["Ácaro-branco", "Mosca-branca", "Vira-cabeça (Tospovírus)"],
+    pragas: [
+      {nome: "Ácaro-branco", controle: "Acaricidas específicos, aumento de umidade, controle biológico com ácaros predadores, e monitoramento constante."},
+      {nome: "Mosca-branca", controle: "Inseticidas seletivos, armadilhas adesivas amarelas, controle biológico com Encarsia, e telas antinseto em estufas."},
+      {nome: "Vira-cabeça (Tospovírus)", controle: "Não há cura; controle rigoroso do tripes vetor, eliminação imediata de plantas doentes, mudas sadias, e variedades resistentes."}
+    ],
   }
 ];
 
-/* ── MEMÓRIA RAM DO APP (ESTADO GLOBAL DO BABADO) 🧠 ── */
+/* ── MEMÓRIA RAM DO APP (ESTADO GLOBAL DO BABADO) 🧠 ─ */
 let culturaSelecionada = null;
 let sintomasSelecionados = [];
 
@@ -773,7 +844,7 @@ function showStep(num) {
   if (step) step.classList.add("active");
 }
 
-/* ── FILTRANDO OS PRODUTOS DO CATÁLOGO PRA NÃO FICAR FLOPADO 🛒 ── */
+/* ── FILTRANDO OS PRODUTOS DO CATÁLOGO PRA NÃO FICAR FLOPADO 🛒 ─ */
 function renderCatalogo(filtro = "todos") {
   const grid = document.getElementById("catalogoGrid");
   if (!grid) return;
@@ -790,7 +861,7 @@ function renderCatalogo(filtro = "todos") {
         <span class="cat-tipo">${item.tipo}</span>
         <p>${item.desc}</p>
         <div class="cat-pragas">
-          ${item.pragas.map((p) => `<span class="cat-praga-tag">${p}</span>`).join("")}
+          ${item.pragas.map((p) => `<span class="cat-praga-tag">${p.nome || p}</span>`).join("")}
         </div>
       </div>
     `;
@@ -813,16 +884,19 @@ function abrirModal(item) {
     <div class="modal-section">
       <h5>Principais Ameaças (Gatilho! 💀)</h5>
       <div class="modal-pragas-lista">
-        ${item.pragas.map((p) => `
+        ${item.pragas.map((p) => {
+          const nomePraga = p.nome || p;
+          const controle = p.controle || "Combine manejo cultural, controle biológico e químico conforme necessidade.";
+          return `
           <div class="modal-praga-item">
-            <h6>⚠️ ${p}</h6>
+            <h6>⚠️ ${nomePraga}</h6>
             <p>Praga/doença de ocorrência frequente nesta cultura. Monitoramento contínuo é essencial.</p>
             <div class="modal-praga-sol">
               <strong>💡 Controle Integrado:</strong>
-              <span>Combine manejo cultural, controle biológico e químico conforme necessidade.</span>
+              <span>${controle}</span>
             </div>
           </div>
-        `).join("")}
+        `}).join("")}
       </div>
     </div>
     <div class="modal-section">
@@ -839,14 +913,12 @@ function abrirModal(item) {
   overlay.classList.add("open");
 }
 
-
-
 function fecharModal() {
   const overlay = document.getElementById("modalOverlay");
   if (overlay) overlay.classList.remove("open");
 }
 
-/* ── ANIMAÇÕES DE SCROLL (PRO SITE FICAR CHIQUE) 🌟 ── */
+/* ── ANIMAÇÕES DE SCROLL (PRO SITE FICAR CHIQUE) 🌟 ─ */
 function initReveal() {
   const obs = new IntersectionObserver(
     (entries) => entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add("show"); }),
@@ -882,7 +954,7 @@ function initNavbar() {
   }
 }
 
-/* ── ESCUTADORES DE EVENTO DOS BOTÕES DE FILTRO 📣 ── */
+/* ── ESCUTADORES DE EVENTO DOS BOTÕES DE FILTRO 📣 ─ */
 function initFiltros() {
   document.querySelectorAll(".filtro-btn").forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -940,4 +1012,3 @@ document.addEventListener("DOMContentLoaded", () => {
   initModal();
   // Literalmente sem bugar nada, amém! 🤍
 });
-
