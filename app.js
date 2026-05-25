@@ -491,7 +491,407 @@ const culturas = [
       },
     },
   },
+  {
+    id: "trigo",
+    emoji: "🌾",
+    nome: "Trigo",
+    tipo: "alimentar",
+    descricao: "Cereal de inverno estratégico cultivado no Sul do Brasil. Suscetível a brusone e giberela.",
+    fotoRef: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&q=80",
+    sintomas: [
+      "Manchas necróticas cinza-esverdeadas nas espigas",
+      "Grãos chochos com coloração rosada",
+      "Manchas amarelas com pústulas laranja nas folhas",
+      "Folhas com lesões ovais esbranquiçadas",
+      "Espiga toda branca antes da maturação",
+      "Plantas acamadas (tombadas)"
+    ],
+    diagnosticos: {
+      "Manchas necróticas cinza-esverdeadas nas espigas,Espiga toda branca antes da maturação": {
+        nome: "Brusone do Trigo",
+        emoji: "🍄",
+        gravidade: "grave",
+        causes: "Fungo Magnaporthe oryzae triticum. Explosivo em clima úmido durante o florescimento.",
+        tratamentos: ["Fungicidas triazóis + estrobilurinas no florescimento", "Cultivares resistentes como TBIO Astro", "Evitar plantio tardio em regiões de risco"]
+      },
+      "Grãos chochos com coloração rosada,Manchas amarelas com pústulas laranja nas folhas": {
+        nome: "Giberela / Ferrugem-da-folha",
+        emoji: "🟠",
+        gravidade: "grave",
+        causes: "Fusarium graminearum (giberela) + Puccinia triticina (ferrugem), ambas favorecidas por chuva e temperatura entre 15–25°C.",
+        tratamentos: ["Fungicidas preventivos no espigamento", "Rotação com soja ou milho", "Tratamento de sementes com tebuconazol"]
+      },
+      default: {
+        nome: "Oídio do Trigo",
+        emoji: "⬜",
+        gravidade: "moderado",
+        causes: "Blumeria graminis – pó branco nas folhas, favorecido por dias nublados e úmidos.",
+        tratamentos: ["Fungicidas à base de triazol", "Cultivares resistentes", "Evitar excesso de nitrogênio"]
+      }
+    }
+  },
+ 
+  {
+    id: "aveia",
+    emoji: "🌿",
+    nome: "Aveia",
+    tipo: "alimentar",
+    descricao: "Cereal de inverno muito cultivado no Sul. Usado também para pastagem e cobertura de solo.",
+    fotoRef: "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=600&q=80",
+    sintomas: [
+      "Pústulas cor de ferrugem (laranja) nas folhas",
+      "Pústulas escuras (negras) nas folhas e caules",
+      "Manchas pardas ovaladas nas folhas",
+      "Grãos com aspecto esbranquiçado",
+      "Plantas com crescimento reduzido e amareladas",
+      "Folhas com listra amarela longitudinal"
+    ],
+    diagnosticos: {
+      "Pústulas cor de ferrugem (laranja) nas folhas": {
+        nome: "Ferrugem-da-Coroa da Aveia",
+        emoji: "🟠",
+        gravidade: "grave",
+        causes: "Puccinia coronata. A doença mais destrutiva da aveia no Sul do Brasil.",
+        tratamentos: ["Fungicidas triazóis preventivos", "Cultivares resistentes: URS Taura, Brisasul", "Monitoramento semanal a partir do afilhamento"]
+      },
+      "Pústulas escuras (negras) nas folhas e caules": {
+        nome: "Ferrugem-do-Colmo",
+        emoji: "⬛",
+        gravidade: "grave",
+        causes: "Puccinia graminis – mais severa em anos quentes durante o enchimento de grãos.",
+        tratamentos: ["Fungicidas sistêmicos no florescimento", "Eliminação de plantas voluntárias (tigueras)", "Cultivares menos suscetíveis"]
+      },
+      default: {
+        nome: "Helmintosporiose da Aveia",
+        emoji: "🍂",
+        gravidade: "moderado",
+        causes: "Drechslera avenae – manchas pardas com halo clorótico em condições de alta umidade.",
+        tratamentos: ["Tratamento de sementes", "Rotação de culturas", "Fungicidas foliares preventivos"]
+      }
+    }
+  },
+ 
+  {
+    id: "canola",
+    emoji: "🌻",
+    nome: "Canola",
+    tipo: "alimentar",
+    descricao: "Oleaginosa de inverno em forte expansão no Sul. Excelente na rotação com soja.",
+    fotoRef: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=80",
+    sintomas: [
+      "Manchas necróticas nas folhas com halo amarelo",
+      "Hastes com lesões escuras e tombamento",
+      "Pétalas caídas e vagens podres cinza",
+      "Folhas com aspecto gorduroso e podridão mole",
+      "Raízes com galhas (bolinhas)",
+      "Plantas amareladas com crescimento irregular"
+    ],
+    diagnosticos: {
+      "Pétalas caídas e vagens podres cinza,Hastes com lesões escuras e tombamento": {
+        nome: "Canela-preta / Esclerotinia",
+        emoji: "🖤",
+        gravidade: "grave",
+        causes: "Leptosphaeria maculans (canela-preta) e Sclerotinia sclerotiorum. Entram pelas pétalas caídas em clima úmido.",
+        tratamentos: ["Fungicidas no florescimento pleno (BBCH 65)", "Rotação de culturas (4 anos mínimo)", "Cultivares com tolerância como Hyola 575CL"]
+      },
+      "Raízes com galhas (bolinhas),Plantas amareladas com crescimento irregular": {
+        nome: "Hérnia-das-crucíferas",
+        emoji: "⚫",
+        gravidade: "grave",
+        causes: "Plasmodiophora brassicae – persiste no solo por mais de 20 anos. Solo ácido favorece.",
+        tratamentos: ["Calagem para pH acima de 6,5", "Rotação longa (5+ anos) sem crucíferas", "Mudas sadias, evitar solo infectado"]
+      },
+      default: {
+        nome: "Alternária da Canola",
+        emoji: "🍂",
+        gravidade: "moderado",
+        causes: "Alternaria brassicae. Manchas nas folhas e vagens, causa perdas de até 30%.",
+        tratamentos: ["Fungicidas preventivos nas flores", "Sementes tratadas com iprodione", "Eliminar restos culturais"]
+      }
+    }
+  },
+ 
+  {
+    id: "maca",
+    emoji: "🍎",
+    nome: "Maçã",
+    tipo: "fruta",
+    descricao: "Principal fruta de clima temperado do Brasil, cultivada em SC e RS. Exige manejo intenso.",
+    fotoRef: "https://images.unsplash.com/photo-1570913149827-d2ac84ab3f9a?w=600&q=80",
+    sintomas: [
+      "Manchas escuras com halo claro nas folhas",
+      "Frutos com manchas escuras e deprimidas",
+      "Galhos com cancros e rachadura da casca",
+      "Brotação fraca e morte de ramos finos",
+      "Frutos com podridão parda na câmara fria",
+      "Folhas com pó branco (farinha)"
+    ],
+    diagnosticos: {
+      "Manchas escuras com halo claro nas folhas,Frutos com manchas escuras e deprimidas": {
+        nome: "Sarna da Macieira (Venturia inaequalis)",
+        emoji: "🍂",
+        gravidade: "grave",
+        causes: "Doença mais importante da maçã no Sul. Esporos se dispersam com chuva após o inóculo de inverno.",
+        tratamentos: ["Fungicidas preventivos pós-chuva (IBE, estrobilurinas)", "Remoção de folhas caídas no inverno", "Variedades resistentes: Daiane, Lisgala"]
+      },
+      "Galhos com cancros e rachadura da casca,Brotação fraca e morte de ramos finos": {
+        nome: "Podridão-de-Collar / Cancro Europeu",
+        emoji: "🔴",
+        gravidade: "grave",
+        causes: "Neonectria ditissima. Entra por ferimentos de poda, geadas ou granizo.",
+        tratamentos: ["Poda de ramos infectados com +30cm de margem saudável", "Proteção de cortes com pasta cúprica", "Evitar podas em dias chuvosos"]
+      },
+      default: {
+        nome: "Oídio da Macieira",
+        emoji: "⬜",
+        gravidade: "moderado",
+        causes: "Podosphaera leucotricha. Ataca brotos e folhas novas deixando-as com pó branco.",
+        tratamentos: ["Enxofre ou fungicidas IQ (quinoxifeno)", "Eliminação de ramos infectados na poda de inverno", "Boa aeração da copa"]
+      }
+    }
+  },
+ 
+  {
+    id: "pera",
+    emoji: "🍐",
+    nome: "Pera / Pereira",
+    tipo: "fruta",
+    descricao: "Cultivada na Serra Gaúcha e SC. Variedades europeias exigem muito frio hibernal.",
+    fotoRef: "https://images.unsplash.com/photo-1582284540020-8acbe03f4924?w=600&q=80",
+    sintomas: [
+      "Brotações com aspecto de queimado",
+      "Frutos e flores negros e murchos",
+      "Manchas alaranjadas nas folhas (ferrugem)",
+      "Galhos com exsudato cor de mel",
+      "Frutos com podridão interna",
+      "Folhas com manchas marrons bordadas de amarelo"
+    ],
+    diagnosticos: {
+      "Brotações com aspecto de queimado,Galhos com exsudato cor de mel": {
+        nome: "Fogo Bacteriano (Erwinia amylovora)",
+        emoji: "🔥",
+        gravidade: "grave",
+        causes: "Bactéria altamente destrutiva que se espalha por insetos polinizadores e chuva durante a floração.",
+        tratamentos: ["Poda imediata de ramos infectados (+50cm margem)", "Desinfecção de tesouras com hipoclorito", "Bactericidas cúpricos preventivos na floração"]
+      },
+      "Manchas alaranjadas nas folhas (ferrugem)": {
+        nome: "Ferrugem da Pereira",
+        emoji: "🟠",
+        gravidade: "moderado",
+        causes: "Gymnosporangium fuscum. Hospedeiro alternativo são as Sabinas/Juniperáceas plantadas próximas.",
+        tratamentos: ["Remoção de juniperáceas nas proximidades", "Fungicidas triazóis no início da floração", "Variedades menos suscetíveis"]
+      },
+      default: {
+        nome: "Sarna da Pereira",
+        emoji: "🍂",
+        gravidade: "moderado",
+        causes: "Venturia pirina. Semelhante à sarna da maçã; favorecida por primaveras chuvosas.",
+        tratamentos: ["Fungicidas preventivos pós-chuva", "Remoção de folhas caídas", "Monitoramento de esporos (Mills)"]
+      }
+    }
+  },
+ 
+  {
+    id: "pessego",
+    emoji: "🍑",
+    nome: "Pêssego / Nectarina",
+    tipo: "fruta",
+    descricao: "Frutas de caroço amplamente cultivadas no RS e SC. Exigem manejo intenso em clima úmido.",
+    fotoRef: "https://images.unsplash.com/photo-1519996529931-28324d5a630e?w=600&q=80",
+    sintomas: [
+      "Bolhas vermelhas nas folhas",
+      "Frutos com podridão marrom e mofo cinza",
+      "Gomose (goma nos ramos e tronco)",
+      "Flores murchas presas no galho",
+      "Frutos deformados com anel prateado",
+      "Folhas mosaico com deformação"
+    ],
+    diagnosticos: {
+      "Bolhas vermelhas nas folhas": {
+        nome: "Crespeira do Pessegueiro",
+        emoji: "🔴",
+        gravidade: "grave",
+        causes: "Taphrina deformans. Infecta brotos e folhas novas durante brotação, em clima frio e úmido.",
+        tratamentos: ["Fungicida cúprico na queda das folhas (outono) e antes da brotação", "Operação única mais eficaz que múltiplas aplicações tardias", "Remoção de folhas infectadas"]
+      },
+      "Frutos com podridão marrom e mofo cinza,Flores murchas presas no galho": {
+        nome: "Monilínia (Podridão-parda)",
+        emoji: "🟫",
+        gravidade: "grave",
+        causes: "Monilinia fructicola. A doença mais importante na pré e pós-colheita. Epidemias em floração chuvosa.",
+        tratamentos: ["Fungicidas nas flores (início, pleno e fim da floração)", "Colheita no ponto certo e refrigeração imediata", "Poda para aeração da copa"]
+      },
+      default: {
+        nome: "Gomose / Bacteriose",
+        emoji: "🟡",
+        gravidade: "moderado",
+        causes: "Pseudomonas syringae ou estresse (frio, seca). Exsudação de goma por ferimentos.",
+        tratamentos: ["Cobre preventivo no outono", "Proteção contra geadas tardias", "Poda em dias secos com proteção dos cortes"]
+      }
+    }
+  },
+ 
+  {
+    id: "alho",
+    emoji: "🧄",
+    nome: "Alho",
+    tipo: "horta",
+    descricao: "Cultivo de inverno importante no Sul. PR e SC são grandes produtores. Exige solos bem drenados.",
+    fotoRef: "https://images.unsplash.com/photo-1501200291289-c5a76c232e5f?w=600&q=80",
+    sintomas: [
+      "Folhas com manchas brancas circulares",
+      "Folhas amareladas com apodrecimento na base",
+      "Bulbos com podridão e cheiro ruim",
+      "Plantas com crescimento paralisado",
+      "Pó violeta nos bulbos na colheita",
+      "Folhas com listras brancas e deformação viral"
+    ],
+    diagnosticos: {
+      "Folhas com manchas brancas circulares": {
+        nome: "Mancha-púrpura / Alternária",
+        emoji: "🟣",
+        gravidade: "moderado",
+        causes: "Alternaria porri. Manchas circulares com centro violáceo. Favorecem a entrada de outros fungos.",
+        tratamentos: ["Fungicidas preventivos a partir do 4º par de folhas", "Rotação de culturas 3+ anos", "Sementes sadias e tratadas"]
+      },
+      "Bulbos com podridão e cheiro ruim,Folhas amareladas com apodrecimento na base": {
+        nome: "Podridão-Branca (Sclerotium cepivorum)",
+        emoji: "☠️",
+        gravidade: "grave",
+        causes: "Fungo de solo que persiste por décadas. Sem controle curativo eficaz.",
+        tratamentos: ["Nunca plantar alho/cebola em área infectada", "Solarização do solo", "Tratamento de sementes com iprodione"]
+      },
+      default: {
+        nome: "Vírus do Alho (Vírus do Amarelão)",
+        emoji: "🦠",
+        gravidade: "moderado",
+        causes: "Garlic virus transmitido por pulgões e material de plantio infectado.",
+        tratamentos: ["Uso de sementes certificadas e livres de vírus", "Controle de pulgões vetores", "Eliminação de plantas doentes"]
+      }
+    }
+  },
+ 
+  {
+    id: "cebola",
+    emoji: "🧅",
+    nome: "Cebola",
+    tipo: "horta",
+    descricao: "Santa Catarina é o maior produtor nacional. Ciclo de inverno a primavera no Sul.",
+    fotoRef: "https://images.unsplash.com/photo-1518977956812-cd3dbadaaf31?w=600&q=80",
+    sintomas: [
+      "Folhas com manchas ovais acinzentadas",
+      "Pó roxo-escuro nas folhas",
+      "Folhas com podridão mole a partir do topo",
+      "Pescoço mole na colheita",
+      "Bulbos com manchas amarelas e podridão",
+      "Plantas raquíticas com raízes escassas"
+    ],
+    diagnosticos: {
+      "Folhas com manchas ovais acinzentadas,Pó roxo-escuro nas folhas": {
+        nome: "Míldio + Alternária da Cebola",
+        emoji: "🌧️",
+        gravidade: "grave",
+        causes: "Peronospora destructor (míldio) e Alternária porri – doença do envelope favorecida por umidade e temperatura amena.",
+        tratamentos: ["Fungicidas sistêmicos preventivos (mancozeb + metalaxil)", "Espaçamento adequado para ventilação", "Evitar irrigação excessiva próxima à colheita"]
+      },
+      "Pescoço mole na colheita,Bulbos com manchas amarelas e podridão": {
+        nome: "Podridão-do-Pescoço (Botrytis allii)",
+        emoji: "🟡",
+        gravidade: "grave",
+        causes: "Fungo que infecta nas últimas semanas antes da colheita. Perdas graves na pós-colheita.",
+        tratamentos: ["Colheita quando 50-70% das plantas tombaram", "Cura adequada (7-10 dias ao sol ou galpão arejado)", "Fungicidas preventivos nas últimas aplicações"]
+      },
+      default: {
+        nome: "Tripes da Cebola",
+        emoji: "🦗",
+        gravidade: "moderado",
+        causes: "Thrips tabaci – inseto minúsculo que causa prateamento e deformação das folhas. Vetor de viroses.",
+        tratamentos: ["Inseticidas seletivos (spinosade, abamectina)", "Armadilhas adesivas azuis para monitoramento", "Evitar períodos secos prolongados sem irrigação"]
+      }
+    }
+  },
+ 
+  {
+    id: "batata",
+    emoji: "🥔",
+    nome: "Batata-Inglesa",
+    tipo: "alimentar",
+    descricao: "Cultivada no inverno no Sul, especialmente em SC e PR serrano. Alta rentabilidade e risco.",
+    fotoRef: "https://images.unsplash.com/photo-1518977676405-d90b2e4f3a60?w=600&q=80",
+    sintomas: [
+      "Folhas com manchas marrons com halo clorótico",
+      "Pecíolos e ramos com lesões escuras",
+      "Tubérculos com manchas cinza na casca",
+      "Mosaico amarelo nas folhas",
+      "Tubérculos com sarna (crostas)",
+      "Plantas amarelando e murchando precocemente"
+    ],
+    diagnosticos: {
+      "Folhas com manchas marrons com halo clorótico,Pecíolos e ramos com lesões escuras": {
+        nome: "Requeima da Batata (Phytophthora infestans)",
+        emoji: "💀",
+        gravidade: "grave",
+        causes: "O patógeno mais destrutivo da batata. Em condições favoráveis, pode destruir a lavoura em menos de 10 dias.",
+        tratamentos: ["Fungicidas preventivos rigorosos (a cada 5-7 dias em clima úmido)", "Variedades resistentes: Vivaldi, Melody", "Eliminar plantas com sintomas imediatamente"]
+      },
+      "Tubérculos com manchas cinza na casca,Mosaico amarelo nas folhas": {
+        nome: "Murcha-bacteriana / Pinta-preta",
+        emoji: "⚫",
+        gravidade: "grave",
+        causes: "Ralstonia solanacearum (murcha) ou Alternária solani (pinta-preta). Ambas graves em clima quente.",
+        tratamentos: ["Rotação de culturas por 3+ anos", "Tubérculos-semente certificados", "Fungicidas preventivos para alternária"]
+      },
+      default: {
+        nome: "Sarna-comum (Streptomyces scabies)",
+        emoji: "🟤",
+        gravidade: "leve",
+        causes: "Bactéria do solo que causa crostas nos tubérculos. Não prejudica o interior, apenas a aparência.",
+        tratamentos: ["Irrigação regular para manter solo úmido", "pH entre 5,0–5,5 (desfavorece a sarna)", "Rotação com gramíneas"]
+      }
+    }
+  },
+ 
+  {
+    id: "erva_mate",
+    emoji: "🌿",
+    nome: "Erva-Mate",
+    tipo: "alimentar",
+    descricao: "Cultura nativa e símbolo do Sul. Cultivada em PR, SC e RS. Poda e manejo são fundamentais.",
+    fotoRef: "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=600&q=80",
+    sintomas: [
+      "Folhas com manchas necróticas circulares",
+      "Queimado das bordas das folhas",
+      "Galhos secos e morte de brotos",
+      "Folhas com manchas amarelas difusas",
+      "Lagartas desfolhando os ramos",
+      "Presença de cochonilhas nos ramos"
+    ],
+    diagnosticos: {
+      "Galhos secos e morte de brotos,Presença de cochonilhas nos ramos": {
+        nome: "Cochonilha da Erva-Mate",
+        emoji: "🪲",
+        gravidade: "moderado",
+        causes: "Hemiberlesia rapax e Coccus viridis. Sugam a seiva e enfraquecem progressivamente a planta.",
+        tratamentos: ["Óleo mineral ou neem no controle biológico", "Poda de limpeza dos ramos mais infestados", "Preservar predadores naturais (joaninhas)"]
+      },
+      "Lagartas desfolhando os ramos,Folhas com manchas amarelas difusas": {
+        nome: "Lagarta-da-Erva-Mate / Deficiência Nutricional",
+        emoji: "🐛",
+        gravidade: "moderado",
+        causes: "Thelosia camina desfolha os ervais. Deficiência de zinco ou boro causa amarelecimento.",
+        tratamentos: ["Controle biológico com Bt ou Beauveria bassiana", "Análise foliar e adubação corretiva", "Calagem e adubação equilibrada"]
+      },
+      default: {
+        nome: "Mancha-foliar / Estresse Hídrico",
+        emoji: "🍂",
+        gravidade: "leve",
+        causes: "Cercospora sp. ou estresse por seca. Bordas necróticas indicam deficiência de potássio.",
+        tratamentos: ["Manutenção de cobertura do solo com sombra parcial", "Adubação com potássio e micronutrientes", "Fungicidas preventivos somente em casos graves"]
+      }
+    }
+  },
 ];
+
 
 const catalogoCompleto = [
   {
@@ -664,8 +1064,119 @@ const catalogoCompleto = [
       {nome: "Mosca-branca", controle: "Inseticidas seletivos, armadilhas adesivas amarelas, controle biológico com Encarsia, e telas antinseto em estufas."},
       {nome: "Vira-cabeça (Tospovírus)", controle: "Não há cura; controle rigoroso do tripes vetor, eliminação imediata de plantas doentes, mudas sadias, e variedades resistentes."}
     ],
-  }
+  },
+
+  {
+    emoji: "🌿", nome: "Erva-Mate", tipo: "alimentar",
+    desc: "Planta nativa do Sul. Produto típico gaúcho, catarinense e paranaense.",
+    pragas: [
+      { nome: "Cochonilha", controle: "Óleo mineral ou neem em pulverizações preventivas, poda de limpeza de ramos infestados, preservação de joaninhas e outros predadores naturais." },
+      { nome: "Lagarta-da-erva-mate", controle: "Controle biológico com Bacillus thuringiensis (Bt) ou Beauveria bassiana; monitoramento do nível de desfolha; inseticidas fisiológicos em surtos severos." },
+      { nome: "Minador-das-folhas", controle: "Inseticidas sistêmicos (abamectina), remoção de folhas atacadas, controle de formigas que protegem os insetos minadores." }
+    ],
+  },
+  {
+    emoji: "🍎", nome: "Maçã", tipo: "fruta",
+    desc: "Principal fruta de clima temperado do Brasil. Valinhos, Vacaria, Fraiburgo.",
+    pragas: [
+      { nome: "Sarna (Venturia)", controle: "Fungicidas preventivos logo após a chuva (IBE, QoI), sistema de alerta (Modelo de Mills), remoção de folhas caídas no inverno, variedades resistentes." },
+      { nome: "Oídio", controle: "Enxofre molhável ou pó, fungicidas inibidores do ergosterol, poda de ramos com sintomas no inverno, boa aeração da copa." },
+      { nome: "Mosca-das-frutas", controle: "Armadilhas com proteína hidrolisada, ensacamento de frutos, iscas tóxicas proteicas (Spinosad), colheita no ponto certo sem deixar frutos caídos." }
+    ],
+  },
+  {
+    emoji: "🍑", nome: "Pêssego", tipo: "fruta",
+    desc: "Cultivado intensamente no RS e SC. Alta demanda por proteção fitossanitária.",
+    pragas: [
+      { nome: "Crespeira (Taphrina)", controle: "Fungicida cúprico único: aplicar na queda das folhas no outono E antes da brotação (janela de 2 aplicações). Após a brotação não tem eficácia." },
+      { nome: "Monilínia (Podridão-parda)", controle: "Fungicidas nas flores (início, pleno e pós-floração), colheita adequada sem machucar os frutos, refrigeração imediata, poda para aeração." },
+      { nome: "Grafolita (Mariposa-oriental)", controle: "Confusão sexual com feromônio (técnica mais eficaz), inseticidas biológicos (Bt, Spinosad), destruição de restos culturais." }
+    ],
+  },
+  {
+    emoji: "🍐", nome: "Pera / Pereira", tipo: "fruta",
+    desc: "Serra Gaúcha e serras catarinenses. Variedades japonesas e europeias.",
+    pragas: [
+      { nome: "Fogo bacteriano", controle: "Poda imediata de ramos infectados (+50cm de margem), desinfecção de ferramentas com hipoclorito 10%, bactericidas cúpricos preventivos na floração." },
+      { nome: "Ferrugem-europeia", controle: "Remoção de Sabinas (Juniperus) no entorno da lavoura (hospedeiro alternativo obrigatório), fungicidas triazóis preventivos na floração." },
+      { nome: "Psila-da-pereira", controle: "Óleos hortigranjeiros na dormência, inseticidas seletivos em brotos, preservar inimigos naturais (sirfídeos, crisopídeos)." }
+    ],
+  },
+  {
+    emoji: "🌻", nome: "Canola", tipo: "alimentar",
+    desc: "Oleaginosa de inverno em expansão no Sul. Excelente rotação com soja e trigo.",
+    pragas: [
+      { nome: "Canela-preta (Leptosphaeria)", controle: "Fungicidas nas pétalas caídas (BBCH 65), rotação de culturas rigorosa (mínimo 4 anos), cultivares tolerantes como Hyola 575CL." },
+      { nome: "Esclerotinia", controle: "Fungicidas no florescimento pleno, solo com boa drenagem, monitoramento de restos culturais, culturas na rotação que não sejam hospedeiras." },
+      { nome: "Afídeos (pulgões)", controle: "Inseticidas seletivos, preservação de inimigos naturais (vespinhas, joaninhas), monitoramento semanal especialmente em brotação." }
+    ],
+  },
+  {
+    emoji: "🌿", nome: "Aveia", tipo: "alimentar",
+    desc: "Cereal de inverno para grão e pastagem. Essencial no sistema plantio direto do Sul.",
+    pragas: [
+      { nome: "Ferrugem-da-coroa", controle: "Fungicidas triazóis preventivos (tebuconazol, ciproconazol), cultivares resistentes como URS Taura e Brisasul, semeadura na época certa." },
+      { nome: "Helmintosporiose", controle: "Tratamento de sementes com fungicidas, rotação de culturas, espaçamento adequado para ventilação." },
+      { nome: "Septoriose", controle: "Fungicidas preventivos nas fases de afilhamento e emborrachamento, cultivares tolerantes, evitar excesso de nitrogênio." }
+    ],
+  },
+  {
+    emoji: "🧄", nome: "Alho", tipo: "horta",
+    desc: "Curitibanos (SC) é capital nacional. Plantio no outono-inverno no Sul.",
+    pragas: [
+      { nome: "Mancha-púrpura (Alternária)", controle: "Fungicidas preventivos a partir do 4º par de folhas, rotação de culturas por 3 anos mínimo, material de plantio sadio e tratado." },
+      { nome: "Podridão-branca", controle: "Solarização do solo (altamente eficaz), nunca replantar em áreas infectadas, tratamento de sementes com iprodione ou tebuconazol." },
+      { nome: "Pulgão-do-alho", controle: "Inseticidas sistêmicos preventivos (neonicotinoides no plantio), controle de formigas, preservação de joaninhas e crisopídeos." }
+    ],
+  },
+  {
+    emoji: "🧅", nome: "Cebola", tipo: "horta",
+    desc: "SC é maior produtor nacional (Ituporanga). Safra de inverno no Sul.",
+    pragas: [
+      { nome: "Míldio (Peronospora)", controle: "Fungicidas sistêmicos preventivos (metalaxil + mancozeb), espaçamento para boa ventilação, evitar irrigação excessiva próxima à colheita." },
+      { nome: "Tripes (Thrips tabaci)", controle: "Inseticidas seletivos (spinosade, abamectina), armadilhas adesivas azuis para monitoramento, controle de vetor de viroses." },
+      { nome: "Podridão-do-pescoço", controle: "Cura adequada após colheita (7-10 dias ao sol ou galpão ventilado), fungicidas preventivos nas últimas aplicações, colheita no ponto certo." }
+    ],
+  },
+  {
+    emoji: "🥔", nome: "Batata-Inglesa", tipo: "alimentar",
+    desc: "Paraná e SC serrano produzem batata de qualidade. Alta rentabilidade e custo.",
+    pragas: [
+      { nome: "Requeima (Phytophthora infestans)", controle: "Fungicidas preventivos rigorosos (a cada 5-7 dias em clima úmido), variedades resistentes, monitoramento com sistema de alerta (BLITECAST)." },
+      { nome: "Pinta-preta (Alternária)", controle: "Fungicidas preventivos a partir do início do florescimento, adubação nitrogenada equilibrada, eliminação de restos culturais." },
+      { nome: "Traça-da-batata", controle: "Feromônio para monitoramento de adultos, Bt para lagartas, armazenamento em câmara fria, cobertura de tubérculos no campo." }
+    ],
+  },
+  {
+    emoji: "🫐", nome: "Mirtilo (Blueberry)", tipo: "fruta",
+    desc: "Fruta nova no Sul, alta rentabilidade. RS e SC são os maiores produtores.",
+    pragas: [
+      { nome: "Múmia do mirtilo (Monilinia)", controle: "Fungicidas na floração, poda de ramos com múmias, boa drenagem do solo, colheita rigorosa sem deixar frutos na planta." },
+      { nome: "Drosophila suzukii", controle: "Armadilhas com vinagre de maçã para monitoramento, ensacamento em variedades precoces, colheita frequente evitando frutos maduros na planta." },
+      { nome: "Podridão-radicular (Phytophthora)", controle: "Solo ácido e bem drenado (pH 4,5–5,5), plantio em camalhões, fungicidas de solo preventivos com metalaxil." }
+    ],
+  },
+  {
+    emoji: "🌾", nome: "Trigo", tipo: "alimentar",
+    desc: "Cereal de inverno estratégico do Paraná e RS. Brusone é o maior risco atual.",
+    pragas: [
+      { nome: "Brusone (Magnaporthe)", controle: "Fungicidas triazóis + estrobilurinas no florescimento (janela de 7 dias), cultivares resistentes como TBIO Sonic, plantio fora do período de alto risco." },
+      { nome: "Giberela (Fusarium)", controle: "Fungicidas preventivos no espigamento, rotação com leguminosas ou pastagens, tratamento de sementes com tebuconazol ou carboxina." },
+      { nome: "Pulgão-do-trigo", controle: "Inseticidas sistêmicos seletivos (pirimicarbe), preservação de vespinhas parasitoides, nível de controle: 10 pulgões/colmo no espigamento." }
+    ],
+  },
+  {
+    emoji: "🫒", nome: "Oliveira", tipo: "fruta",
+    desc: "Cultura emergente no RS (Serra Gaúcha/Campanha). Brasil produz azeite premiado.",
+    pragas: [
+      { nome: "Antracnose da Oliveira (Colletotrichum)", controle: "Fungicidas cúpricos preventivos antes das chuvas de outono, colheita precoce (azeitona verde), variedades tolerantes como Arbequina." },
+      { nome: "Mosca-da-azeitona (Bactrocera oleae)", controle: "Iscas proteicas com Spinosad, armadilhas de feromônio para monitoramento, colheita antecipada em variedades sensíveis." },
+      { nome: "Verticiliose (Verticillium)", controle: "Não plantar em solos com histórico da doença, variedades resistentes, boa drenagem, evitar ferimentos nas raízes." }
+    ],
+  },
 ];
+
+
 
 /* ── MEMÓRIA RAM DO APP (ESTADO GLOBAL DO BABADO) 🧠 ─ */
 let culturaSelecionada = null;
@@ -1012,3 +1523,158 @@ document.addEventListener("DOMContentLoaded", () => {
   initModal();
   // Literalmente sem bugar nada, amém! 🤍
 });
+
+/* ══════════════════════════════════════════════════════════
+   SKIP LINK DE ACESSIBILIDADE
+   ══════════════════════════════════════════════════════════ */
+function injectSkipLink() {
+  if (document.querySelector(".skip-link")) return;
+  const skip = document.createElement("a");
+  skip.href = "#hero";
+  skip.className = "skip-link";
+  skip.textContent = "Pular para o conteúdo principal";
+  document.body.prepend(skip);
+}
+
+/* ══════════════════════════════════════════════════════════
+   ANIMAÇÃO DOS STATS (CONTADOR)
+   ══════════════════════════════════════════════════════════ */
+function initCounters() {
+  const cards = document.querySelectorAll(".stat-card");
+  if (!cards.length) return;
+ 
+  const parseValue = (text) => {
+    const cleaned = text.replace(/[^\d.,]/g, "").replace(",", ".");
+    return parseFloat(cleaned) || 0;
+  };
+ 
+  const formatValue = (original, val) => {
+    if (original.startsWith("-")) return `-${Math.round(val)}%`;
+    if (original.startsWith("+")) return `+${Math.round(val)}%`;
+    if (original.includes("R$")) return `R$ ${(val / 1000).toFixed(1)}M`;
+    if (original.includes(".")) return Math.round(val).toLocaleString("pt-BR");
+    return Math.round(val).toString();
+  };
+ 
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      const h3 = entry.target.querySelector("h3");
+      if (!h3 || h3.dataset.animated) return;
+      h3.dataset.animated = "true";
+ 
+      const original = h3.textContent.trim();
+      const target   = parseValue(original);
+      const duration = 1800;
+      const start    = performance.now();
+ 
+      const tick = (now) => {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased    = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+        h3.textContent = formatValue(original, eased * target);
+        if (progress < 1) requestAnimationFrame(tick);
+        else h3.textContent = original; // garante valor exato no final
+      };
+      requestAnimationFrame(tick);
+      obs.unobserve(entry.target);
+    });
+  }, { threshold: 0.4 });
+ 
+  cards.forEach((c) => obs.observe(c));
+}
+
+/* ── LIMITE DE ITENS VISÍVEIS ── */
+const CATALOGO_LIMITE = 8;
+const CULTURAS_LIMITE = 8;
+
+function renderCatalogo(filtro = "todos") {
+    const grid = document.getElementById("catalogoGrid");
+    if (!grid) return;
+    grid.innerHTML = "";
+
+    const lista = filtro === "todos"
+        ? catalogoCompleto
+        : catalogoCompleto.filter((c) => c.tipo === filtro);
+
+    lista.forEach((item, index) => {
+        const card = document.createElement("div");
+        card.className = "cat-card" + (index >= CATALOGO_LIMITE ? " oculto" : "");
+        card.innerHTML = `
+            <div class="cat-img">${item.emoji}</div>
+            <div class="cat-body">
+                <h4>${item.nome}</h4>
+                <span class="cat-tipo">${item.tipo}</span>
+                <p>${item.desc}</p>
+                <div class="cat-pragas">
+                    ${item.pragas.map((p) => `<span class="cat-praga-tag">${p.nome || p}</span>`).join("")}
+                </div>
+            </div>
+        `;
+        card.addEventListener("click", () => abrirModal(item));
+        grid.appendChild(card);
+    });
+
+    /* Remove botão antigo se existir */
+    const btnAntigo = document.getElementById("btnMostrarMaisCatalogo");
+    if (btnAntigo) btnAntigo.remove();
+
+    /* Só cria o botão se houver itens ocultos */
+    if (lista.length > CATALOGO_LIMITE) {
+        const btn = document.createElement("button");
+        btn.id = "btnMostrarMaisCatalogo";
+        btn.className = "btn-mostrar-mais";
+        btn.innerHTML = `<span>Mostrar mais culturas</span><span class="btn-chevron">↓</span>`;
+
+        let expandido = false;
+        btn.addEventListener("click", () => {
+            expandido = !expandido;
+            grid.querySelectorAll(".cat-card.oculto, .cat-card").forEach((card, i) => {
+                card.classList.toggle("oculto", !expandido && i >= CATALOGO_LIMITE);
+            });
+            btn.classList.toggle("expandido", expandido);
+            btn.querySelector("span:first-child").textContent = expandido
+                ? "Mostrar menos"
+                : "Mostrar mais culturas";
+        });
+
+        grid.parentElement.appendChild(btn);
+    }
+}
+
+function renderCulturas() {
+    const grid = document.getElementById("culturaGrid");
+    if (!grid) return;
+    grid.innerHTML = "";
+
+    culturas.forEach((c, index) => {
+        const div = document.createElement("div");
+        div.className = "cultura-item" + (index >= CULTURAS_LIMITE ? " oculto" : "");
+        div.dataset.id = c.id;
+        div.innerHTML = `<span class="ci-emoji">${c.emoji}</span><span class="ci-nome">${c.nome}</span>`;
+        div.addEventListener("click", () => selecionarCultura(c.id));
+        grid.appendChild(div);
+    });
+
+    /* Botão mostrar mais para o diagnóstico */
+    if (culturas.length > CULTURAS_LIMITE) {
+        const btn = document.createElement("button");
+        btn.id = "btnMostrarMaisCulturas";
+        btn.className = "btn-mostrar-mais";
+        btn.style.marginTop = "20px";
+        btn.innerHTML = `<span>Mostrar mais plantas</span><span class="btn-chevron">↓</span>`;
+
+        let expandido = false;
+        btn.addEventListener("click", () => {
+            expandido = !expandido;
+            grid.querySelectorAll(".cultura-item").forEach((el, i) => {
+                el.classList.toggle("oculto", !expandido && i >= CULTURAS_LIMITE);
+            });
+            btn.classList.toggle("expandido", expandido);
+            btn.querySelector("span:first-child").textContent = expandido
+                ? "Mostrar menos"
+                : "Mostrar mais plantas";
+        });
+
+        grid.parentElement.appendChild(btn);
+    }
+}

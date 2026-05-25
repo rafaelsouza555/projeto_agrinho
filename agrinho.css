@@ -1344,3 +1344,69 @@ footer strong { color: var(--verde-neon); }
         gap: 30px !important;
     }
 }
+
+/* ===== BOTÃO MOSTRAR MAIS ===== */
+.btn-mostrar-mais {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 40px auto 0;
+    padding: 14px 32px;
+    background: transparent;
+    border: 1.5px solid var(--border-card);
+    border-radius: 30px;
+    color: var(--texto-muted);
+    font-family: var(--font-body);
+    font-size: 0.92rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.3px;
+}
+
+.btn-mostrar-mais:hover {
+    border-color: var(--verde-neon);
+    color: var(--verde-neon);
+    background: rgba(78, 203, 106, 0.06);
+    transform: translateY(-2px);
+    box-shadow: 0 0 24px rgba(78, 203, 106, 0.12);
+}
+
+.btn-mostrar-mais:active {
+    transform: translateY(0px);
+}
+
+.btn-mostrar-mais .btn-chevron {
+    display: inline-block;
+    font-size: 1.1rem;
+    transition: transform 0.35s ease;
+    line-height: 1;
+}
+
+.btn-mostrar-mais.expandido .btn-chevron {
+    transform: rotate(180deg);
+}
+
+.btn-mostrar-mais.expandido {
+    color: var(--verde-neon);
+    border-color: rgba(78, 203, 106, 0.35);
+}
+
+/* Itens ocultos do catálogo */
+.cat-card.oculto {
+    display: none;
+}
+
+/* Itens ocultos da cultura no diagnóstico */
+.cultura-item.oculto {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .btn-mostrar-mais {
+        width: 100%;
+        padding: 13px 20px;
+        font-size: 0.9rem;
+    }
+}

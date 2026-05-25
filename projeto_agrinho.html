@@ -6,6 +6,7 @@
     <title>AgroInteligente – O Futuro na Palma da sua Mão</title>
     <link rel="shortcut icon" href="img/folha.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="clima.css">
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="agrinho.css">
 </head>
@@ -17,9 +18,9 @@
         <ul class="nav-links">
             <li><a href="#desafios">Desafios</a></li>   
             <li><a href="#solucao">Solução</a></li>
+            <li><a href="#clima">Clima</a></li>
             <li><a href="#diagnostico">Diagnóstico</a></li>
             <li><a href="#catalogo">Catálogo</a></li>
-            <li><a href="#planos">Planos</a></li>
             <li><a href="#suporte">Suporte</a></li>
             <li><a href="#nos">Sobre Nós</a></li>
         </ul>
@@ -202,6 +203,26 @@
         </div>
     </section>
 
+     <section id="clima" class="clima-section">
+            <div class="container">
+                <div class="section-label reveal">CLIMA EM TEMPO REAL</div>
+                <h2 class="section-title reveal">Previsão e Recomendações<br><em>Para Sua Lavoura</em></h2>
+                <p class="section-sub reveal">
+                    Acesse o clima atual da sua propriedade, alertas agronômicos e as
+                    <strong>melhores culturas para plantar e colher agora</strong>,
+                    com foco no Sul do Brasil.
+                </p>
+        
+                <div class="clima-cta-wrap reveal">
+                    <button class="btn-buscar-clima" id="btnBuscarClima">
+                        📍 Buscar Clima da Minha Localização
+                    </button>
+                </div>
+        
+                <div id="climaPanel"></div>
+            </div>
+        </section>
+
     <section id="diagnostico" class="diagnostico-section">
         <div class="container">
             <div class="section-label reveal">FERRAMENTA</div>
@@ -286,7 +307,7 @@
                 </div>
                 <div class="plano-card destaque reveal">
                     <div class="plano-badge">PREMIUM</div>
-                    <div class="plano-preco">R$ 29<span>/mês</span></div>
+                    <div class="plano-preco">R$ 99<span>/mês</span></div>
                     <ul>
                         <li>✅ Tudo do plano gratuito</li>
                         <li>✅ Recomendações e tratamentos avançados</li>
@@ -294,6 +315,7 @@
                         <li>✅ Relatórios e gráficos de desempenho</li>
                         <li>✅ Mapeamento GPS completo dos lotes</li>
                         <li>✅ Suporte técnico prioritário</li>
+                        <li>✅ Relatórios Constantes </li>
                     </ul>
                     <a href="#" class="btn-plano destaque">Assinar Premium</a>
                 </div>
@@ -508,5 +530,6 @@
 <a href="#" id="backToTop" title="Voltar ao topo">↑</a>
 
 <script src="app.js"></script>
+<script src="clima.js"></script>
 </body>
 </html>
