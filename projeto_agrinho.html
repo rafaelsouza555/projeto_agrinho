@@ -8,7 +8,7 @@
   <title>AgroInteligente – O Futuro na Palma da sua Mão</title>
 
   <!-- Ícone da aba -->
-  <link rel="shortcut icon" href="img/folha.png" type="image/x-icon">
+  <link rel="shortcut icon" href="Projeto-Agrinho/assets/image/folha.png" type="image/x-icon">
 
   <!-- Fontes do Google -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,8 +16,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 
   <!-- Estilos -->
-  <link rel="stylesheet" href="agrinho.css">
-  <link rel="stylesheet" href="clima.css">
+  <link rel="stylesheet" href="Projeto-Agrinho/assets/css/agrinho.css">
+  <link rel="stylesheet" href="Projeto-Agrinho/assets/css/clima.css">
+  <link rel="stylesheet" href="Projeto-Agrinho/assets/css/calendario.css">
 </head>
 
 <body>
@@ -46,6 +47,7 @@
       <li><a href="#desafios">Desafios</a></li>
       <li><a href="#solucao">Solução</a></li>
       <li><a href="#clima">Clima</a></li>
+      <li><a href="#calendario">Calendário</a></li>
       <li><a href="#diagnostico">Diagnóstico</a></li>
       <li><a href="#catalogo">Catálogo</a></li>
       <li><a href="#suporte">Suporte</a></li>
@@ -393,6 +395,90 @@
     </div>
   </section><!-- /clima -->
 
+    <!-- ======================================================
+     SEÇÃO CALENDÁRIO DE PLANTIO
+     Cole este bloco no index.html após a seção #clima
+     e antes da seção #diagnostico
+====================================================== -->
+<section id="calendario" class="calendario-section" aria-labelledby="cal-titulo">
+  <div class="container">
+
+    <p class="section-label reveal" aria-hidden="true">PLANEJAMENTO</p>
+    <h2 class="section-title reveal" id="cal-titulo">
+      Calendário de<br><em>Plantio & Colheita</em>
+    </h2>
+    <p class="section-sub reveal">
+      Descubra o que plantar e colher cada mês no Sul do Brasil,
+      com as <strong>fases da lua calculadas astronomicamente</strong>
+      e recomendações técnicas por cultura.
+    </p>
+
+    <!-- Navegação entre meses -->
+    <div class="cal-nav reveal">
+      <div>
+        <p style="font-size:0.8rem;color:var(--texto-muted);margin-bottom:4px;">Sul do Brasil · PR · SC · RS</p>
+      </div>
+      <div class="cal-nav-centro">
+        <button class="cal-btn-nav" id="cal-btn-prev" aria-label="Mês anterior">‹</button>
+        <div>
+          <div class="cal-mes-nome" id="cal-mes-nome"></div>
+          <div class="cal-estacao-nome" id="cal-estacao-nome"></div>
+        </div>
+        <button class="cal-btn-nav" id="cal-btn-next" aria-label="Próximo mês">›</button>
+      </div>
+    </div>
+
+    <!-- Cards com as 4 fases-chave do mês -->
+    <div class="cal-lua-cards-grid reveal" id="cal-lua-cards"></div>
+
+    <!-- Faixa diária com emoji de fase lunar -->
+    <div class="cal-lua-strip-wrap reveal">
+      <span class="cal-lua-strip-label">🌙 Fases da lua — todos os dias do mês</span>
+      <div class="cal-lua-strip" id="cal-lua-strip" aria-label="Fases da lua por dia do mês"></div>
+    </div>
+
+    <!-- Legenda -->
+    <div class="cal-legenda">
+      <span class="cal-leg-item">🌑 Nova — plantar raízes</span>
+      <span class="cal-leg-item">🌒 Crescente — plantar folhas</span>
+      <span class="cal-leg-item">🌕 Cheia — colheita e poda</span>
+      <span class="cal-leg-item">🌘 Minguante — adubação e tratos</span>
+    </div>
+
+    <div class="cal-divider"></div>
+
+    <!-- Culturas para plantar -->
+    <div class="cal-secao reveal">
+      <div class="cal-secao-label plantio">
+        🌱 O que plantar este mês
+      </div>
+      <div class="cal-tags" id="cal-tags-plantio"></div>
+    </div>
+
+    <!-- Culturas para colher -->
+    <div class="cal-secao reveal">
+      <div class="cal-secao-label colheita">
+        🌾 O que colher este mês
+      </div>
+      <div class="cal-tags" id="cal-tags-colheita"></div>
+    </div>
+
+    <!-- Cuidados especiais -->
+    <div class="cal-secao reveal">
+      <div class="cal-secao-label cuidados">
+        ⚠️ Cuidados especiais do mês
+      </div>
+      <div class="cal-tags" id="cal-tags-cuidados"></div>
+    </div>
+
+    <!-- Card de detalhes (aberto ao clicar em uma cultura) -->
+    <div id="cal-detalhe" role="region" aria-live="polite" aria-label="Detalhes da cultura selecionada">
+      <div id="cal-det-nome"></div>
+      <div id="cal-det-linhas"></div>
+    </div>
+
+  </div>
+</section><!-- /calendario -->
 
   <!-- ======================================================
        SEÇÃO DIAGNÓSTICO – ferramenta interativa com IA
@@ -986,8 +1072,9 @@
      app.js   – lógica do diagnóstico, catálogo e navbar
      clima.js – previsão do tempo em tempo real
 ======================================================== -->
-<script src="app.js"></script>
-<script src="clima.js"></script>
+<script src="Projeto-Agrinho/assets/js/app.js"></script>
+<script src="Projeto-Agrinho/assets/js/clima.js"></script>
+<script src="Projeto-Agrinho/assets/js/calendario.js"></script>
 
 </body>
 </html>

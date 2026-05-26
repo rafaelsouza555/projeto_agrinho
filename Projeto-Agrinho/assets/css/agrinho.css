@@ -14,36 +14,39 @@
    Altere aqui para mudar toda a paleta de uma vez
 ============================================================ */
 :root {
-  /* Paleta verde-terra */
-  --verde-escuro:  #1b5f2b;
-  --verde-medio:   #1a5e28;
-  --verde-claro:   #2d8f45;
-  --verde-neon:    #4ecb6a;
-  --verde-mint:    #a8f0bc;
+  /* ── Estrutura (identidade da marca) ── */
+  --verde-escuro:  #283830;
+  --verde-medio:   #3a5445;
+  --verde-claro:   #507060;
+  --verde-neon:    #84b898;   /* sage — destaque principal */
+  --verde-mint:    #b8d8c4;
 
-  /* Cores de alerta */
-  --amarelo:       #f5c842;
-  --laranja:       #f07d2a;
-  --vermelho:      #e04040;
+  /* ── Paleta complementar pastel ── */
+  --terracota:     #c08870;   /* laranja-terra  */
+  --mel:           #c4a85a;   /* âmbar / aviso  */
+  --argila:        #b47c7c;   /* vermelho-terra */
+  --neblina:       #7898b8;   /* azul-info      */
 
-  /* Fundos e superfícies */
-  --bg-escuro:     #164722;
-  --bg-card:       rgba(58, 136, 92, 0.18);
-  --bg-light:      #f4faf6;
+  /* ── Aliases semânticos ── */
+  --amarelo:       #c4a85a;
+  --laranja:       #c08870;
+  --vermelho:      #b47c7c;
 
-  /* Texto */
-  --texto:         #e8f5ec;
-  --texto-muted:   #8ab098;
+  /* ── Fundos — carvão quente neutro ── */
+  --bg-escuro:     #1a1e1b;
+  --bg-card:       rgba(160, 200, 175, 0.07);
+  --bg-light:      #ece9e1;
 
-  /* Tipografia */
-  --font-display:  'Syne',   sans-serif;
+  /* ── Texto suavizado ── */
+  --texto:         #dcd8ce;
+  --texto-muted:   #8c9e94;
+
+  --font-display:  'Syne',    sans-serif;
   --font-body:     'DM Sans', sans-serif;
 
-  /* Bordas e sombras */
-  --border-card:   rgba(50, 201, 82, 0.15);
-  --shadow:        0 8px 32px rgba(0, 0, 0, 0.35);
+  --border-card:   rgba(150, 195, 165, 0.13);
+  --shadow:        0 8px 32px rgba(0, 0, 0, 0.20);
 
-  /* Raio de borda padrão */
   --radius:        20px;
   --radius-sm:     12px;
 }
@@ -636,8 +639,10 @@ section {
   border:        1px solid var(--border-card);
   border-radius: var(--radius);
   padding:       40px;
+  margin-top:    80px;
   margin-bottom: 60px;
 }
+
 .gestao-block h3 {
   font-family:   var(--font-display);
   font-size:     1.4rem;
@@ -705,7 +710,7 @@ section {
 ============================================================ */
 .resultados-section {
   background:    linear-gradient(180deg, #0d2614 0%, var(--bg-escuro) 100%);
-  padding:       80px 0;
+  padding:       80px 0 100px ;
 }
 
 .stats-grid {
@@ -1597,6 +1602,39 @@ footer strong { color: var(--verde-neon); }
 
 /* Item oculto no diagnóstico também */
 .cultura-item.oculto { display: none; }
+
+/* ============================================================
+   OVERRIDE – substitui fundos hardcoded pelo carvão quente
+============================================================ */
+
+/* Navbar */
+.navbar                         { background: rgba(14, 18, 15, 0.85); }
+.navbar.scrolled,
+.nav-links.open                 { background: rgba(14, 18, 15, 0.97); }
+
+/* Hero */
+.hero-bg {
+  background:
+    radial-gradient(ellipse 60% 60% at 80% 50%, rgba(90,140,110,0.14) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 50% at 10% 80%, rgba(120,152,184,0.08) 0%, transparent 70%),
+    linear-gradient(160deg, #111412 0%, #161c16 50%, #111412 100%);
+}
+
+/* Seções com fundo fixo */
+.solucao              { background: linear-gradient(180deg, #1a1e1b 0%, #161c17 100%); }
+.resultados-section   { background: linear-gradient(180deg, #161c17 0%, #1a1e1b 100%); }
+.diagnostico-section  { background: #161c17; }
+.planos-section       { background: linear-gradient(180deg, #1a1e1b 0%, #111412 100%); }
+.nos-section          { background: linear-gradient(180deg, #161c17 0%, #1a1e1b 100%); }
+.suporte-section      { background: linear-gradient(180deg, #161c17 0%, #1a1e1b 100%); }
+.faq-section          { background: #111412; }
+.cta-section          { background: #223028; }
+
+/* Modal */
+.modal-box            { background: #181e19; }
+
+/* Phone mockup */
+.phone-mockup         { background: #1a1c1a; }
 
 
 /* ============================================================

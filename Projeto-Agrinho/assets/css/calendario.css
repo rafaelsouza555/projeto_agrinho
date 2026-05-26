@@ -1,0 +1,348 @@
+/* ============================================================
+   AgroInteligente – calendario.css
+   Seção de Calendário de Plantio com Fases da Lua
+   Adicione este arquivo ao projeto e importe no <head>
+============================================================ */
+
+/* ── SEÇÃO ── */
+#calendario {
+  background: linear-gradient(180deg, #161c17 0%, #1a1e1b 100%);
+  padding: 100px 0;
+}
+
+/* ── CABEÇALHO DE NAVEGAÇÃO ── */
+.cal-nav {
+  display:         flex;
+  align-items:     center;
+  justify-content: space-between;
+  flex-wrap:       wrap;
+  gap:             20px;
+  margin-bottom:   40px;
+}
+
+.cal-nav-centro {
+  display:        flex;
+  align-items:    center;
+  gap:            16px;
+}
+
+.cal-mes-nome {
+  font-family:   var(--font-display);
+  font-size:     1.8rem;
+  font-weight:   800;
+  color:         #fff;
+  min-width:     200px;
+  text-align:    center;
+  line-height:   1;
+}
+
+.cal-estacao-nome {
+  font-size:   0.82rem;
+  color:       var(--verde-neon);
+  text-align:  center;
+  margin-top:  4px;
+  letter-spacing: 0.5px;
+}
+
+.cal-btn-nav {
+  background:    rgba(255,255,255,0.05);
+  border:        1px solid var(--border-card);
+  color:         var(--texto);
+  width:         40px;
+  height:        40px;
+  border-radius: 50%;
+  font-size:     1.2rem;
+  cursor:        pointer;
+  transition:    background 0.2s, border-color 0.2s;
+  display:       flex;
+  align-items:   center;
+  justify-content: center;
+}
+
+.cal-btn-nav:hover {
+  background:    rgba(78, 203, 106, 0.1);
+  border-color:  var(--verde-neon);
+  color:         var(--verde-neon);
+}
+
+/* ── CARDS DAS FASES-CHAVE ── */
+.cal-lua-cards-grid {
+  display:               grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap:                   14px;
+  margin-bottom:         32px;
+}
+
+.cal-lua-card {
+  background:    var(--bg-card);
+  border:        1px solid var(--border-card);
+  border-radius: var(--radius);
+  padding:       20px 16px;
+  text-align:    center;
+  transition:    border-color 0.2s, transform 0.2s;
+}
+
+.cal-lua-card:hover {
+  border-color: var(--verde-neon);
+  transform:    translateY(-3px);
+}
+
+.cal-lua-card-fase {
+  font-size:     2rem;
+  display:       block;
+  margin-bottom: 6px;
+}
+
+.cal-lua-card-dia {
+  font-family:   var(--font-display);
+  font-size:     1.1rem;
+  font-weight:   700;
+  color:         #fff;
+  display:       block;
+  margin-bottom: 4px;
+}
+
+.cal-lua-card-nome {
+  font-size:      0.78rem;
+  color:          var(--verde-neon);
+  font-weight:    600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display:        block;
+  margin-bottom:  6px;
+}
+
+.cal-lua-card-agro {
+  font-size:   0.75rem;
+  color:       var(--texto-muted);
+  display:     block;
+  line-height: 1.4;
+}
+
+/* ── FAIXA DIÁRIA DE FASES ── */
+.cal-lua-strip-wrap {
+  margin-bottom: 12px;
+}
+
+.cal-lua-strip-label {
+  font-family:    var(--font-display);
+  font-size:      0.75rem;
+  font-weight:    700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color:          var(--verde-neon);
+  margin-bottom:  12px;
+  display:        block;
+}
+
+.cal-lua-strip {
+  display:    flex;
+  gap:        5px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(78,203,106,0.3) transparent;
+}
+
+.cal-lua-strip::-webkit-scrollbar { height: 4px; }
+.cal-lua-strip::-webkit-scrollbar-track { background: transparent; }
+.cal-lua-strip::-webkit-scrollbar-thumb { background: rgba(78,203,106,0.3); border-radius: 2px; }
+
+.cal-lua-dia {
+  flex-shrink:  0;
+  display:      flex;
+  flex-direction: column;
+  align-items:  center;
+  gap:          3px;
+  padding:      8px 5px;
+  border-radius: var(--radius-sm);
+  border:       1px solid transparent;
+  min-width:    36px;
+  cursor:       default;
+  transition:   background 0.15s, border-color 0.15s;
+}
+
+.cal-lua-dia:hover {
+  background:    rgba(78,203,106,0.06);
+  border-color:  rgba(78,203,106,0.2);
+}
+
+.cal-hoje {
+  border-color:  var(--verde-neon) !important;
+  background:    rgba(78,203,106,0.08) !important;
+}
+
+.cal-lua-n {
+  font-size: 10px;
+  color:     var(--texto-muted);
+  white-space: nowrap;
+}
+
+.cal-lua-icon { font-size: 15px; line-height: 1; }
+
+/* ── LEGENDA DAS FASES ── */
+.cal-legenda {
+  display:   flex;
+  flex-wrap: wrap;
+  gap:       16px;
+  margin:    16px 0 36px;
+}
+
+.cal-leg-item {
+  display:   flex;
+  align-items: center;
+  gap:       6px;
+  font-size: 0.8rem;
+  color:     var(--texto-muted);
+}
+
+/* ── DIVISOR ── */
+.cal-divider {
+  height:     1px;
+  background: var(--border-card);
+  margin:     36px 0;
+}
+
+/* ── SEÇÕES DE CULTURAS ── */
+.cal-secao {
+  margin-bottom: 28px;
+}
+
+.cal-secao-label {
+  font-family:    var(--font-display);
+  font-size:      0.75rem;
+  font-weight:    700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom:  14px;
+  display:        flex;
+  align-items:    center;
+  gap:            8px;
+}
+
+.cal-secao-label.plantio  { color: var(--verde-neon); }
+.cal-secao-label.colheita { color: var(--mel); }
+.cal-secao-label.cuidados { color: var(--argila); }
+
+/* ── TAGS CLICÁVEIS ── */
+.cal-tags {
+  display:   flex;
+  flex-wrap: wrap;
+  gap:       10px;
+}
+
+.cal-tag {
+  font-size:   0.85rem;
+  font-weight: 600;
+  padding:     8px 16px;
+  border-radius: 30px;
+  cursor:      pointer;
+  border:      1.5px solid;
+  transition:  transform 0.15s, box-shadow 0.15s, background 0.15s;
+  font-family: var(--font-body);
+}
+
+.cal-tag:hover {
+  transform:  translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+
+.cal-tag[aria-pressed="true"] {
+  transform:  translateY(-2px);
+}
+
+/* Variações por tipo */
+.cal-tag-plantio {
+  background:   rgba(78, 203, 106, 0.1);
+  border-color: rgba(78, 203, 106, 0.35);
+  color:        #a8f0bc;
+}
+.cal-tag-plantio[aria-pressed="true"],
+.cal-tag-plantio:hover {
+  background: rgba(78, 203, 106, 0.2);
+  border-color: var(--verde-neon);
+}
+
+.cal-tag-colheita {
+  background:   rgba(196, 168, 90, 0.1);
+  border-color: rgba(196, 168, 90, 0.35);
+  color:        #e8cc7a;
+}
+.cal-tag-colheita[aria-pressed="true"],
+.cal-tag-colheita:hover {
+  background: rgba(196, 168, 90, 0.2);
+  border-color: var(--mel);
+}
+
+.cal-tag-cuidado {
+  background:   rgba(180, 124, 124, 0.1);
+  border-color: rgba(180, 124, 124, 0.35);
+  color:        #e8a8a8;
+}
+.cal-tag-cuidado[aria-pressed="true"],
+.cal-tag-cuidado:hover {
+  background: rgba(180, 124, 124, 0.2);
+  border-color: var(--argila);
+}
+
+/* ── CARD DE DETALHE ── */
+#cal-detalhe {
+  display:       none;
+  background:    var(--bg-card);
+  border:        1px solid var(--border-card);
+  border-left:   3px solid var(--verde-neon);
+  border-radius: var(--radius);
+  padding:       24px 28px;
+  margin-top:    20px;
+  animation:     fadeIn 0.3s ease;
+}
+
+#cal-det-nome {
+  font-family:   var(--font-display);
+  font-size:     1.2rem;
+  font-weight:   700;
+  color:         #fff;
+  margin-bottom: 16px;
+}
+
+.cal-det-linha {
+  display:       flex;
+  gap:           12px;
+  align-items:   flex-start;
+  margin-bottom: 10px;
+  font-size:     0.88rem;
+}
+
+.cal-det-label {
+  font-weight: 600;
+  color:       var(--verde-neon);
+  min-width:   160px;
+  flex-shrink: 0;
+}
+
+.cal-det-valor {
+  color: var(--texto-muted);
+  line-height: 1.5;
+}
+
+/* ── RESPONSIVO ── */
+@media (max-width: 900px) {
+  .cal-lua-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cal-det-linha {
+    flex-direction: column;
+    gap:            4px;
+  }
+  .cal-det-label { min-width: unset; }
+}
+
+@media (max-width: 600px) {
+  .cal-nav {
+    flex-direction: column;
+    align-items:    flex-start;
+  }
+  .cal-mes-nome { font-size: 1.4rem; min-width: unset; }
+  .cal-lua-cards-grid { grid-template-columns: repeat(2, 1fr); }
+  #cal-detalhe { padding: 18px 16px; }
+}
