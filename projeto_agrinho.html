@@ -1,535 +1,993 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgroInteligente – O Futuro na Palma da sua Mão</title>
-    <link rel="shortcut icon" href="img/folha.png" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="stylesheet" href="clima.css">
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="agrinho.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AgroInteligente – diagnóstico por IA, previsão do tempo e gestão agrícola para produtores rurais do Brasil.">
+  <meta name="theme-color" content="#164722">
+  <title>AgroInteligente – O Futuro na Palma da sua Mão</title>
+
+  <!-- Ícone da aba -->
+  <link rel="shortcut icon" href="img/folha.png" type="image/x-icon">
+
+  <!-- Fontes do Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="agrinho.css">
+  <link rel="stylesheet" href="clima.css">
 </head>
+
 <body>
 
-<nav class="navbar" id="navbar">
-    <div class="nav-inner">
-        <a href="#hero" class="logo">🌿 AgroInteligente</a>
-        <ul class="nav-links">
-            <li><a href="#desafios">Desafios</a></li>   
-            <li><a href="#solucao">Solução</a></li>
-            <li><a href="#clima">Clima</a></li>
-            <li><a href="#diagnostico">Diagnóstico</a></li>
-            <li><a href="#catalogo">Catálogo</a></li>
-            <li><a href="#suporte">Suporte</a></li>
-            <li><a href="#nos">Sobre Nós</a></li>
-        </ul>
-        <button class="hamburger" id="hamburger" aria-label="Abrir Menu">
-            <span></span><span></span><span></span>
-        </button>
-    </div>
+<!-- ========================================================
+     LINK DE ACESSIBILIDADE – pula direto pro conteúdo
+     (aparece só quando o usuário navega pelo teclado)
+======================================================== -->
+<a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
+
+
+<!-- ========================================================
+     NAVEGAÇÃO PRINCIPAL
+     Fixa no topo, com blur e hambúrguer para mobile
+======================================================== -->
+<nav class="navbar" id="navbar" role="navigation" aria-label="Menu principal">
+  <div class="nav-inner">
+
+    <!-- Logo / identidade da marca -->
+    <a href="#hero" class="logo" aria-label="AgroInteligente – Página inicial">
+      🌱 AgroInteligente
+    </a>
+
+    <!-- Links de navegação (desktop) -->
+    <ul class="nav-links" id="navLinks" role="list">
+      <li><a href="#desafios">Desafios</a></li>
+      <li><a href="#solucao">Solução</a></li>
+      <li><a href="#clima">Clima</a></li>
+      <li><a href="#diagnostico">Diagnóstico</a></li>
+      <li><a href="#catalogo">Catálogo</a></li>
+      <li><a href="#suporte">Suporte</a></li>
+      <li><a href="#nos">Sobre Nós</a></li>
+    </ul>
+
+    <!-- Botão hambúrguer (visível só no mobile) -->
+    <button
+      class="hamburger"
+      id="hamburger"
+      aria-label="Abrir menu de navegação"
+      aria-expanded="false"
+      aria-controls="navLinks"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+  </div>
 </nav>
 
-<main>
-    <section id="hero" class="hero">
-        <div class="hero-bg"></div>
-        <div class="hero-content reveal">
-            <span class="badge">🚀 Tecnologia Agrícola</span>
-            <h1>AgroInteligente<br><em>O Futuro na Palma<br>da sua Mão</em></h1>
-            <p>Diagnóstico por IA, gestão simplificada e conhecimento técnico ao alcance de todos os produtores rurais do Brasil.</p>
-            <div class="hero-btns">
-                <a href="#diagnostico" class="btn-primary">Ver Diagnóstico</a>
-                <a href="#catalogo" class="btn-outline">Explorar Catálogo</a>
-            </div>
+
+<!-- ========================================================
+     CONTEÚDO PRINCIPAL
+======================================================== -->
+<main id="conteudo-principal">
+
+
+  <!-- ======================================================
+       SEÇÃO HERO – primeira impressão do app
+  ====================================================== -->
+  <section id="hero" class="hero" aria-labelledby="hero-titulo">
+
+    <!-- Fundo decorativo (gradiente + textura) -->
+    <div class="hero-bg" aria-hidden="true"></div>
+
+    <!-- Texto principal -->
+    <div class="hero-content reveal">
+      <span class="badge" aria-label="Categoria: Tecnologia Agrícola">
+        🚀 Tecnologia Agrícola
+      </span>
+
+      <h1 id="hero-titulo">
+        AgroInteligente<br>
+        <em>O Futuro na Palma<br>da sua Mão</em>
+      </h1>
+
+      <p>
+        Diagnóstico por IA, gestão simplificada e conhecimento técnico
+        ao alcance de todos os produtores rurais do Brasil.
+      </p>
+
+      <div class="hero-btns">
+        <a href="#diagnostico" class="btn-primary">Fazer Diagnóstico</a>
+        <a href="#catalogo"    class="btn-outline">Explorar Catálogo</a>
+      </div>
+    </div>
+
+    <!-- Mockup do celular animado -->
+    <div class="hero-visual reveal-right" aria-hidden="true">
+      <div class="phone-mockup" role="img" aria-label="Simulação do aplicativo AgroInteligente">
+        <div class="phone-screen">
+          <div class="app-header">🌱 AgroInteligente</div>
+
+          <!-- Área de escaneamento animada -->
+          <div class="app-scan">
+            <div class="scan-line"></div>
+            <div class="scan-icon">🔍</div>
+            <span>Analisando sintomas…</span>
+          </div>
+
+          <!-- Resultados simulados -->
+          <div class="app-result">
+            <div class="result-item ok">✅ Cafeeiro – Saudável</div>
+            <div class="result-item warn">⚠️ Ferrugem detectada</div>
+            <div class="result-item info">💧 Irrigação recomendada</div>
+          </div>
         </div>
-        <div class="hero-visual reveal-right">
-            <div class="phone-mockup">
-                <div class="phone-screen">
-                    <div class="app-header">AgroInteligente</div>
-                    <div class="app-scan">
-                        <div class="scan-line"></div>
-                        <div class="scan-icon">🔍</div>
-                        <span>Analisando sintomas...</span>
-                    </div>
-                    <div class="app-result">
-                        <div class="result-item ok">✅ Cafeeiro – Saudável</div>
-                        <div class="result-item warn">⚠️ Ferrugem detectada</div>
-                        <div class="result-item info">💧 Irrigação recomendada</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="scroll-hint">↓ Role para descobrir</div>
-    </section>
+      </div>
+    </div>
 
-    <section id="desafios" class="desafios">
-        <div class="container">
-            <div class="section-label reveal">PROBLEMA</div>
-            <h2 class="section-title reveal">Os Desafios do<br><em>Campo Moderno</em></h2>
-            <div class="desafios-grid">
-                <article class="desafio-card reveal">
-                    <div class="desafio-icon">🦟</div>
-                    <h3>Pragas e Doenças</h3>
-                    <p>Muitos produtores identificam pragas tarde demais. Sem saber a forma correta de combatê-las, enfrentam grandes perdas na safra e desperdício de recursos.</p>
-                </article>
-                <article class="desafio-card reveal">
-                    <div class="desafio-icon">⛈️</div>
-                    <h3>Clima Imprevisível</h3>
-                    <p>Mudanças repentinas no clima geram riscos gigantescos. Variações severas sem uma preparação prévia podem causar danos críticos e irreversíveis à plantação.</p>
-                </article>
-                <article class="desafio-card reveal">
-                    <div class="desafio-icon">📡</div>
-                    <h3>Acesso Limitado</h3>
-                    <p>A falta de assistência técnica especializada e o isolamento digital dificultam a modernização e diminuem o potencial produtivo de muitas famílias.</p>
-                </article>
-                <article class="desafio-card reveal">
-                    <div class="desafio-icon">⚗️</div>
-                    <h3>Gestão de Insumos</h3>
-                    <p>O uso sem moderação ou controle de insumos agrícolas prejudica o solo, encarece a produção e afeta a sustentabilidade da propriedade a longo prazo.</p>
-                </article>
-            </div>
-        </div>
-    </section>
+    <!-- Indicador de scroll -->
+    <div class="scroll-hint" aria-hidden="true">↓ Role para descobrir</div>
 
-    <section id="solucao" class="solucao">
-        <div class="container">
-            <div class="section-label reveal">SOLUÇÃO</div>
-            <h2 class="section-title reveal">A Solução é o<br><em>AgroInteligente</em></h2>
-            <div class="solucao-intro reveal">
-                <p>O AgroInteligente é um aplicativo mobile que usa <strong>inteligência artificial</strong> para auxiliar produtores rurais a monitorar suas lavouras, identificar anomalias, acompanhar a previsão do tempo em tempo real e conectar-se com especialistas da área.</p>
-            </div>
+  </section><!-- /hero -->
 
-            <div class="steps-titulo reveal"><h3>Como o Diagnóstico por IA Funciona?</h3></div>
-            <div class="steps-grid">
-                <div class="step-card reveal">
-                    <div class="step-num">01</div>
-                    <div class="step-icon">👀</div>
-                    <h4>Observação do Campo</h4>
-                    <p>O produtor analisa a planta diretamente no campo e nota se há algo incomum no seu desenvolvimento.</p>
-                </div>
-                <div class="step-arrow">→</div>
-                <div class="step-card reveal">
-                    <div class="step-num">02</div>
-                    <div class="step-icon">📝</div>
-                    <h4>Registro de Sintomas</h4>
-                    <p>No aplicativo, o usuário informa as anormalidades visíveis, como manchas, cores alteradas, deformações ou folhas murchas.</p>
-                </div>
-                <div class="step-arrow">→</div>
-                <div class="step-card reveal">
-                    <div class="step-num">03</div>
-                    <div class="step-icon">🤖</div>
-                    <h4>Análise da IA</h4>
-                    <p>Nossa inteligência artificial cruza os sintomas informados com um banco de dados agronômicos em questão de segundos.</p>
-                </div>
-                <div class="step-arrow">→</div>
-                <div class="step-card reveal">
-                    <div class="step-num">04</div>
-                    <div class="step-icon">📋</div>
-                    <h4>Recomendação Direta</h4>
-                    <p>O sistema indica o provável problema, o nível de gravidade e aponta as melhores soluções e tratamentos recomendados.</p>
-                </div>
-            </div>
-                <section id="resultados" class="resultados-section">
-                    <div class="container">
-                        <div class="section-label reveal">IMPACTO REAL</div>
-                        <h2 class="section-title reveal">Resultados que <em>Estão Acontecendo</em></h2>
-                        
-                        <div class="stats-grid">
-                            <div class="stat-card reveal">
-                                <h3>-47%</h3>
-                                <p>Redução média de perdas por pragas</p>
-                            </div>
-                            <div class="stat-card reveal">
-                                <h3>+31%</h3>
-                                <p>Aumento de produtividade reportado</p>
-                            </div>
-                            <div class="stat-card reveal">
-                                <h3>R$ 2.4M</h3>
-                                <p>Economia em insumos em 2025/26</p>
-                            </div>
-                            <div class="stat-card reveal">
-                                <h3>4.872</h3>
-                                <p>Produtores usando ativamente</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            
-            <div class="gestao-block reveal">
-                <h3>Gestão Simplificada e Integrada</h3>
-                <div class="gestao-items">
-                    <div class="gestao-item">
-                        <span class="g-icon">🗺️</span>
-                        <div>
-                            <strong>Mapeamento por GPS</strong>
-                            <p>O aplicativo divide toda a propriedade por lotes, facilitando localizar os focos de problemas e organizar a produção por setores.</p>
-                        </div>
-                    </div>
-                    <div class="gestao-item">
-                        <span class="g-icon">📅</span>
-                        <div>
-                            <strong>Registro de Atividades</strong>
-                            <p>O agricultor registra as datas de plantio, insumos aplicados, frequência de irrigação e colheitas de forma super prática.</p>
-                        </div>
-                    </div>
-                    <div class="gestao-item">
-                        <span class="g-icon">📊</span>
-                        <div>
-                            <strong>Relatórios Automáticos</strong>
-                            <p>A IA gera gráficos mostrando as áreas mais produtivas, os custos operacionais e onde os cuidados devem ser redobrados.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <h3 class="reveal" style="text-align:center; margin: 60px 0 30px; font-family: var(--font-display); font-size: 1.8rem;">Benefícios Tangíveis para Todos</h3>
-            <div class="beneficios-grid">
-                <article class="beneficio-card reveal" data-tipo="pequeno">
-                    <div class="ben-icon">👨‍🌾</div>
-                    <h4>Pequenos Agricultores</h4>
-                    <p>Acesso a tecnologias de ponta por um custo acessível, ajudando a evitar a perda de lavouras com respostas rápidas e precisas.</p>
-                </article>
-                <article class="beneficio-card reveal" data-tipo="grande">
-                    <div class="ben-icon">🏭</div>
-                    <h4>Grandes Agricultores</h4>
-                    <p>Otimização de recursos em larga escala, maior controle de qualidade das operações e relatórios detalhados para tomada de decisão.</p>
-                </article>
-                <article class="beneficio-card reveal" data-tipo="ambiente">
-                    <div class="ben-icon">🌍</div>
-                    <h4>Meio Ambiente</h4>
-                    <p>Uso consciente e moderado de defensivos agrícolas e fertilizantes, promovendo uma agricultura sustentável e de baixo impacto.</p>
-                </article>
-            </div>
-        </div>
-    </section>
-
-     <section id="clima" class="clima-section">
-            <div class="container">
-                <div class="section-label reveal">CLIMA EM TEMPO REAL</div>
-                <h2 class="section-title reveal">Previsão e Recomendações<br><em>Para Sua Lavoura</em></h2>
-                <p class="section-sub reveal">
-                    Acesse o clima atual da sua propriedade, alertas agronômicos e as
-                    <strong>melhores culturas para plantar e colher agora</strong>,
-                    com foco no Sul do Brasil.
-                </p>
-        
-                <div class="clima-cta-wrap reveal">
-                    <button class="btn-buscar-clima" id="btnBuscarClima">
-                        📍 Buscar Clima da Minha Localização
-                    </button>
-                </div>
-        
-                <div id="climaPanel"></div>
-            </div>
-        </section>
-
-    <section id="diagnostico" class="diagnostico-section">
-        <div class="container">
-            <div class="section-label reveal">FERRAMENTA</div>
-            <h2 class="section-title reveal">Diagnóstico<br><em>Interativo</em></h2>
-            <p class="section-sub reveal">Selecione uma cultura, marque as características estranhas observadas e veja a recomendação da nossa IA.</p>
-
-            <div class="diagnostico-app reveal">
-                <div class="diag-step active" id="step1">
-                    <h4>① Selecione a Cultura</h4>
-                    <div class="cultura-grid" id="culturaGrid">
-                        </div>
-                </div>
-
-                <div class="diag-step" id="step2">
-                    <h4>② Compare com a referência saudável</h4>
-                    <div class="compare-area">
-                        <div class="compare-foto">
-                            <img id="fotoReferencia" src="" alt="Planta saudável de referência">
-                            <span class="foto-label">📷 Referência Saudável</span>
-                        </div>
-                        <div class="compare-seta">⟺</div>
-                        <div class="compare-foto sintomas-area">
-                            <div id="sintomas-visuais"></div>
-                            <span class="foto-label">🔍 Sua Planta</span>
-                        </div>
-                    </div>
-                    <div class="sintomas-select">
-                        <h4>③ Selecione os Sintomas Estranhos Observados</h4>
-                        <div class="sintomas-grid" id="sintomasGrid"></div>
-                    </div>
-                    <button class="btn-diagnosticar" id="btnDiagnosticar" disabled>🔬 Realizar Diagnóstico</button>
-                </div>
-
-                <div class="diag-step" id="step3">
-                    <div class="resultado-header">
-                        <button class="btn-voltar" id="btnVoltar">← Voltar</button>
-                        <h4>④ Resultado do Diagnóstico</h4>
-                    </div>
-                    <div class="resultado-content" id="resultadoContent"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="catalogo" class="catalogo-section">
-        <div class="container">
-            <div class="section-label reveal">ENCICLOPÉDIA</div>
-            <h2 class="section-title reveal">Catálogo de<br><em>Culturas & Pragas</em></h2>
-            <p class="section-sub reveal">Explore nossa base de conhecimento com descrições detalhadas de culturas, pragas, doenças e soluções.</p>
-
-            <div class="catalogo-filtros reveal">
-                <button class="filtro-btn active" data-filtro="todos">Todos</button>
-                <button class="filtro-btn" data-filtro="alimentar">🌽 Alimentares</button>
-                <button class="filtro-btn" data-filtro="fruta">🍓 Frutas</button>
-                <button class="filtro-btn" data-filtro="horta">🥦 Horta</button>
-            </div>
-
-            <div class="catalogo-grid" id="catalogoGrid">
-                </div>
-        </div>
-    </section>
-
-    <section id="planos" class="planos-section">
-        <div class="container">
-            <div class="section-label reveal">ACESSO</div>
-            <h2 class="section-title reveal">O Custo da<br><em>Inovação</em></h2>
-            <p class="section-sub reveal">Acessibilidade é a nossa chave. Comece gratuitamente e expanda conforme sua necessidade.</p>
-            <div class="planos-grid">
-                <div class="plano-card reveal">
-                    <div class="plano-badge">GRATUITO</div>
-                    <div class="plano-preco">R$ 0<span>/mês</span></div>
-                    <ul>
-                        <li>✅ Diagnóstico de sintomas por IA</li>
-                        <li>✅ Alertas climáticos básicos</li>
-                        <li>✅ Acesso à comunidade de produtores</li>
-                        <li>✅ Catálogo geral de culturas</li>
-                        <li>❌ Relatórios analíticos avançados</li>
-                        <li>❌ Suporte técnico prioritário</li>
-                        <li>❌ Mapeamento GPS completo dos lotes</li>
-                    </ul>
-                    <a href="#" class="btn-plano">Começar Grátis</a>
-                </div>
-                <div class="plano-card destaque reveal">
-                    <div class="plano-badge">PREMIUM</div>
-                    <div class="plano-preco">R$ 99<span>/mês</span></div>
-                    <ul>
-                        <li>✅ Tudo do plano gratuito</li>
-                        <li>✅ Recomendações e tratamentos avançados</li>
-                        <li>✅ Planejamento inteligente de safra</li>
-                        <li>✅ Relatórios e gráficos de desempenho</li>
-                        <li>✅ Mapeamento GPS completo dos lotes</li>
-                        <li>✅ Suporte técnico prioritário</li>
-                        <li>✅ Relatórios Constantes </li>
-                    </ul>
-                    <a href="#" class="btn-plano destaque">Assinar Premium</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="nos" class="nos-section">
-        <div class="container">
-            <div class="section-label reveal">QUEM SOMOS</div>
-            <h2 class="section-title reveal">Inovação com o<br><em>Pé na Terra</em></h2>
-            <p class="section-sub reveal">Conheça o propósito por trás do AgroInteligente e a equipe que trabalha para revolucionar o campo.</p>
-
-            <div class="nos-grid">
-                <article class="nos-card reveal">
-                    <div class="nos-icon">🎯</div>
-                    <h3>Nossa Missão</h3>
-                    <p>Democratizar o acesso à tecnologia no campo. Queremos que tanto o pequeno quanto o grande produtor tenham ferramentas inteligentes para proteger suas lavouras e prosperar.</p>
-                </article>
-                <article class="nos-card reveal">
-                    <div class="nos-icon">👁️</div>
-                    <h3>Nossa Visão</h3>
-                    <p>Ser a principal plataforma de apoio à tomada de decisão agrícola no Brasil, unindo o conhecimento tradicional da terra com a precisão da inteligência artificial.</p>
-                </article>
-                <article class="nos-card reveal">
-                    <div class="nos-icon">💚</div>
-                    <h3>Nossos Valores</h3>
-                    <p>Respeito ao produtor rural, compromisso real com a sustentabilidade, transparência tecnológica e paixão por ver o ecossistema agrícola crescer.</p>
-                </article>
-            </div>
-
-            <div class="equipe-block reveal">
-                <h3>Quem Faz Acontecer</h3>
-                <div class="equipe-grid">
-                    <div class="membro-card">
-                        <div class="membro-avatar">🌱</div>
-                        <h4>Rafael Souza</h4>
-                        <p>Desenvolvedor & Lider de Equipe.</p>
-                    </div>
-                    <div class="membro-card">
-                        <div class="membro-avatar">🌾</div>
-                        <h4>Equipe AgroInteligente</h4>
-                        <p>Pesquisa & Conteúdo Agrícola.</p>
-                    </div>
-                    <div class="membro-card">
-                        <div class="membro-avatar">✋</div>
-                        <h4>Equipe Formada</h4>
-                        <p>Miguel Caroano, Lucas Marques, Vinicius Henrique, Roger Maruschi.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="cta-section">
-        <div class="cta-content reveal">
-            <span class="badge">🌱 O Futuro é Agora</span>
-            <h2>Transformando o Campo</h2>
-            <div class="cta-pilares">
-                <div class="cta-pilar">🤝<br><strong>Parceiro do Agricultor</strong><br><small>Mais do que tecnologia: somos um companheiro diário na sua jornada.</small></div>
-                <div class="cta-pilar">📚<br><strong>Conhecimento Prático</strong><br><small>Conhecimento técnico simplificado e ao alcance de todos.</small></div>
-                <div class="cta-pilar">♻️<br><strong>Futuro Sustentável</strong><br><small>Produção mais eficiente e ambientalmente responsável.</small></div>
-            </div>
-            <p class="cta-frase">Com o AgroInteligente, tecnologia e campo trabalham lado a lado para aumentar a produtividade, reduzir perdas e cuidar do meio ambiente. <strong>Tudo isso direto na palma da sua mão.</strong></p>
-            <p class="cta-slogan">🌾 Plantar melhor, produzir mais e transformar o amanhã!</p>
-        </div>
-    </section>
-
-    <section id="faq" class="faq-section">
+  <!-- ======================================================
+       SEÇÃO DESAFIOS – problemas reais do campo
+  ====================================================== -->
+  <section id="desafios" class="desafios" aria-labelledby="desafios-titulo">
     <div class="container">
-        <div class="section-label reveal">DÚVIDAS</div>
-        <h2 class="section-title reveal">Perguntas Frequentes</h2>
 
-        <div class="faq-grid">
-            <details class="faq-item reveal">
-                <summary>O app funciona offline?</summary>
-                <p>Sim. O diagnóstico por IA funciona offline. Apenas alguns recursos como previsão do tempo em tempo real precisam de internet.</p>
-            </details>
-            
-            <details class="faq-item reveal">
-                <summary>A IA é realmente precisa?</summary>
-                <p>Atualmente temos **87% de acerto** em diagnósticos (validados por agrônomos). Quanto mais sintomas você marcar, mais preciso fica o resultado.</p>
-            </details>
-            
-            <details class="faq-item reveal">
-                <summary>Preciso ter internet o tempo todo?</summary>
-                <p>Não. Você pode registrar sintomas, tirar fotos e fazer diagnósticos offline. A sincronização acontece quando voltar ao sinal.</p>
-            </details>
-            
-            <details class="faq-item reveal">
-                <summary>Vocês vendem meus dados?</summary>
-                <p>Jamais. Seus dados são criptografados e nunca são vendidos. Usamos apenas para melhorar o diagnóstico.</p>
-            </details>
-            
-            <details class="faq-item reveal">
-                <summary>Posso testar antes de pagar?</summary>
-                <p>Sim! O plano gratuito já permite diagnósticos ilimitados + catálogo completo.</p>
-            </details>
-        </div>
+      <p class="section-label reveal" aria-hidden="true">PROBLEMA</p>
+      <h2 class="section-title reveal" id="desafios-titulo">
+        Os Desafios do<br><em>Campo Moderno</em>
+      </h2>
+
+      <!-- Grade com os 4 principais desafios do produtor -->
+      <div class="desafios-grid">
+
+        <article class="desafio-card reveal">
+          <span class="desafio-icon" aria-hidden="true">🐛</span>
+          <h3>Pragas e Doenças</h3>
+          <p>
+            Muitos produtores identificam pragas tarde demais.
+            Sem saber o jeito certo de combatê-las, enfrentam
+            grandes perdas na safra e desperdício de recursos.
+          </p>
+        </article>
+
+        <article class="desafio-card reveal">
+          <span class="desafio-icon" aria-hidden="true">⛈️</span>
+          <h3>Clima Imprevisível</h3>
+          <p>
+            Variações bruscas de temperatura e chuva geram riscos
+            gigantescos. Sem preparo, um evento extremo pode
+            causar danos irreversíveis à plantação.
+          </p>
+        </article>
+
+        <article class="desafio-card reveal">
+          <span class="desafio-icon" aria-hidden="true">📡</span>
+          <h3>Acesso Limitado</h3>
+          <p>
+            A falta de assistência técnica especializada e o
+            isolamento digital dificultam a modernização e
+            reduzem o potencial de muitas famílias rurais.
+          </p>
+        </article>
+
+        <article class="desafio-card reveal">
+          <span class="desafio-icon" aria-hidden="true">🧪</span>
+          <h3>Gestão de Insumos</h3>
+          <p>
+            O uso sem controle de defensivos prejudica o solo,
+            encarece a produção e compromete a sustentabilidade
+            da propriedade ao longo do tempo.
+          </p>
+        </article>
+
+      </div>
     </div>
-</section>
+  </section><!-- /desafios -->
 
-    <section id="depoimentos" class="depoimentos-section">
+
+  <!-- ======================================================
+       SEÇÃO SOLUÇÃO – como o AgroInteligente resolve
+  ====================================================== -->
+  <section id="solucao" class="solucao" aria-labelledby="solucao-titulo">
     <div class="container">
-        <div class="section-label reveal">DEPOIMENTOS</div>
-        <h2 class="section-title reveal">O que os produtores<br>estão dizendo</h2>
 
-        <div class="depoimentos-grid">
-            <div class="depo-card reveal">
-                <p>"Consegui identificar ferrugem no café com 3 dias de antecedência. Economizei uma fortuna em fungicida desnecessário."</p>
-                <div class="depo-autor">
-                    <strong>João Mendes</strong><br>
-                    <small>Café • Minas Gerais</small>
-                </div>
+      <p class="section-label reveal" aria-hidden="true">SOLUÇÃO</p>
+      <h2 class="section-title reveal" id="solucao-titulo">
+        A Solução é o<br><em>AgroInteligente</em>
+      </h2>
+
+      <!-- Parágrafo introdutório em destaque -->
+      <div class="solucao-intro reveal">
+        <p>
+          O AgroInteligente é um aplicativo que usa
+          <strong>inteligência artificial</strong> para ajudar
+          produtores a monitorar lavouras, identificar problemas
+          cedo, acompanhar o clima em tempo real e se conectar
+          com especialistas — tudo de forma simples e acessível.
+        </p>
+      </div>
+
+      <!-- Passo a passo do diagnóstico por IA -->
+      <div class="steps-titulo reveal">
+        <h3>Como o Diagnóstico por IA Funciona?</h3>
+      </div>
+
+      <ol class="steps-grid" aria-label="Passo a passo do diagnóstico">
+
+        <li class="step-card reveal">
+          <span class="step-num" aria-hidden="true">01</span>
+          <span class="step-icon" aria-hidden="true">👀</span>
+          <h4>Observação no Campo</h4>
+          <p>O produtor analisa a planta e nota qualquer coisa fora do normal.</p>
+        </li>
+
+        <span class="step-arrow" aria-hidden="true">→</span>
+
+        <li class="step-card reveal">
+          <span class="step-num" aria-hidden="true">02</span>
+          <span class="step-icon" aria-hidden="true">📝</span>
+          <h4>Registro de Sintomas</h4>
+          <p>No app, informa o que viu: manchas, cores, deformações ou folhas murchas.</p>
+        </li>
+
+        <span class="step-arrow" aria-hidden="true">→</span>
+
+        <li class="step-card reveal">
+          <span class="step-num" aria-hidden="true">03</span>
+          <span class="step-icon" aria-hidden="true">🤖</span>
+          <h4>Análise da IA</h4>
+          <p>A IA cruza os sintomas com nosso banco de dados agronômico em segundos.</p>
+        </li>
+
+        <span class="step-arrow" aria-hidden="true">→</span>
+
+        <li class="step-card reveal">
+          <span class="step-num" aria-hidden="true">04</span>
+          <span class="step-icon" aria-hidden="true">📋</span>
+          <h4>Recomendação Direta</h4>
+          <p>O sistema indica o problema, a gravidade e os melhores tratamentos.</p>
+        </li>
+
+      </ol>
+
+
+      <!-- ── Sub-seção: Resultados reais ── -->
+      <section id="resultados" class="resultados-section" aria-labelledby="resultados-titulo">
+        <div class="container">
+
+          <p class="section-label reveal" aria-hidden="true">IMPACTO REAL</p>
+          <h2 class="section-title reveal" id="resultados-titulo">
+            Resultados que <em>Estão Acontecendo</em>
+          </h2>
+
+          <!-- Números que impressionam (animados por JS) -->
+          <div class="stats-grid" role="list">
+
+            <div class="stat-card reveal" role="listitem">
+              <h3 aria-label="Redução de 47% em perdas por pragas">-47%</h3>
+              <p>Redução média de perdas por pragas</p>
             </div>
-            <div class="depo-card reveal">
-                <p>"Meu filho de 19 anos usa o app todo dia. A gente reduziu o uso de agrotóxico em quase 40% na soja."</p>
-                <div class="depo-autor">
-                    <strong>Antônio Silva</strong><br>
-                    <small>Soja • Mato Grosso</small>
-                </div>
+
+            <div class="stat-card reveal" role="listitem">
+              <h3 aria-label="Aumento de 31% na produtividade">+31%</h3>
+              <p>Aumento de produtividade reportado</p>
             </div>
-            <div class="depo-card reveal">
-                <p>"Melhor investimento que fiz em 2026. O diagnóstico é absurdamente preciso."</p>
-                <div class="depo-autor">
-                    <strong>Maria Clara Oliveira</strong><br>
-                    <small>Tomate • São Paulo</small>
-                </div>
+
+            <div class="stat-card reveal" role="listitem">
+              <h3 aria-label="R$ 2,4 milhões economizados em insumos">R$ 2.4M</h3>
+              <p>Economia em insumos em 2025/26</p>
             </div>
+
+            <div class="stat-card reveal" role="listitem">
+              <h3 aria-label="4 mil 872 produtores ativos">4.872</h3>
+              <p>Produtores usando ativamente</p>
+            </div>
+
+          </div>
         </div>
-    </div>
-</section>
+      </section><!-- /resultados -->
 
-<section id="suporte" class="suporte-section">
+
+      <!-- ── Gestão integrada da propriedade ── -->
+      <div class="gestao-block reveal">
+        <h3>Gestão Simplificada e Integrada</h3>
+
+        <div class="gestao-items">
+
+          <div class="gestao-item">
+            <span class="g-icon" aria-hidden="true">🗺️</span>
+            <div>
+              <strong>Mapeamento por GPS</strong>
+              <p>Divide a propriedade por lotes para localizar focos de problemas e organizar a produção por setor.</p>
+            </div>
+          </div>
+
+          <div class="gestao-item">
+            <span class="g-icon" aria-hidden="true">📅</span>
+            <div>
+              <strong>Registro de Atividades</strong>
+              <p>Datas de plantio, insumos aplicados, irrigação e colheitas — tudo registrado de forma simples.</p>
+            </div>
+          </div>
+
+          <div class="gestao-item">
+            <span class="g-icon" aria-hidden="true">📊</span>
+            <div>
+              <strong>Relatórios Automáticos</strong>
+              <p>Gráficos das áreas mais produtivas, custos e alertas de onde redobrar os cuidados.</p>
+            </div>
+          </div>
+
+        </div>
+      </div><!-- /gestao-block -->
+
+
+      <!-- ── Benefícios para cada perfil de produtor ── -->
+      <h3 class="reveal beneficios-titulo">Benefícios para Todos os Tamanhos de Propriedade</h3>
+
+      <div class="beneficios-grid">
+
+        <article class="beneficio-card reveal" data-tipo="pequeno">
+          <span class="ben-icon" aria-hidden="true">👨‍🌾</span>
+          <h4>Pequenos Agricultores</h4>
+          <p>Tecnologia de ponta por um custo acessível, com respostas rápidas para evitar a perda da lavoura.</p>
+        </article>
+
+        <article class="beneficio-card reveal" data-tipo="grande">
+          <span class="ben-icon" aria-hidden="true">🏭</span>
+          <h4>Grandes Produtores</h4>
+          <p>Otimização em larga escala, controle de qualidade das operações e relatórios para tomada de decisão.</p>
+        </article>
+
+        <article class="beneficio-card reveal" data-tipo="ambiente">
+          <span class="ben-icon" aria-hidden="true">🌍</span>
+          <h4>Meio Ambiente</h4>
+          <p>Uso consciente de defensivos e fertilizantes, promovendo uma agricultura mais sustentável.</p>
+        </article>
+
+      </div>
+
+    </div>
+  </section><!-- /solucao -->
+
+
+  <!-- ======================================================
+       SEÇÃO CLIMA – previsão em tempo real para a lavoura
+  ====================================================== -->
+  <section id="clima" class="clima-section" aria-labelledby="clima-titulo">
     <div class="container">
-        <div class="section-label reveal">SUPORTE</div>
-        <h2 class="section-title reveal">Reclamações e<br><em>Suporte ao Produtor</em></h2>
-        <p class="section-sub reveal">Sua opinião importa. Registre sua reclamação, sugestão ou problema que vamos te ajudar o mais rápido possível.</p>
 
-        <div class="suporte-grid">
-            
-            <!-- Formulário -->
-            <div class="suporte-form reveal">
-                <h3>Registrar Reclamação / Sugestão</h3>
-                <form id="formReclamacao">
-                    <div class="form-group">
-                        <label>Nome completo</label>
-                        <input type="text" id="nome" required placeholder="Seu nome">
-                    </div>
-                    <div class="form-group">
-                        <label>Telefone / WhatsApp</label>
-                        <input type="tel" id="telefone" required placeholder="(00) 00000-0000">
-                    </div>
-                    <div class="form-group">
-                        <label>Tipo</label>
-                        <select id="tipo" required>
-                            <option value="">Selecione...</option>
-                            <option value="reclamacao">Reclamação</option>
-                            <option value="sugestao">Sugestão de melhoria</option>
-                            <option value="erro">Erro no diagnóstico</option>
-                            <option value="outros">Outros</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Descreva o problema ou sugestão</label>
-                        <textarea id="descricao" rows="6" required placeholder="Descreva com detalhes..."></textarea>
-                    </div>
-                    <button type="submit" class="btn-primary" style="width: 100%; padding: 16px;">
-                        Enviar Reclamação
-                    </button>
-                </form>
-            </div>
+      <p class="section-label reveal" aria-hidden="true">CLIMA EM TEMPO REAL</p>
+      <h2 class="section-title reveal" id="clima-titulo">
+        Previsão e Recomendações<br><em>Para Sua Lavoura</em>
+      </h2>
 
-            <!-- Informações de Contato -->
-            <div class="suporte-info reveal">
-                <h3>Outras formas de contato</h3>
-                <div class="contato-opcoes">
-                    <a href="#" class="contato-item">
-                        <span>📱</span>
-                        <strong>WhatsApp</strong>
-                        <p>(11) 91234-5678</p>
-                    </a>
-                    <a href="#" class="contato-item">
-                        <span>✉️</span>
-                        <strong>E-mail</strong>
-                        <p>suporte@agrointeligente.com.br</p>
-                    </a>
-                </div>
+      <p class="section-sub reveal">
+        Acesse o clima atual da sua propriedade, alertas agronômicos e as
+        <strong>melhores culturas para plantar e colher agora</strong>,
+        com foco no Sul do Brasil.
+      </p>
 
-                <div class="tempo-resposta">
-                    <strong>⏱️ Tempo médio de resposta:</strong>
-                    <p><strong>Até 4 horas</strong> em dias úteis</p>
-                </div>
-            </div>
+      <!-- Botão de geolocalização -->
+      <div class="clima-cta-wrap reveal">
+        <button
+          class="btn-buscar-clima"
+          id="btnBuscarClima"
+          aria-label="Buscar clima da minha localização atual"
+        >
+          📍 Buscar Clima da Minha Localização
+        </button>
+      </div>
+
+      <!-- Painel de clima preenchido por clima.js -->
+      <div id="climaPanel" aria-live="polite" aria-label="Resultados do clima"></div>
+
+    </div>
+  </section><!-- /clima -->
+
+
+  <!-- ======================================================
+       SEÇÃO DIAGNÓSTICO – ferramenta interativa com IA
+  ====================================================== -->
+  <section id="diagnostico" class="diagnostico-section" aria-labelledby="diag-titulo">
+    <div class="container">
+
+      <p class="section-label reveal" aria-hidden="true">FERRAMENTA</p>
+      <h2 class="section-title reveal" id="diag-titulo">
+        Diagnóstico<br><em>Interativo</em>
+      </h2>
+      <p class="section-sub reveal">
+        Selecione uma cultura, marque as características estranhas observadas
+        e veja a recomendação da nossa IA.
+      </p>
+
+      <!-- App de diagnóstico em 3 passos -->
+      <div class="diagnostico-app reveal" role="region" aria-label="Ferramenta de diagnóstico de lavoura">
+
+        <!-- PASSO 1 – Escolha da cultura -->
+        <div class="diag-step active" id="step1" role="group" aria-labelledby="step1-label">
+          <h4 id="step1-label">① Selecione a Cultura</h4>
+          <!-- Preenchido por app.js -->
+          <div class="cultura-grid" id="culturaGrid" role="list" aria-label="Lista de culturas disponíveis"></div>
         </div>
-    </div>
-</section>
 
-</main>
+        <!-- PASSO 2 – Comparação e seleção de sintomas -->
+        <div class="diag-step" id="step2" role="group" aria-labelledby="step2-label">
+          <h4 id="step2-label">② Compare com a referência saudável</h4>
 
-<div class="modal-overlay" id="modalOverlay">
-    <div class="modal-box" id="modalBox">
-        <button class="modal-close" id="modalClose" aria-label="Fechar Modal">✕</button>
-        <div class="modal-content" id="modalContent"></div>
+          <div class="compare-area">
+
+            <!-- Foto da planta saudável (referência) -->
+            <div class="compare-foto">
+              <img
+                id="fotoReferencia"
+                src=""
+                alt="Foto de referência da planta saudável selecionada"
+                loading="lazy"
+              >
+              <span class="foto-label">📷 Referência Saudável</span>
+            </div>
+
+            <span class="compare-seta" aria-hidden="true">⟺</span>
+
+            <!-- Área onde os sintomas marcados aparecem visualmente -->
+            <div class="compare-foto sintomas-area">
+              <div
+                id="sintomas-visuais"
+                aria-live="polite"
+                aria-label="Sintomas selecionados"
+              ></div>
+              <span class="foto-label">🔍 Sua Planta</span>
+            </div>
+
+          </div>
+
+          <!-- Lista de sintomas clicáveis -->
+          <div class="sintomas-select">
+            <h4>③ Selecione os Sintomas Observados</h4>
+            <div
+              class="sintomas-grid"
+              id="sintomasGrid"
+              role="group"
+              aria-label="Sintomas para selecionar"
+            ></div>
+          </div>
+
+          <!-- Botão de diagnóstico (desabilitado até selecionar ao menos 1 sintoma) -->
+          <button
+            class="btn-diagnosticar"
+            id="btnDiagnosticar"
+            disabled
+            aria-disabled="true"
+          >
+            🔬 Realizar Diagnóstico
+          </button>
+        </div><!-- /step2 -->
+
+        <!-- PASSO 3 – Resultado do diagnóstico -->
+        <div class="diag-step" id="step3" role="region" aria-labelledby="step3-label">
+          <div class="resultado-header">
+            <button class="btn-voltar" id="btnVoltar" aria-label="Voltar para seleção de sintomas">
+              ← Voltar
+            </button>
+            <h4 id="step3-label">④ Resultado do Diagnóstico</h4>
+          </div>
+
+          <!-- Preenchido dinamicamente por app.js -->
+          <div
+            class="resultado-content"
+            id="resultadoContent"
+            aria-live="polite"
+            aria-label="Resultado do diagnóstico"
+          ></div>
+        </div><!-- /step3 -->
+
+      </div><!-- /diagnostico-app -->
+
     </div>
+  </section><!-- /diagnostico -->
+
+
+  <!-- ======================================================
+       SEÇÃO CATÁLOGO – enciclopédia de culturas e pragas
+  ====================================================== -->
+  <section id="catalogo" class="catalogo-section" aria-labelledby="catalogo-titulo">
+    <div class="container">
+
+      <p class="section-label reveal" aria-hidden="true">ENCICLOPÉDIA</p>
+      <h2 class="section-title reveal" id="catalogo-titulo">
+        Catálogo de<br><em>Culturas & Pragas</em>
+      </h2>
+      <p class="section-sub reveal">
+        Explore nossa base de conhecimento com descrições detalhadas
+        de culturas, pragas, doenças e soluções.
+      </p>
+
+      <!-- Filtros de categoria -->
+      <div class="catalogo-filtros reveal" role="group" aria-label="Filtrar por tipo de cultura">
+        <button class="filtro-btn active" data-filtro="todos"    aria-pressed="true">Todos</button>
+        <button class="filtro-btn"        data-filtro="alimentar" aria-pressed="false">🌽 Alimentares</button>
+        <button class="filtro-btn"        data-filtro="fruta"     aria-pressed="false">🍓 Frutas</button>
+        <button class="filtro-btn"        data-filtro="horta"     aria-pressed="false">🥦 Horta</button>
+      </div>
+
+      <!-- Cards do catálogo (preenchidos por app.js) -->
+      <div
+        class="catalogo-grid"
+        id="catalogoGrid"
+        role="list"
+        aria-label="Catálogo de culturas"
+      ></div>
+
+    </div>
+  </section><!-- /catalogo -->
+
+
+  <!-- ======================================================
+       SEÇÃO PLANOS – custo e planos de acesso
+  ====================================================== -->
+  <section id="planos" class="planos-section" aria-labelledby="planos-titulo">
+    <div class="container">
+
+      <p class="section-label reveal" aria-hidden="true">ACESSO</p>
+      <h2 class="section-title reveal" id="planos-titulo">
+        O Custo da<br><em>Inovação</em>
+      </h2>
+      <p class="section-sub reveal">
+        Acessibilidade é a nossa chave. Comece gratuitamente
+        e expanda conforme sua necessidade.
+      </p>
+
+      <!-- Comparação de planos -->
+      <div class="planos-grid">
+
+        <!-- Plano gratuito -->
+        <div class="plano-card reveal">
+          <p class="plano-badge">GRATUITO</p>
+          <p class="plano-preco">R$ 0<span>/mês</span></p>
+          <ul aria-label="Recursos do plano gratuito">
+            <li>✅ Diagnóstico de sintomas por IA</li>
+            <li>✅ Alertas climáticos básicos</li>
+            <li>✅ Acesso à comunidade de produtores</li>
+            <li>✅ Catálogo geral de culturas</li>
+            <li aria-label="Não incluso">❌ Relatórios analíticos avançados</li>
+            <li aria-label="Não incluso">❌ Suporte técnico prioritário</li>
+            <li aria-label="Não incluso">❌ Mapeamento GPS completo dos lotes</li>
+          </ul>
+          <a href="#" class="btn-plano" aria-label="Começar gratuitamente">Começar Grátis</a>
+        </div>
+
+        <!-- Plano Premium (em destaque) -->
+        <div class="plano-card destaque reveal">
+          <p class="plano-badge">PREMIUM</p>
+          <p class="plano-preco">R$ 99<span>/mês</span></p>
+          <ul aria-label="Recursos do plano Premium">
+            <li>✅ Tudo do plano gratuito</li>
+            <li>✅ Recomendações e tratamentos avançados</li>
+            <li>✅ Planejamento inteligente de safra</li>
+            <li>✅ Relatórios e gráficos de desempenho</li>
+            <li>✅ Mapeamento GPS completo dos lotes</li>
+            <li>✅ Suporte técnico prioritário</li>
+            <li>✅ Relatórios automáticos constantes</li>
+          </ul>
+          <a href="#" class="btn-plano destaque" aria-label="Assinar o plano Premium">Assinar Premium</a>
+        </div>
+
+      </div>
+    </div>
+  </section><!-- /planos -->
+
+
+  <!-- ======================================================
+       SEÇÃO SOBRE NÓS – missão, visão e equipe
+  ====================================================== -->
+  <section id="nos" class="nos-section" aria-labelledby="nos-titulo">
+    <div class="container">
+
+      <p class="section-label reveal" aria-hidden="true">QUEM SOMOS</p>
+      <h2 class="section-title reveal" id="nos-titulo">
+        Inovação com o<br><em>Pé na Terra</em>
+      </h2>
+      <p class="section-sub reveal">
+        Conheça o propósito por trás do AgroInteligente e a equipe
+        que trabalha para revolucionar o campo.
+      </p>
+
+      <!-- Missão, Visão e Valores -->
+      <div class="nos-grid">
+
+        <article class="nos-card reveal">
+          <span class="nos-icon" aria-hidden="true">🎯</span>
+          <h3>Nossa Missão</h3>
+          <p>
+            Democratizar o acesso à tecnologia no campo. Queremos que
+            tanto o pequeno quanto o grande produtor tenham ferramentas
+            inteligentes para proteger suas lavouras e prosperar.
+          </p>
+        </article>
+
+        <article class="nos-card reveal">
+          <span class="nos-icon" aria-hidden="true">👁️</span>
+          <h3>Nossa Visão</h3>
+          <p>
+            Ser a principal plataforma de apoio à decisão agrícola no Brasil,
+            unindo o conhecimento tradicional da terra com a precisão da IA.
+          </p>
+        </article>
+
+        <article class="nos-card reveal">
+          <span class="nos-icon" aria-hidden="true">💚</span>
+          <h3>Nossos Valores</h3>
+          <p>
+            Respeito ao produtor rural, compromisso com a sustentabilidade,
+            transparência tecnológica e paixão por ver o agro crescer.
+          </p>
+        </article>
+
+      </div>
+
+      <!-- Equipe -->
+      <div class="equipe-block reveal">
+        <h3>Quem Faz Acontecer</h3>
+
+        <div class="equipe-grid">
+
+          <div class="membro-card">
+            <span class="membro-avatar" aria-hidden="true">🌱</span>
+            <h4>Rafael Souza</h4>
+            <p>Desenvolvedor &amp; Líder de Equipe</p>
+          </div>
+
+          <div class="membro-card">
+            <span class="membro-avatar" aria-hidden="true">🌾</span>
+            <h4>Equipe AgroInteligente</h4>
+            <p>Pesquisa &amp; Conteúdo Agrícola</p>
+          </div>
+
+          <div class="membro-card">
+            <span class="membro-avatar" aria-hidden="true">🤝</span>
+            <h4>Equipe Formada</h4>
+            <p>Miguel Caroano, Lucas Marques, Vinicius Henrique, Roger Maruschi</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section><!-- /nos -->
+
+
+  <!-- ======================================================
+       SEÇÃO CTA – chamada para ação final
+  ====================================================== -->
+  <section class="cta-section" aria-labelledby="cta-titulo">
+    <div class="cta-content reveal">
+
+      <span class="badge">🌱 O Futuro é Agora</span>
+      <h2 id="cta-titulo">Transformando o Campo</h2>
+
+      <!-- Três pilares de valor -->
+      <div class="cta-pilares">
+
+        <div class="cta-pilar">
+          🤝<br>
+          <strong>Parceiro do Agricultor</strong><br>
+          <small>Mais do que tecnologia: somos um companheiro diário na sua jornada.</small>
+        </div>
+
+        <div class="cta-pilar">
+          📚<br>
+          <strong>Conhecimento Prático</strong><br>
+          <small>Saber técnico simplificado ao alcance de todos os produtores.</small>
+        </div>
+
+        <div class="cta-pilar">
+          ♻️<br>
+          <strong>Futuro Sustentável</strong><br>
+          <small>Produção mais eficiente e ambientalmente responsável.</small>
+        </div>
+
+      </div>
+
+      <p class="cta-frase">
+        Com o AgroInteligente, tecnologia e campo trabalham lado a lado para
+        aumentar a produtividade, reduzir perdas e cuidar do meio ambiente.
+        <strong>Tudo isso direto na palma da sua mão.</strong>
+      </p>
+
+      <p class="cta-slogan">🌾 Plantar melhor, produzir mais e transformar o amanhã!</p>
+
+    </div>
+  </section><!-- /cta -->
+
+
+  <!-- ======================================================
+       SEÇÃO FAQ – perguntas frequentes
+  ====================================================== -->
+  <section id="faq" class="faq-section" aria-labelledby="faq-titulo">
+    <div class="container">
+
+      <p class="section-label reveal" aria-hidden="true">DÚVIDAS</p>
+      <h2 class="section-title reveal" id="faq-titulo">Perguntas Frequentes</h2>
+
+      <!-- Acordeão nativo com <details>/<summary> – acessível por padrão -->
+      <div class="faq-grid">
+
+        <details class="faq-item reveal">
+          <summary>O app funciona sem internet?</summary>
+          <p>
+            Sim. O diagnóstico por IA funciona offline.
+            Apenas recursos como previsão do tempo em tempo real precisam de conexão.
+          </p>
+        </details>
+
+        <details class="faq-item reveal">
+          <summary>A IA é realmente precisa?</summary>
+          <p>
+            Temos 87% de acerto em diagnósticos validados por agrônomos.
+            Quanto mais sintomas você marcar, mais preciso fica o resultado.
+          </p>
+        </details>
+
+        <details class="faq-item reveal">
+          <summary>Preciso de sinal o tempo todo?</summary>
+          <p>
+            Não. Você pode registrar sintomas, tirar fotos e fazer diagnósticos offline.
+            A sincronização acontece quando o sinal voltar.
+          </p>
+        </details>
+
+        <details class="faq-item reveal">
+          <summary>Vocês vendem meus dados?</summary>
+          <p>
+            Jamais. Seus dados são criptografados e nunca compartilhados.
+            Usamos somente para melhorar o diagnóstico.
+          </p>
+        </details>
+
+        <details class="faq-item reveal">
+          <summary>Posso testar antes de pagar?</summary>
+          <p>
+            Sim! O plano gratuito já permite diagnósticos ilimitados
+            e acesso ao catálogo completo — sem cartão de crédito.
+          </p>
+        </details>
+
+      </div>
+    </div>
+  </section><!-- /faq -->
+
+
+  <!-- ======================================================
+       SEÇÃO DEPOIMENTOS – voz dos produtores
+  ====================================================== -->
+  <section id="depoimentos" class="depoimentos-section" aria-labelledby="dep-titulo">
+    <div class="container">
+
+      <p class="section-label reveal" aria-hidden="true">DEPOIMENTOS</p>
+      <h2 class="section-title reveal" id="dep-titulo">
+        O que os produtores<br>estão dizendo
+      </h2>
+
+      <div class="depoimentos-grid">
+
+        <figure class="depo-card reveal">
+          <blockquote>
+            <p>
+              "Consegui identificar ferrugem no café com 3 dias de antecedência.
+              Economizei uma fortuna em fungicida desnecessário."
+            </p>
+          </blockquote>
+          <figcaption class="depo-autor">
+            <strong>João Mendes</strong><br>
+            <small>☕ Café • Minas Gerais</small>
+          </figcaption>
+        </figure>
+
+        <figure class="depo-card reveal">
+          <blockquote>
+            <p>
+              "Meu filho de 19 anos usa o app todo dia.
+              Reduzimos o uso de agrotóxico em quase 40% na soja."
+            </p>
+          </blockquote>
+          <figcaption class="depo-autor">
+            <strong>Antônio Silva</strong><br>
+            <small>🫘 Soja • Mato Grosso</small>
+          </figcaption>
+        </figure>
+
+        <figure class="depo-card reveal">
+          <blockquote>
+            <p>
+              "Melhor investimento que fiz em 2026.
+              O diagnóstico é absurdamente preciso."
+            </p>
+          </blockquote>
+          <figcaption class="depo-autor">
+            <strong>Maria Clara Oliveira</strong><br>
+            <small>🍅 Tomate • São Paulo</small>
+          </figcaption>
+        </figure>
+
+      </div>
+    </div>
+  </section><!-- /depoimentos -->
+
+
+  <!-- ======================================================
+       SEÇÃO SUPORTE – formulário de reclamação e contato
+  ====================================================== -->
+  <section id="suporte" class="suporte-section" aria-labelledby="suporte-titulo">
+    <div class="container">
+
+      <p class="section-label reveal" aria-hidden="true">SUPORTE</p>
+      <h2 class="section-title reveal" id="suporte-titulo">
+        Reclamações e<br><em>Suporte ao Produtor</em>
+      </h2>
+      <p class="section-sub reveal">
+        Sua opinião importa. Registre sua reclamação ou sugestão
+        e vamos te ajudar o mais rápido possível.
+      </p>
+
+      <div class="suporte-grid">
+
+        <!-- Formulário de contato -->
+        <div class="suporte-form reveal">
+          <h3>Registrar Reclamação / Sugestão</h3>
+
+          <form id="formReclamacao" novalidate aria-label="Formulário de suporte">
+
+            <div class="form-group">
+              <label for="nome">Nome completo</label>
+              <input
+                type="text"
+                id="nome"
+                name="nome"
+                required
+                placeholder="Seu nome"
+                autocomplete="name"
+                aria-required="true"
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="telefone">Telefone / WhatsApp</label>
+              <input
+                type="tel"
+                id="telefone"
+                name="telefone"
+                required
+                placeholder="(00) 00000-0000"
+                autocomplete="tel"
+                aria-required="true"
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="tipo">Tipo de contato</label>
+              <select id="tipo" name="tipo" required aria-required="true">
+                <option value="">Selecione…</option>
+                <option value="reclamacao">Reclamação</option>
+                <option value="sugestao">Sugestão de melhoria</option>
+                <option value="erro">Erro no diagnóstico</option>
+                <option value="outros">Outros</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="descricao">Descreva o problema ou sugestão</label>
+              <textarea
+                id="descricao"
+                name="descricao"
+                rows="6"
+                required
+                placeholder="Descreva com detalhes…"
+                aria-required="true"
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary btn-full">
+              Enviar Mensagem
+            </button>
+
+          </form>
+        </div><!-- /suporte-form -->
+
+        <!-- Informações de contato alternativas -->
+        <div class="suporte-info reveal">
+          <h3>Outras formas de falar com a gente</h3>
+
+          <div class="contato-opcoes">
+
+            <a href="https://wa.me/5511912345678" class="contato-item" aria-label="Falar pelo WhatsApp: (11) 91234-5678">
+              <span aria-hidden="true">📱</span>
+              <strong>WhatsApp</strong>
+              <p>(11) 91234-5678</p>
+            </a>
+
+            <a href="mailto:suporte@agrointeligente.com.br" class="contato-item" aria-label="Enviar e-mail para suporte@agrointeligente.com.br">
+              <span aria-hidden="true">✉️</span>
+              <strong>E-mail</strong>
+              <p>suporte@agrointeligente.com.br</p>
+            </a>
+
+          </div>
+
+          <div class="tempo-resposta">
+            <strong>⏱️ Tempo médio de resposta:</strong>
+            <p><strong>Até 4 horas</strong> em dias úteis</p>
+          </div>
+        </div><!-- /suporte-info -->
+
+      </div>
+    </div>
+  </section><!-- /suporte -->
+
+
+</main><!-- /conteúdo principal -->
+
+
+<!-- ========================================================
+     MODAL – detalhes das culturas e pragas do catálogo
+     (aberto e fechado por app.js)
+======================================================== -->
+<div
+  class="modal-overlay"
+  id="modalOverlay"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="modalTitulo"
+  hidden
+>
+  <div class="modal-box" id="modalBox">
+    <button
+      class="modal-close"
+      id="modalClose"
+      aria-label="Fechar janela"
+    >✕</button>
+    <!-- Conteúdo preenchido por app.js -->
+    <div class="modal-content" id="modalContent"></div>
+  </div>
 </div>
 
-<footer>
-    <p>🌿 <strong>AgroInteligente</strong> &nbsp;·&nbsp; Tecnologia a serviço do campo &nbsp;·&nbsp; © 2026</p>
+
+<!-- ========================================================
+     RODAPÉ
+======================================================== -->
+<footer role="contentinfo">
+  <p>
+    🌿 <strong>AgroInteligente</strong>
+    &nbsp;·&nbsp; Tecnologia a serviço do campo
+    &nbsp;·&nbsp; © 2026
+  </p>
 </footer>
 
-<a href="#" id="backToTop" title="Voltar ao topo">↑</a>
 
+<!-- Botão flutuante "Voltar ao topo" -->
+<a
+  href="#hero"
+  id="backToTop"
+  title="Voltar ao topo da página"
+  aria-label="Voltar ao topo"
+>↑</a>
+
+
+<!-- ========================================================
+     SCRIPTS
+     app.js   – lógica do diagnóstico, catálogo e navbar
+     clima.js – previsão do tempo em tempo real
+======================================================== -->
 <script src="app.js"></script>
 <script src="clima.js"></script>
+
 </body>
 </html>
