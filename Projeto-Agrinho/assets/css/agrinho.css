@@ -711,6 +711,7 @@ section {
 .resultados-section {
   background:    linear-gradient(180deg, #0d2614 0%, var(--bg-escuro) 100%);
   padding:       80px 0 100px ;
+  border-radius: 20px;
 }
 
 .stats-grid {
