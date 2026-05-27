@@ -1,0 +1,524 @@
+/* ============================================================
+   AgroInteligente – termometro.css
+   Termômetro de Risco da Lavoura
+   Importe após agrinho.css
+============================================================ */
+
+/* ── SEÇÃO ── */
+.termo-section {
+  background: linear-gradient(180deg, #0d1f12 0%, #111a13 100%);
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decoração de fundo */
+.termo-section::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(132, 184, 152, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+
+/* ── SELETOR DE CULTURAS ── */
+.termo-label-selecione {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--verde-neon);
+  margin-bottom: 14px;
+}
+
+.termo-culturas-wrap {
+  margin-bottom: 48px;
+}
+
+.termo-culturas-scroll {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.termo-cultura-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.04);
+  border: 1.5px solid var(--border-card);
+  color: var(--texto-muted);
+  padding: 10px 18px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 0.87rem;
+  font-family: var(--font-body);
+  font-weight: 500;
+  transition: border-color 0.25s, color 0.25s, background 0.25s, transform 0.2s;
+  white-space: nowrap;
+}
+
+.termo-cultura-btn:hover {
+  border-color: var(--verde-neon);
+  color: var(--verde-neon);
+  transform: translateY(-2px);
+}
+
+.termo-cultura-btn.ativo {
+  background: rgba(83, 245, 145, 0.12);
+  border-color: var(--verde-neon);
+  color: #fff;
+}
+
+.termo-cultura-btn .tc-emoji {
+  font-size: 1.1rem;
+}
+
+
+/* ── PAINEL PRINCIPAL ── */
+.termo-painel {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+
+/* ── GAUGE (MEDIDOR SEMICIRCULAR) ── */
+.termo-gauge-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  position: sticky;
+  top: 100px;
+}
+
+.termo-gauge {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+}
+
+.termo-svg {
+  width: 100%;
+  filter: drop-shadow(0 8px 32px rgba(0,0,0,0.4));
+  overflow: visible;
+}
+
+/* Arco de fundo */
+.termo-arc-bg {
+  fill: none;
+  stroke: rgba(255,255,255,0.06);
+  stroke-width: 18;
+  stroke-linecap: round;
+}
+
+/* Arco de progresso (colorido) */
+.termo-arc-fill {
+  fill: none;
+  stroke: url(#termoGradient);
+  stroke-width: 18;
+  stroke-linecap: round;
+  stroke-dasharray: 283;
+  stroke-dashoffset: 283;
+  transition: stroke-dashoffset 1.2s cubic-bezier(0.34, 1.56, 0.64, 1),
+              stroke 0.6s ease;
+}
+
+/* Agulha */
+.termo-agulha-group line {
+  stroke: #fff;
+  transition: transform 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.termo-agulha-group circle:first-of-type {
+  fill: rgba(255,255,255,0.1);
+  stroke: rgba(255,255,255,0.2);
+  stroke-width: 1;
+}
+
+.termo-agulha-centro {
+  fill: var(--verde-neon) !important;
+}
+
+/* Valor numérico centralizado */
+.termo-valor-wrap {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  display: flex;
+  align-items: baseline;
+  gap: 3px;
+}
+
+.termo-valor {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+  transition: color 0.6s ease;
+}
+
+.termo-valor-label {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--texto-muted);
+  font-weight: 600;
+}
+
+/* Faixas de texto no arco */
+.termo-faixas {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 8px;
+  margin-top: -4px;
+}
+
+.termo-faixa-label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.f-baixo   { color: #84b898; }
+.f-medio   { color: #c4a85a; }
+.f-alto    { color: #c08870; }
+.f-critico { color: #b47c7c; }
+
+/* Badge de status */
+.termo-status-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border-card);
+  border-radius: 16px;
+  padding: 14px 20px;
+  width: 100%;
+  max-width: 320px;
+  transition: border-color 0.6s ease, background 0.6s ease;
+}
+
+.termo-status-ico {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+}
+
+.termo-status-txt {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.3;
+}
+
+/* Estados do badge por nível de risco */
+.termo-status-badge.nivel-baixo   { border-color: rgba(132,184,152,0.5); background: rgba(132,184,152,0.08); }
+.termo-status-badge.nivel-medio   { border-color: rgba(196,168,90,0.5);  background: rgba(196,168,90,0.08); }
+.termo-status-badge.nivel-alto    { border-color: rgba(192,136,112,0.5); background: rgba(192,136,112,0.08); }
+.termo-status-badge.nivel-critico { border-color: rgba(180,124,124,0.5); background: rgba(180,124,124,0.08); }
+
+
+/* ── FATORES ── */
+.termo-fatores {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.termo-fator-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  transition: border-color 0.3s, transform 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.termo-fator-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--verde-neon), transparent);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.termo-fator-card:hover {
+  border-color: rgba(132,184,152,0.3);
+  transform: translateX(4px);
+}
+
+.termo-fator-card:hover::before {
+  opacity: 1;
+}
+
+.termo-fator-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.termo-fator-ico {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.termo-fator-nome {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  flex: 1;
+}
+
+.termo-fator-peso {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--verde-neon);
+  transition: color 0.4s;
+  min-width: 36px;
+  text-align: right;
+}
+
+/* Barra de progresso do fator */
+.termo-fator-bar-wrap {
+  height: 6px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.termo-fator-bar {
+  height: 100%;
+  border-radius: 3px;
+  width: 0%;
+  transition: width 1s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.5s ease;
+}
+
+.termo-fator-desc {
+  font-size: 0.83rem;
+  color: var(--texto-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+
+/* ── RECOMENDAÇÕES ── */
+.termo-recomendacoes {
+  margin-top: 40px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius);
+  padding: 32px;
+}
+
+.termo-rec-titulo {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: #fff;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.termo-rec-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.termo-rec-item {
+  background: rgba(255,255,255,0.03);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  border-left: 3px solid;
+  transition: transform 0.2s;
+}
+
+.termo-rec-item:hover {
+  transform: translateY(-2px);
+}
+
+.termo-rec-item.rec-ok      { border-color: var(--verde-neon); }
+.termo-rec-item.rec-atencao { border-color: var(--mel); }
+.termo-rec-item.rec-evitar  { border-color: var(--argila); }
+
+.termo-rec-item h5 {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.termo-rec-item.rec-ok      h5 { color: var(--verde-neon); }
+.termo-rec-item.rec-atencao h5 { color: var(--mel); }
+.termo-rec-item.rec-evitar  h5 { color: var(--argila); }
+
+.termo-rec-item p {
+  font-size: 0.82rem;
+  color: var(--texto-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+
+/* ── HISTÓRICO 7 DIAS ── */
+.termo-historico {
+  margin-top: 24px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius);
+  padding: 28px 32px;
+}
+
+.termo-hist-titulo {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  color: var(--verde-neon);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 20px;
+}
+
+.termo-hist-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  height: 90px;
+}
+
+.hist-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  height: 100%;
+}
+
+.hist-bar-wrap {
+  flex: 1;
+  width: 100%;
+  background: rgba(255,255,255,0.04);
+  border-radius: 6px 6px 0 0;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  cursor: help;
+  position: relative;
+}
+
+.hist-bar-fill {
+  width: 100%;
+  border-radius: 6px 6px 0 0;
+  transition: height 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+  min-height: 4px;
+}
+
+/* Destaque do dia de hoje */
+.hist-col.hoje .hist-bar-wrap {
+  border: 1px solid rgba(132,184,152,0.4);
+}
+
+.hist-col.hoje .hist-dia-label {
+  color: var(--verde-neon);
+  font-weight: 700;
+}
+
+.hist-dia-label {
+  font-size: 0.65rem;
+  color: var(--texto-muted);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.hist-valor-label {
+  font-size: 0.65rem;
+  color: var(--texto-muted);
+  position: absolute;
+  top: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Cores das barras por nível */
+.hist-bar-baixo   { background: linear-gradient(180deg, #84b898, #4a7a5a); }
+.hist-bar-medio   { background: linear-gradient(180deg, #c4a85a, #8a6a2a); }
+.hist-bar-alto    { background: linear-gradient(180deg, #c08870, #8a5840); }
+.hist-bar-critico { background: linear-gradient(180deg, #b47c7c, #7a3c3c); }
+
+
+/* ── GRADIENTE SVG EMBUTIDO ── */
+.termo-svg-defs {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+
+/* ── ESTADO INICIAL (sem cultura selecionada) ── */
+.termo-painel.inativo {
+  opacity: 0.35;
+  pointer-events: none;
+  filter: blur(1px);
+  user-select: none;
+}
+
+.termo-painel.inativo .termo-valor { color: var(--texto-muted); }
+
+
+/* ── ANIMAÇÃO DE ENTRADA DOS FATORES ── */
+@keyframes fatorEntrada {
+  from { opacity: 0; transform: translateX(20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.termo-fator-card.animando {
+  animation: fatorEntrada 0.4s ease forwards;
+}
+
+
+/* ── RESPONSIVO ── */
+@media (max-width: 900px) {
+  .termo-painel {
+    grid-template-columns: 1fr;
+  }
+  .termo-gauge-wrap {
+    position: static;
+  }
+}
+
+@media (max-width: 600px) {
+  .termo-recomendacoes,
+  .termo-historico {
+    padding: 20px 16px;
+  }
+  .termo-rec-grid {
+    grid-template-columns: 1fr;
+  }
+  .termo-gauge {
+    max-width: 260px;
+  }
+  .termo-valor {
+    font-size: 2.4rem;
+  }
+}
