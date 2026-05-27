@@ -1,0 +1,392 @@
+/* ============================================================
+   AgroInteligente – clima-eventos.css
+   Pop-up de Alertas de Eventos Climáticos Globais
+   Importe APÓS todos os outros CSS.
+============================================================ */
+
+/* ── OVERLAY ── */
+#climaEventoOverlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9000;
+    background: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(0px);
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 28px;
+    pointer-events: none;
+    transition: background 0.4s ease, backdrop-filter 0.4s ease;
+  }
+  
+  #climaEventoOverlay.aberto {
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(5px);
+    pointer-events: all;
+  }
+  
+  /* ── CARD PRINCIPAL ── */
+  #climaEventoCard {
+    background: linear-gradient(145deg, #0e1f12 0%, #152819 55%, #0e1f12 100%);
+    border: 1px solid rgba(132, 184, 152, 0.2);
+    border-radius: 24px;
+    width: 100%;
+    max-width: 480px;
+    box-shadow:
+      0 40px 80px rgba(0, 0, 0, 0.6),
+      0 0 0 1px rgba(132, 184, 152, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    overflow: hidden;
+    transform: translateY(40px) scale(0.96);
+    opacity: 0;
+    transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1),
+                opacity 0.35s ease;
+    position: relative;
+  }
+  
+  #climaEventoCard.visivel {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  
+  /* Barra de severidade no topo */
+  #climaEventoCard::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--evento-cor, linear-gradient(90deg, #f5c842, #f07030));
+    border-radius: 24px 24px 0 0;
+  }
+  
+  /* Textura sutil de fundo */
+  #climaEventoCard::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+    pointer-events: none;
+    border-radius: 24px;
+  }
+  
+  /* ── HEADER DO CARD ── */
+  .ce-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 22px 22px 16px;
+    gap: 14px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .ce-header-left {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    flex: 1;
+  }
+  
+  .ce-icone-wrap {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    background: var(--evento-bg-icon, rgba(245, 200, 66, 0.12));
+    border: 1px solid var(--evento-borda-icon, rgba(245, 200, 66, 0.25));
+    flex-shrink: 0;
+    animation: ce-pulso 3s ease-in-out infinite;
+  }
+  
+  @keyframes ce-pulso {
+    0%, 100% { box-shadow: 0 0 0 0 var(--evento-glow, rgba(245, 200, 66, 0.25)); }
+    50%       { box-shadow: 0 0 0 8px transparent; }
+  }
+  
+  .ce-header-texto { flex: 1; }
+  
+  .ce-rotulo {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.67rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--verde-neon, #84b898);
+    margin-bottom: 4px;
+    display: block;
+  }
+  
+  .ce-titulo {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+    margin: 0;
+  }
+  
+  /* Badge de severidade */
+  .ce-badge {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    background: var(--evento-badge-bg, rgba(245, 200, 66, 0.15));
+    color: var(--evento-badge-cor, #f5e07a);
+    border: 1px solid var(--evento-badge-borda, rgba(245, 200, 66, 0.3));
+    align-self: flex-start;
+  }
+  
+  /* Botão fechar */
+  .ce-btn-fechar {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.5);
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+    flex-shrink: 0;
+  }
+  
+  .ce-btn-fechar:hover {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  /* ── CORPO DO CARD ── */
+  .ce-corpo {
+    padding: 0 22px 20px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .ce-descricao {
+    color: rgba(220, 216, 206, 0.75);
+    font-size: 0.875rem;
+    line-height: 1.65;
+    margin-bottom: 18px;
+  }
+  
+  /* Impactos na lavoura */
+  .ce-impactos {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(132, 184, 152, 0.1);
+    border-radius: 14px;
+    padding: 14px 16px;
+    margin-bottom: 16px;
+  }
+  
+  .ce-impactos-titulo {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--verde-neon, #84b898);
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+  .ce-impacto-lista {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+  
+  .ce-impacto-lista li {
+    font-size: 0.82rem;
+    color: rgba(220, 216, 206, 0.7);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    line-height: 1.4;
+  }
+  
+  .ce-impacto-lista li::before {
+    content: '→';
+    color: var(--evento-acento, #f5c842);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  
+  /* ── FOOTER ── */
+  .ce-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 22px 18px;
+    border-top: 1px solid rgba(132, 184, 152, 0.08);
+    position: relative;
+    z-index: 1;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  
+  .ce-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .ce-btn-nav {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(220, 216, 206, 0.6);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+  }
+  
+  .ce-btn-nav:hover {
+    background: rgba(132, 184, 152, 0.1);
+    border-color: rgba(132, 184, 152, 0.3);
+    color: var(--verde-neon, #84b898);
+  }
+  
+  .ce-indicadores {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+  
+  .ce-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    transition: background 0.25s, transform 0.25s;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+  }
+  
+  .ce-dot.ativo {
+    background: var(--verde-neon, #84b898);
+    transform: scale(1.3);
+  }
+  
+  .ce-btn-dispensar {
+    background: transparent;
+    border: 1px solid rgba(132, 184, 152, 0.2);
+    color: rgba(220, 216, 206, 0.5);
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.78rem;
+    font-weight: 500;
+    transition: 0.2s;
+    white-space: nowrap;
+  }
+  
+  .ce-btn-dispensar:hover {
+    border-color: rgba(132, 184, 152, 0.4);
+    color: rgba(220, 216, 206, 0.85);
+  }
+  
+  /* ── MINI TRIGGER (quando dispensado) ── */
+  #climaEventoTrigger {
+    position: fixed;
+    bottom: 80px;
+    right: 28px;
+    z-index: 8900;
+    background: linear-gradient(135deg, #0e1f12, #1b3d22);
+    border: 1px solid rgba(132, 184, 152, 0.3);
+    border-radius: 50px;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4),
+                0 0 0 0 rgba(132, 184, 152, 0.3);
+    transform: scale(0) translateY(10px);
+    opacity: 0;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+                opacity 0.3s ease,
+                box-shadow 0.3s ease;
+  }
+  
+  #climaEventoTrigger.visivel {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+    animation: ce-trigger-pulse 2.5s ease-in-out infinite 1s;
+  }
+  
+  @keyframes ce-trigger-pulse {
+    0%, 100% { box-shadow: 0 8px 28px rgba(0,0,0,0.4), 0 0 0 0 rgba(132,184,152,0.3); }
+    50%       { box-shadow: 0 8px 28px rgba(0,0,0,0.4), 0 0 0 10px rgba(132,184,152,0); }
+  }
+  
+  #climaEventoTrigger:hover {
+    background: linear-gradient(135deg, #152819, #234d2c);
+    border-color: rgba(132, 184, 152, 0.5);
+  }
+  
+  .ce-trigger-icone { font-size: 1.1rem; }
+  
+  .ce-trigger-texto {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--verde-neon, #84b898);
+    white-space: nowrap;
+  }
+  
+  .ce-trigger-badge {
+    background: var(--evento-badge-bg, rgba(245, 200, 66, 0.15));
+    color: var(--evento-badge-cor, #f5e07a);
+    border: 1px solid var(--evento-badge-borda, rgba(245, 200, 66, 0.3));
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 10px;
+    font-family: 'Syne', sans-serif;
+  }
+  
+  /* ── RESPONSIVO ── */
+  @media (max-width: 560px) {
+    #climaEventoOverlay {
+      align-items: flex-end;
+      justify-content: center;
+      padding: 0;
+    }
+  
+    #climaEventoCard {
+      max-width: 100%;
+      border-radius: 20px 20px 0 0;
+      transform: translateY(100%);
+    }
+  
+    #climaEventoCard.visivel {
+      transform: translateY(0);
+    }
+  
+    #climaEventoTrigger {
+      bottom: 80px;
+      right: 16px;
+    }
+  }
