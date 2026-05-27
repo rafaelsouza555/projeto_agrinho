@@ -113,7 +113,7 @@ const culturas = [
   {
     id: "uva", emoji: "🍇", nome: "Uva", tipo: "fruta",
     descricao: "Exige manejo fitossanitário intenso, especialmente em regiões úmidas.",
-    fotoRef: "https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?w=600&q=80",
+    fotoRef: "https://i.ibb.co/QFzDpLFd/uva.jpg",
     sintomas: [
       "Manchas oleosas na face inferior das folhas","Pó branco nas folhas e cachos",
       "Lesões escuras tipo 'olho de passarinho'","Podridão cinzenta nos cachos",
