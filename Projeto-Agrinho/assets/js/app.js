@@ -22,7 +22,7 @@ const culturas = [
   {
     id: "algodao", emoji: "☁️", nome: "Algodão", tipo: "fibra",
     descricao: "Cultura de alto valor tecnológico. Principal praga: Bicudo-do-algodoeiro.",
-    fotoRef: "https://images.unsplash.com/photo-1585336268764-0c4c4e9c5e0f?w=600&q=80",
+    fotoRef: "https://s2.glbimg.com/xpvhkC5uyFvA2cwLZmWwOYBlGhY=/e.glbimg.com/og/ed/f/original/2022/09/29/img_0142.jpg",
     sintomas: [
       "Furos nos botões florais com queda","Manchas angulares nas folhas",
       "Folhas com pó branco ou teia fina","Lagartas devorando folhas",
@@ -54,7 +54,7 @@ const culturas = [
   {
     id: "arroz", emoji: "🌾", nome: "Arroz", tipo: "alimentar",
     descricao: "Principal cereal do Brasil. Brusone é a doença mais temida.",
-    fotoRef: "https://images.unsplash.com/photo-1593001873049-2f5d3b2e7f4d?w=600&q=80",
+    fotoRef: "https://blog.mfrural.com.br/wp-content/uploads/2023/07/plantacao-arroz-capa-1024x620.jpg.webp",
     sintomas: [
       "Manchas necróticas com halo amarelo nas folhas","Lesões nas panículas (espigas vazias)",
       "Manchas pardas ovais nas folhas","Folhas com escaldadura (queimadas)",
@@ -81,7 +81,7 @@ const culturas = [
   {
     id: "feijao", emoji: "🌱", nome: "Feijão", tipo: "alimentar",
     descricao: "Cultura de alto risco fitossanitário, especialmente viroses.",
-    fotoRef: "https://images.unsplash.com/photo-1596733434982-0a5c4c8f4b0f?w=600&q=80",
+    fotoRef: "https://www.floralondrina.com.br/img/products/muda-de-inga-feijao-inga-marginata_1_1200.jpg",
     sintomas: [
       "Folhas com mosaico dourado","Manchas angulares nas folhas",
       "Lesões encharcadas nos caules e vagens","Plantas murchas com raízes podres",
@@ -113,7 +113,7 @@ const culturas = [
   {
     id: "uva", emoji: "🍇", nome: "Uva", tipo: "fruta",
     descricao: "Exige manejo fitossanitário intenso, especialmente em regiões úmidas.",
-    fotoRef: "https://i.ibb.co/QFzDpLFd/uva.jpg",
+    fotoRef: "https://stacatarina.mx/consejos/wp-content/uploads/2025/09/1757503172_Italia-Regina-Red-Globe-Victoria-%C2%BFQue-variedad-de-uvas-elegir.jpg",
     sintomas: [
       "Manchas oleosas na face inferior das folhas","Pó branco nas folhas e cachos",
       "Lesões escuras tipo 'olho de passarinho'","Podridão cinzenta nos cachos",
