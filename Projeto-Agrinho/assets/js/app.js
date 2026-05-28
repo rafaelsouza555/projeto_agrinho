@@ -167,7 +167,7 @@ const culturas = [
   {
     id: "cana", emoji: "🎋", nome: "Cana-de-Açúcar", tipo: "alimentar",
     descricao: "Base da nossa bioenergia e açúcar. Sofre com brocas e pragas de solo.",
-    fotoRef: "https://images.unsplash.com/photo-1590005085374-2976be0d5884?w=600&q=80",
+    fotoRef: "https://agropos.com.br/wp-content/uploads/2022/04/Imagem-2023-12-20T082626.268.png",
     sintomas: [
       "Orifícios no colmo com serragem","Morte do broto apical (coração morto)",
       "Pústulas alaranjadas na folha","Estrutura preta parecida com chicote no topo",
@@ -194,7 +194,7 @@ const culturas = [
   {
     id: "mandioca", emoji: "🍠", nome: "Mandioca / Macaxeira", tipo: "alimentar",
     descricao: "Raiz rústica e 100% brasileira, mas muito sensível a apodrecimentos radiculares.",
-    fotoRef: "https://images.unsplash.com/photo-1627914092120-00eab868f029?w=600&q=80",
+    fotoRef: "https://jornadaamazonia.org.br/wp-content/uploads/2024/03/mandioca-1024x683.jpg",
     sintomas: [
       "Folhas devoradas rapidamente","Raízes moles e com mau cheiro",
       "Manchas necróticas pardas nas folhas","Murcha repentina",
@@ -221,7 +221,7 @@ const culturas = [
   {
     id: "cafe", emoji: "☕", nome: "Café", tipo: "alimentar",
     descricao: "Uma das principais culturas do Brasil, sensível a fungos e variações climáticas.",
-    fotoRef: "https://images.unsplash.com/photo-1629157241274-9f8bc3704283?w=600&q=80",
+    fotoRef: "https://cultivarjardinagem.com.br/wp-content/uploads/2025/10/pe-de-cafe-frutos-maduros-cafe-arabica.jpg",
     sintomas: [
       "Manchas alaranjadas nas folhas","Queda prematura de folhas",
       "Frutos murchos","Lesões escuras no caule",
