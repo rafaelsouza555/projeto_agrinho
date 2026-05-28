@@ -368,25 +368,22 @@
   }
   
   /* ── RESPONSIVO ── */
-  @media (max-width: 560px) {
-    #climaEventoOverlay {
-      align-items: flex-end;
-      justify-content: center;
-      padding: 0;
-    }
-  
-    #climaEventoCard {
-      max-width: 100%;
-      border-radius: 20px 20px 0 0;
-      transform: translateY(100%);
-    }
-  
-    #climaEventoCard.visivel {
-      transform: translateY(0);
-    }
-  
-    #climaEventoTrigger {
-      bottom: 80px;
-      right: 16px;
-    }
+@media (max-width: 600px) {
+  .ce-trigger-texto,
+  .ce-trigger-badge {
+    display: none;
   }
+
+  #climaEventoTrigger {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border-radius: 50%;
+    justify-content: center;
+    bottom: 80px;
+  }
+
+  .ce-trigger-icone {
+    font-size: 20px;
+  }
+}

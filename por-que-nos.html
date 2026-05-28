@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Por Que Nos Escolher? – AgroInteligente</title>
+
+  <!-- Mesmas fontes do projeto principal -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+    <link rel="shortcut icon" href="Projeto-Agrinho/assets/image/folha.png" type="image/x-icon">
+
+    <!--Estilo-->
+    <link rel="stylesheet" href="Projeto-Agrinho/assets/css/por-que-nos.css">
+
+</head>
+
+<body>
+
+<!-- ============================================================
+     BARRA DE NAVEGAÇÃO FIXA (topbar minimalista)
+     Contém logo e botão de voltar ao site principal.
+============================================================ -->
+<nav class="topbar" role="navigation" aria-label="Navegação do por que nos escolher">
+  <!-- Logo clicável que volta à raiz -->
+  <a href="projeto_agrinho.html" class="topbar-logo">🌱 AgroInteligente</a>
+
+  <!-- Botão de voltar para a página principal -->
+  <a href="projeto_agrinho.html" class="btn-voltar" aria-label="Voltar ao site principal">
+    ← Voltar ao App
+  </a>
+</nav>
+
+
+<!-- ============================================================
+     SEÇÃO HERO  –  Primeiro impacto da página
+     Apresenta a proposta de valor com números reais.
+============================================================ -->
+<section class="pq-hero" aria-labelledby="pq-hero-titulo">
+  <div class="pq-hero-inner">
+
+    <!-- Rótulo acima do título -->
+    <span class="pq-rotulo" aria-hidden="true">🌿 AgroInteligente vs. Concorrentes</span>
+
+    <!-- Título principal -->
+    <h1 id="pq-hero-titulo">
+      Feito para<br>
+      <em>o Campo Brasileiro</em>
+    </h1>
+
+    <!-- Subtítulo explicativo -->
+    <p>
+      Enquanto outros apps são genéricos, o AgroInteligente foi desenvolvido
+      do zero para a realidade do produtor rural brasileiro — com dados
+      regionais, culturas locais e suporte em português.
+    </p>
+
+    <!-- Números de impacto -->
+    <div class="pq-numeros">
+      <div class="pq-num-item">
+        <span class="pq-num-valor">100%</span>
+        <span class="pq-num-desc">Gratuito &amp; sem assinatura oculta</span>
+      </div>
+      <div class="pq-num-item">
+        <span class="pq-num-valor">Sul BR</span>
+        <span class="pq-num-desc">Dados específicos da região</span>
+      </div>
+      <div class="pq-num-item">
+        <span class="pq-num-valor">7 dias</span>
+        <span class="pq-num-desc">Previsão climática agrícola</span>
+      </div>
+    </div>
+
+    <!-- Separador decorativo -->
+    <div class="pq-separador" aria-hidden="true"></div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SEÇÃO: TABELA COMPARATIVA
+     Mostra lado a lado os recursos do AgroInteligente
+     versus apps genéricos de terceiros.
+============================================================ -->
+<section class="comparativo-section" aria-labelledby="comp-titulo">
+  <div class="container">
+
+    <!-- Cabeçalho da seção -->
+    <span class="section-label reveal">COMPARATIVO</span>
+    <h2 class="section-title reveal" id="comp-titulo">
+      Nós vs.<br><em>Aplicativos de Terceiros</em>
+    </h2>
+    <p class="section-sub reveal">
+      Veja por que produtores do Sul do Brasil preferem o AgroInteligente
+      a soluções importadas que não entendem o campo nacional.
+    </p>
+
+    <!-- Wrapper para rolagem horizontal no mobile -->
+    <div style="overflow-x: auto;" class="reveal">
+      <table class="comp-tabela" role="table" aria-label="Comparativo de recursos">
+        <thead>
+          <tr>
+            <!-- Cabeçalho das 3 colunas -->
+            <th class="th-recurso" scope="col">Recurso</th>
+            <th class="th-nos"     scope="col">🌱 AgroInteligente</th>
+            <th class="th-outros"  scope="col">📱 Apps Genéricos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Cada linha compara um recurso específico -->
+          <tr>
+            <td class="td-recurso">Culturas do Sul do Brasil</td>
+            <td class="td-nos"><span class="ico-sim">✅</span> 60+ culturas regionais</td>
+            <td class="td-outros"><span class="ico-nao">✗</span> Apenas culturas globais</td>
+          </tr>
+          <tr>
+            <td class="td-recurso">Calendário lunar de plantio</td>
+            <td class="td-nos"><span class="ico-sim">✅</span> Fases + recomendação agro</td>
+            <td class="td-outros"><span class="ico-nao">✗</span> Não disponível</td>
+          </tr>
+          <tr>
+            <td class="td-recurso">Termômetro de risco da lavoura</td>
+            <td class="td-nos"><span class="ico-sim">✅</span> Por cultura, tempo real</td>
+            <td class="td-outros"><span class="ico-nao">✗</span> Não disponível</td>
+          </tr>
+          <tr>
+            <td class="td-recurso">Diagnóstico de doenças por IA</td>
+            <td class="td-nos"><span class="ico-sim">✅</span> Foto + sugestão de trato.</td>
+            <td class="td-outros"><span class="ico-parc">◐</span> Genérico / pago</td>
+          </tr>
+          <tr>
+            <td class="td-recurso">Alertas climáticos agrícolas</td>
+            <td class="td-nos"><span class="ico-sim">✅</span> Geada, vento, seca, encharca.</td>
+            <td class="td-outros"><span class="ico-parc">◐</span> Apenas clima geral</td>
+          </tr>
+          <tr>
+            <td class="td-recurso">Previsão 7 dias com foco no campo</td>
+            <td class="td-nos"><span class="ico-sim">✅</span> Indica "Campo livre / Evitar"</td>
+            <td class="td-outros"><span class="ico-parc">◐</span> Sem contexto agrícola</td>
+          </tr>
+          <tr>
+            <td class="td-recurso">Catálogo de insumos & defensivos</td>
+            <td class="td-nos"><span class="ico-sim">✅</span> Produtos disponíveis no BR</td>
+            <td class="td-outros"><span class="ico-nao">✗</span> Não disponível</td>
+          </tr>
+          <tr>
+            <td class="td-recurso">Interface em Português</td>
+            <td class="td-nos"><span class="ico-sim">✅</span> 100% nativa</td>
+            <td class="td-outros"><span class="ico-parc">◐</span> Tradução automática</td>
+          </tr>
+          <tr>
+            <td class="td-recurso">Custo para o produtor</td>
+            <td class="td-nos"><span class="ico-sim">✅</span> Totalmente gratuito</td>
+            <td class="td-outros"><span class="ico-nao">✗</span> Freemium ou assinatura</td>
+          </tr>
+          <tr>
+            <td class="td-recurso">Suporte &amp; FAQ em português</td>
+            <td class="td-nos"><span class="ico-sim">✅</span> Chat + formulário</td>
+            <td class="td-outros"><span class="ico-nao">✗</span> Inglês / ticket em dias</td>
+          </tr>
+        </tbody>
+      </table>
+    </div><!-- /overflow wrapper -->
+
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SEÇÃO: DIFERENCIAIS EM CARDS
+     Seis pilares que explicam o diferencial da plataforma.
+============================================================ -->
+<section class="diferenciais-section" aria-labelledby="dif-titulo">
+  <div class="container">
+
+    <span class="section-label reveal">POR QUE NÓS</span>
+    <h2 class="section-title reveal" id="dif-titulo">
+      Seis razões para<br><em>escolher o AgroInteligente</em>
+    </h2>
+
+    <!-- Grade de cards de diferenciais -->
+    <div class="dif-grid">
+
+      <!-- Card 1: Regional -->
+      <div class="dif-card reveal">
+        <span class="dif-ico" aria-hidden="true">🗺️</span>
+        <h3>Dados 100% Regionais</h3>
+        <p>
+          Nossas bases de culturas, safras e recomendações são
+          calibradas para o Sul do Brasil — Paraná, Santa Catarina e
+          Rio Grande do Sul. Nenhum dado genérico de outro continente.
+        </p>
+        <span class="dif-tag">Sul do Brasil</span>
+      </div>
+
+      <!-- Card 2: Gratuito -->
+      <div class="dif-card reveal">
+        <span class="dif-ico" aria-hidden="true">💸</span>
+        <h3>Sem Cobranças Ocultas</h3>
+        <p>
+          Todos os recursos — diagnóstico por IA, clima em tempo real,
+          calendário lunar e catálogo — são gratuitos. Acreditamos que
+          tecnologia no campo não pode ter barreira de preço.
+        </p>
+        <span class="dif-tag">Gratuito</span>
+      </div>
+
+      <!-- Card 3: IA especializada -->
+      <div class="dif-card reveal">
+        <span class="dif-ico" aria-hidden="true">🤖</span>
+        <h3>IA Treinada para a Lavoura</h3>
+        <p>
+          Nosso módulo de diagnóstico analisa fotos de plantas e
+          identifica pragas e doenças comuns no Brasil, sugerindo
+          tratamentos registrados junto ao Ministério da Agricultura.
+        </p>
+        <span class="dif-tag">Inteligência Artificial</span>
+      </div>
+
+      <!-- Card 4: Clima agrícola -->
+      <div class="dif-card reveal">
+        <span class="dif-ico" aria-hidden="true">🌧️</span>
+        <h3>Clima com Contexto Agrícola</h3>
+        <p>
+          Não basta saber se vai chover. Informamos o que
+          fazer com essa informação: quando irrigar, adiar
+          pulverizações, proteger de geada e colher no momento certo.
+        </p>
+        <span class="dif-tag">Open-Meteo API</span>
+      </div>
+
+      <!-- Card 5: Fácil de usar -->
+      <div class="dif-card reveal">
+        <span class="dif-ico" aria-hidden="true">📲</span>
+        <h3>Simples para Qualquer Produtor</h3>
+        <p>
+          Interface projetada para ser usada no campo, sob o sol,
+          com luvas. Tamanhos de fonte generosos, ícones claros e
+          linguagem acessível sem jargão técnico desnecessário.
+        </p>
+        <span class="dif-tag">Acessível</span>
+      </div>
+
+      <!-- Card 6: Open source / transparência -->
+      <div class="dif-card reveal">
+        <span class="dif-ico" aria-hidden="true">🔓</span>
+        <h3>Transparente &amp; Aberto</h3>
+        <p>
+          Desenvolvido como projeto aberto para fins educacionais.
+          Nenhum dado pessoal é vendido ou compartilhado. Você
+          usa a localização só quando você permite — sempre.
+        </p>
+        <span class="dif-tag">Privacidade</span>
+      </div>
+
+    </div><!-- /dif-grid -->
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SEÇÃO: DEPOIMENTOS (carrossel automático)
+     Scroll infinito e suave, pausa ao passar o mouse.
+============================================================ -->
+<section class="depoimentos-section" aria-labelledby="depo-titulo">
+  <div class="container">
+    <span class="section-label reveal">PRODUTORES FALAM</span>
+    <h2 class="section-title reveal" id="depo-titulo">
+      Quem usa,<br><em>recomenda</em>
+    </h2>
+  </div>
+
+  <!-- Carrossel sem bordas laterais (mask-image) -->
+  <div class="depo-track-wrap">
+    <div class="depo-track" aria-label="Carrossel de depoimentos – pausa ao passar o mouse">
+
+      <!-- ── GRUPO 1 (duplicado abaixo para scroll infinito) ── -->
+      <div class="depo-card">
+        <div class="depo-aspas" aria-hidden="true">"</div>
+        <p class="depo-texto">
+          Antes eu usava um app gringo que nem tinha soja no calendário.
+          O AgroInteligente sabe exatamente quando plantar aqui no Paraná.
+        </p>
+        <div class="depo-autor">
+          <div class="depo-avatar" aria-hidden="true">👨‍🌾</div>
+          <div>
+            <span class="depo-nome">João Ferreira</span>
+            <span class="depo-local">Cascavel – PR</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="depo-card">
+        <div class="depo-aspas" aria-hidden="true">"</div>
+        <p class="depo-texto">
+          O alerta de geada salvou minha plantação de fumo dois anos seguidos.
+          Nenhum outro app me avisou daquela maneira prática.
+        </p>
+        <div class="depo-autor">
+          <div class="depo-avatar" aria-hidden="true">👩‍🌾</div>
+          <div>
+            <span class="depo-nome">Maria Aparecida</span>
+            <span class="depo-local">Santa Cruz do Sul – RS</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="depo-card">
+        <div class="depo-aspas" aria-hidden="true">"</div>
+        <p class="depo-texto">
+          A tabela comparativa me convenceu na hora. Tentei três apps
+          pagos antes e nenhum tinha o termômetro de risco por cultura.
+        </p>
+        <div class="depo-autor">
+          <div class="depo-avatar" aria-hidden="true">🧑‍🌾</div>
+          <div>
+            <span class="depo-nome">Carlos Ribeiro</span>
+            <span class="depo-local">Lages – SC</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="depo-card">
+        <div class="depo-aspas" aria-hidden="true">"</div>
+        <p class="depo-texto">
+          Meu pai tem 60 anos e usa o app com facilidade. Interface
+          limpa, tudo em português de verdade — não tradução automática.
+        </p>
+        <div class="depo-autor">
+          <div class="depo-avatar" aria-hidden="true">👨‍🌾</div>
+          <div>
+            <span class="depo-nome">Pedro Alves</span>
+            <span class="depo-local">Pato Branco – PR</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="depo-card">
+        <div class="depo-aspas" aria-hidden="true">"</div>
+        <p class="depo-texto">
+          Gratuito, sem propaganda e ainda sugere o que plantar
+          este mês. Por que alguém usaria outra coisa?
+        </p>
+        <div class="depo-autor">
+          <div class="depo-avatar" aria-hidden="true">👩‍🌾</div>
+          <div>
+            <span class="depo-nome">Luísa Santos</span>
+            <span class="depo-local">Ijuí – RS</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── GRUPO 2  (cópia exata para scroll contínuo) ── -->
+      <div class="depo-card" aria-hidden="true">
+        <div class="depo-aspas">"</div>
+        <p class="depo-texto">
+          Antes eu usava um app gringo que nem tinha soja no calendário.
+          O AgroInteligente sabe exatamente quando plantar aqui no Paraná.
+        </p>
+        <div class="depo-autor">
+          <div class="depo-avatar">👨‍🌾</div>
+          <div>
+            <span class="depo-nome">João Ferreira</span>
+            <span class="depo-local">Cascavel – PR</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="depo-card" aria-hidden="true">
+        <div class="depo-aspas">"</div>
+        <p class="depo-texto">
+          O alerta de geada salvou minha plantação de fumo dois anos seguidos.
+          Nenhum outro app me avisou daquela maneira prática.
+        </p>
+        <div class="depo-autor">
+          <div class="depo-avatar">👩‍🌾</div>
+          <div>
+            <span class="depo-nome">Maria Aparecida</span>
+            <span class="depo-local">Santa Cruz do Sul – RS</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="depo-card" aria-hidden="true">
+        <div class="depo-aspas">"</div>
+        <p class="depo-texto">
+          A tabela comparativa me convenceu na hora. Tentei três apps
+          pagos antes e nenhum tinha o termômetro de risco por cultura.
+        </p>
+        <div class="depo-autor">
+          <div class="depo-avatar">🧑‍🌾</div>
+          <div>
+            <span class="depo-nome">Carlos Ribeiro</span>
+            <span class="depo-local">Lages – SC</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="depo-card" aria-hidden="true">
+        <div class="depo-aspas">"</div>
+        <p class="depo-texto">
+          Meu pai tem 60 anos e usa o app com facilidade. Interface
+          limpa, tudo em português de verdade — não tradução automática.
+        </p>
+        <div class="depo-autor">
+          <div class="depo-avatar">👨‍🌾</div>
+          <div>
+            <span class="depo-nome">Pedro Alves</span>
+            <span class="depo-local">Pato Branco – PR</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="depo-card" aria-hidden="true">
+        <div class="depo-aspas">"</div>
+        <p class="depo-texto">
+          Gratuito, sem propaganda e ainda sugere o que plantar
+          este mês. Por que alguém usaria outra coisa?
+        </p>
+        <div class="depo-autor">
+          <div class="depo-avatar">👩‍🌾</div>
+          <div>
+            <span class="depo-nome">Luísa Santos</span>
+            <span class="depo-local">Ijuí – RS</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /depo-track -->
+  </div><!-- /depo-track-wrap -->
+</section>
+
+
+<!-- ============================================================
+     SEÇÃO: CTA FINAL
+     Convida o usuário a voltar ao app e usar de verdade.
+============================================================ -->
+<section class="cta-section" aria-labelledby="cta-titulo">
+  <div class="cta-inner">
+
+    <h2 id="cta-titulo">
+      Pronto para usar<br>
+      <em>o melhor do campo?</em>
+    </h2>
+
+    <p>
+      Volte ao AgroInteligente e aproveite todas as ferramentas —
+      clima em tempo real, calendário lunar, diagnóstico por IA e
+      muito mais. Tudo gratuito, tudo em português.
+    </p>
+
+    <!-- Botão de ação principal que leva de volta ao app -->
+    <a href="projeto_agrinho.html" class="btn-cta-principal" aria-label="Abrir o AgroInteligente">
+      🌱 Usar o AgroInteligente Agora
+    </a>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
+     RODAPÉ SIMPLES
+============================================================ -->
+<footer class="pq-footer" role="contentinfo">
+  <p>
+    © 2025 AgroInteligente – Projeto Agrinho ·
+    <a href="projeto_agrinho.html">Voltar ao App Principal</a>
+  </p>
+</footer>
+
+
+<!-- ============================================================
+     JAVASCRIPT
+     1. Reveal ao scroll (Intersection Observer)
+     2. Sem dependências externas
+============================================================ -->
+<script>
+  /* ── REVEAL AO SCROLL ──────────────────────────────────────
+     Usa IntersectionObserver para adicionar a classe .visivel
+     quando um elemento com .reveal entra na viewport.
+     Threshold 0.15 = 15% do elemento visível já dispara.
+  ──────────────────────────────────────────────────────────── */
+  (function () {
+    const elementos = document.querySelectorAll('.reveal');
+
+    // Sem suporte ao observer: mostra tudo de uma vez
+    if (!('IntersectionObserver' in window)) {
+      elementos.forEach(el => el.classList.add('visivel'));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visivel');
+            // Para de observar após a animação disparar (performance)
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    elementos.forEach(el => observer.observe(el));
+  })();
+
+
+  /* ── DELAY ESCALONADO NOS CARDS ────────────────────────────
+     Aplica um atraso progressivo nos cards dos diferenciais
+     para que entrem em cascata ao invés de todos juntos.
+  ──────────────────────────────────────────────────────────── */
+  (function () {
+    const cards = document.querySelectorAll('.dif-card');
+    cards.forEach((card, i) => {
+      // 80ms de diferença entre cada card
+      card.style.transitionDelay = `${i * 80}ms`;
+    });
+  })();
+</script>
+
+</body>
+</html>
