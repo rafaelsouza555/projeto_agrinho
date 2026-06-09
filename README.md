@@ -29,7 +29,7 @@ O AgroInteligente busca democratizar o acesso a ferramentas tecnológicas, contr
 
 ## Funcionalidades
 
-- Previsão do Tempo e Alertas Agronômicos: Identificação da localização via GPS e dados climáticos em tempo real com recomendações específicas para o Sul do Brasil (PR, SC e RS).
+- **Previsão do Tempo e Alertas Agronômicos**: Identificação da localização via GPS e dados climáticos em tempo real com recomendações específicas para o Sul do Brasil (PR, SC e RS).
 - Termômetro de Risco da Lavoura: Cálculo de índice de risco (0 a 100) considerando clima, fase lunar, época do ano e histórico de pragas.
 - Calendário de Plantio e Colheita: Navegável por mês, com fases lunares calculadas e recomendações de culturas.
 - Diagnóstico Interativo por IA: Seleção de cultura, identificação de sintomas e recomendações de tratamento.
